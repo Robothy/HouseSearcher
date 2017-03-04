@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-3 23:23:39 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="EntAgent" table="ent_agent" catalog="housesearcher" optimistic-lock="version">
+        <id name="dataId" type="java.lang.Integer">
+            <column name="DATA_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="HHref" type="string">
+            <column name="H_HREF" length="100" unique="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="30" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="20" />
+        </property>
+        <property name="CHref" type="string">
+            <column name="C_HREF" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

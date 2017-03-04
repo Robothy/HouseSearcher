@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-3 23:23:39 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="EntCommunity" table="ent_community" catalog="housesearcher" optimistic-lock="version">
+        <id name="dataId" type="java.lang.Integer">
+            <column name="DATA_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="AHref" type="string">
+            <column name="A_HREF" length="100" unique="true" />
+        </property>
+        <property name="CLocation" type="string">
+            <column name="c_location" length="100" />
+        </property>
+        <property name="coord" type="java.lang.Character">
+            <column name="coord" length="0" />
+        </property>
+    </class>
+</hibernate-mapping>

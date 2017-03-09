@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-3-3 23:23:39 by Hibernate Tools 5.1.0.Alpha1 -->
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-9 16:31:56 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="EntHouse" table="ent_house" catalog="housesearcher" optimistic-lock="version">
+    <class name="edu.housesearcher.crawler.entity.EntHouse" table="ent_house" catalog="housesearcher">
         <id name="dataId" type="java.lang.Integer">
             <column name="data_id" />
             <generator class="identity" />
@@ -11,13 +11,19 @@
         <property name="HHref" type="string">
             <column name="H_HREF" length="100" unique="true" />
         </property>
-        <property name="pubDate" type="date">
+        <property name="pubDate" type="string">
             <column name="PUB_DATE" length="10" />
         </property>
-        <property name="HType" type="java.lang.Character">
+        <property name="area" type="string">
+            <column name="Area" precision="22" scale="0" />
+        </property>
+        <property name="price" type="string">
+            <column name="Price" precision="22" scale="0" />
+        </property>
+        <property name="HType" type="string">
             <column name="h_type" length="0" />
         </property>
-        <property name="HLevel" type="java.lang.Integer">
+        <property name="HLevel" type="string">
             <column name="h_level" />
         </property>
         <property name="HOrientation" type="string">
@@ -26,11 +32,14 @@
         <property name="CHref" type="string">
             <column name="c_href" length="100" />
         </property>
-        <property name="CLocation" type="string">
-            <column name="c_location" length="100" />
+        <property name="AHref" type="string">
+            <column name="A_href" length="100" />
         </property>
-        <property name="agentId" type="java.lang.Integer">
-            <column name="agent_id" />
+        <property name="isGetMsg" type="string">
+            <column name="is_get_msg" length="1" />
+        </property>
+        <property name="createTime" type="string">
+            <column name="create_time" length="19" />
         </property>
     </class>
 </hibernate-mapping>

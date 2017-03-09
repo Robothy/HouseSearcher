@@ -5,6 +5,7 @@
   	 <Property name="ErrorFileName" value="logs/err.log" />
   	 <Property name="InfoFileName" value="logs/info.log" />
   	 <Property name="DebugFileName" value="logs/debug-log.log" />
+  	 <Property name="HbmLogFileName" value="logs/hibernate.log" ></Property>
   </Properties>
 
   <Appenders>
@@ -22,14 +23,31 @@
     <File name="LogFile" filename="${InfoFileName}">
       <PatternLayout pattern="%d [%t] %-6level %l - %msg%n" />
     </File>
+    
+    <!-- 输出hibernate日志信息到文件 -->
+    <File name="HbmLogFile" filename="${HbmLogFileName}" >
+      <PatternLayout pattern="%d [%t] %-6level - %msg%n" />
+    </File>
+    
   </Appenders>
   
   <Loggers>     
      <!-- 日志信息输出到文件和控制台，当程序处于开发状态时，level设置为debug，当程序发布之后，level设置为info -->
      <Logger name="crawlerLogger" level="debug" additivity="false" >
-     	<AppenderRef ref="LogFile" />
      	<AppenderRef ref="Console"/>
+     	<AppenderRef ref="HbmLogFile" />
      </Logger>
+     
+     <!-- hibernate 的SQL日志信息 -->
+     <logger name="org.hibernate.SQL" level="debug" additivity="false" >   
+       <appender-ref ref="Console" />
+       <appender-ref ref="HbmLogFile" />
+     </logger>
+
+	<logger name="org.hibernate.type" level="TRACE" additivity="false" >
+ 	  <appender-ref ref="Console" />
+ 	  <appender-ref ref="HbmLogFile" />
+	</logger>
      
      <!-- Error,Warn 日志信息输出到单独的文件，当然，这些信息在${InfoFileName}文件中也会有 -->
     <Root level="WARN">

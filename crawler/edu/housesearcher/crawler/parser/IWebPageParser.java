@@ -1,5 +1,6 @@
 package edu.housesearcher.crawler.parser;
 
+import java.util.List;
 import java.util.Map;
 
 import org.jsoup.nodes.Document;
@@ -14,5 +15,5 @@ import edu.housesearcher.crawler.utils.ICrawlerLogger;
  *
  */
 public interface IWebPageParser extends ICrawlerLogger {
-    Map<String, String> doParse(final Document document);
+    List<Map<String, String>> doParse(final Document document);
 }

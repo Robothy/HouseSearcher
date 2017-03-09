@@ -3,22 +3,19 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-3-9 16:31:56 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="edu.housesearcher.crawler.entity.EntCommunity" table="ent_community" catalog="housesearcher">
+    <class name="edu.housesearcher.crawler.entity.AgentWatchTimes" table="agent_watch_times" catalog="housesearcher">
         <id name="dataId" type="java.lang.Integer">
             <column name="DATA_ID" />
             <generator class="identity" />
         </id>
-        <property name="CHref" type="string">
-            <column name="C_HREF" length="100" unique="true" />
+        <property name="AHref" type="string">
+            <column name="A_HREF" length="100" />
         </property>
-        <property name="CLocation" type="string">
-            <column name="c_location" length="100" />
+        <property name="HHref" type="string">
+            <column name="H_HREF" length="100" />
         </property>
-        <property name="coord" type="string">
-            <column name="coord" length="20" />
-        </property>
-        <property name="isGetMsg" type="string">
-            <column name="IS_GET_MSG" length="1" />
+        <property name="watchTimes" type="string">
+            <column name="WATCH_TIMES" />
         </property>
         <property name="createTime" type="string">
             <column name="CREATE_TIME" length="19" />

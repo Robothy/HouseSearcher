@@ -2,8 +2,10 @@ package edu.housesearcher.crawler.lianjia;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.jsoup.nodes.Document;
@@ -15,6 +17,7 @@ import edu.housesearcher.crawler.getter.IWebPageGetter;
 import edu.housesearcher.crawler.hrefprovider.AHrefProvider;
 import edu.housesearcher.crawler.manager.AWebpageManager;
 import edu.housesearcher.crawler.parser.IWebPageParser;
+import edu.housesearcher.crawler.saver.CommonPageDataDBSaver;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
 
 public class LianJiaHrefListCrawler extends AWebpageManager implements Serializable {
@@ -36,7 +39,7 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 	     */
 	    @Override
 	    public synchronized String getHref() {
-		if(seqNum>99) super.setIsContinueProvide(false);
+		if(seqNum>=10) setIsContinueProvide(false);
 		seqNum++;
 		return "http://sh.lianjia.com/zufang/d"+seqNum.toString();
 	    }
@@ -64,42 +67,66 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 	IWebPageParser parser = new IWebPageParser() {
 	    
 	    @Override
-	    public Map<String, String> doParse(Document document) {
-		if(document==null) return null;
-		Map<String, String> result = new HashMap<>();
-		Elements elements = document.select("a[name=selectDetail]");
+	    public List<Map<String, String>> doParse(Document document) {
+		if(document==null) {
+		    CRAWLER_LOGGER.debug("文档为空！");
+		    return null;
+		}
+		List<Map<String, String>> result = new ArrayList<Map<String, String>>();
+		Elements elements = document.select("a[class=rent]");
 		Iterator<Element> iterator = elements.iterator();
 		while(iterator.hasNext()){
 		    Element element = iterator.next();
 		    String key = element.attr("href");
 		    String value = "http://sh.lianjia.com" + key;
-		    result.put(key, value);
+		    Map<String, String> e = new HashMap<String,String>();
+		    e.put("HHref", value);
+		    e.put("IsGetMsg", "N");
+		    result.add(e);
 		}
-		
 		return result;
 	    }
 	};
 	
-	IPageDataSaver saver = new IPageDataSaver() {
-	    
-	    @Override
-	    public void doSave(Map<String, String> data) {
-		if(data == null) return;
-		
-	    }
-	};
+	IPageDataSaver saver = new CommonPageDataDBSaver(edu.housesearcher.crawler.entity.EntHouse.class);
 	
-	
+	Integer invalidPagesCount = 0;
+	Integer emptyPagesCount = 0;
 	
 	do{
 	    super.setHref(hrefProvider.getHref());
-	    CRAWLER_LOGGER.debug(super.getHref());
-	    //get(getter);
-	    parse(parser);
+	    CRAWLER_LOGGER.debug("正在处理 " + super.getHref());
+	    
+	    Document document = get(getter);
+	    
+	    /**
+	     * 统计连续获取到的空页面的次数
+	     */
+	    if (document == null) {
+		CRAWLER_LOGGER.debug("获取到一个不合法的页面!");
+		invalidPagesCount ++;
+		if(invalidPagesCount>=5) hrefProvider.setIsContinueProvide(false);
+	    }else {
+		invalidPagesCount = 0;
+		super.setDocument(document);
+	    }
+	    
+	    List<Map<String, String>> data = parse(parser);
+	    
+	    /**
+	     * 统计连续获取到的不包含目标数据的页面的数量
+	     */
+	    if(data.size()==0){
+		CRAWLER_LOGGER.debug("获取到一个不包含目标数据的页面!");
+		emptyPagesCount ++;
+		if(emptyPagesCount>=5) hrefProvider.setIsContinueProvide(false);
+	    }else {
+		emptyPagesCount = 0;
+		super.setData(data);
+	    }
+	    
 	    save(saver);
 	}while(hrefProvider.getIsContinueProvide());
-	
-	
     }
 
 }

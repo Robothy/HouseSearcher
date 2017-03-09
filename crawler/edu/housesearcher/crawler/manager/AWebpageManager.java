@@ -1,6 +1,7 @@
 package edu.housesearcher.crawler.manager;
 
 
+import java.util.List;
 import java.util.Map;
 
 import org.jsoup.nodes.Document;
@@ -40,7 +41,7 @@ public abstract class AWebpageManager implements Runnable,ICrawlerLogger {
     /**
      * 解析得到的数据
      */
-    private Map<String, String> data = null;
+    private List<Map<String, String>> data = null;
 
     /**
      * 执行获取页面文本操作
@@ -53,7 +54,7 @@ public abstract class AWebpageManager implements Runnable,ICrawlerLogger {
      * 执行页面解析操作
      * @return 
      */
-    protected Map<String, String> parse(IWebPageParser parser){
+    protected List<Map<String, String>> parse(IWebPageParser parser){
 	return parser.doParse(document);
     }
     
@@ -83,11 +84,11 @@ public abstract class AWebpageManager implements Runnable,ICrawlerLogger {
         this.document = document;
     }
 
-    public Map<String, String> getData() {
+    public List<Map<String, String>> getData() {
         return data;
     }
 
-    public void setData(Map<String, String> data) {
+    public void setData(List<Map<String, String>> data) {
         this.data = data;
     }
     

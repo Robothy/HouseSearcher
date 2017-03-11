@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">housesearcher</property>
+  <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/housesearcher?autoReconnect=true&amp;verifyServerCertificate=false&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8</property>
+  <property name="hibernate.connection.username">housesearcher</property>
+  <property name="hibernate.current_session_context_class">thread</property>
+  <property name="hibernate.default_schema">housesearcher</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <!-- <property name="hibernate.show_sql">true</property>
+  <property name="hibernate.format_sql">true</property> 
+ 
+    <mapping class="edu.housesearcher.crawler.entity.EntHouse" resource="edu/housesearcher/crawler/entity/EntHouse.hbm.xml"/>
+  <mapping class="edu.housesearcher.crawler.entity.EntAgent" resource="edu/housesearcher/crawler/entity/EntAgent.hbm.xml"/>
+  <mapping class="edu.housesearcher.crawler.entity.EntCommunity" resource="edu/housesearcher/crawler/entity/EntCommunity.hbm.xml"/>
+  <mapping class="edu.housesearcher.crawler.entity.AgentManaScope" resource="edu/housesearcher/crawler/entity/AgentManaScope.hbm.xml"/>
+  <mapping class="edu.housesearcher.crawler.entity.AgentWatchTimes" resource="edu/housesearcher/crawler/entity/AgentWatchTimes.hbm.xml"/> -->
+  <mapping resource="edu/housesearcher/crawler/entity/EntHouse.hbm.xml"/>
+  <mapping resource="edu/housesearcher/crawler/entity/EntAgent.hbm.xml"/>
+  <mapping resource="edu/housesearcher/crawler/entity/EntCommunity.hbm.xml"/>
+  <mapping resource="edu/housesearcher/crawler/entity/AgentManaScope.hbm.xml"/>
+  <mapping resource="edu/housesearcher/crawler/entity/AgentWatchTimes.hbm.xml"/>
+  <mapping resource="edu/housesearcher/crawler/entity/StatusValue.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

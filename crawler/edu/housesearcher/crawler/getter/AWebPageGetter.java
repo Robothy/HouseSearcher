@@ -43,6 +43,7 @@ public abstract class AWebPageGetter implements IWebPageGetter {
 	    if (document!=null) {
 		CRAWLER_LOGGER.debug("获取到了文档!" + href);
 		if (!isValidPage(document)) {
+		    CRAWLER_LOGGER.debug("页面不合法！");
 		    document = null;
 		}
 	    }

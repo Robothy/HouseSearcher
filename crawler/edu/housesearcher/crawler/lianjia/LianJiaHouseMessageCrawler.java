@@ -7,32 +7,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.naming.spi.ResolveResult;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
 import edu.housesearcher.crawler.entity.EntHouse;
 import edu.housesearcher.crawler.getter.AWebPageGetter;
 import edu.housesearcher.crawler.getter.IWebPageGetter;
 import edu.housesearcher.crawler.hrefprovider.DBHrefProvider;
-import edu.housesearcher.crawler.hrefprovider.AHrefProvider;
-import edu.housesearcher.crawler.hrefprovider.IHrefProvider;
 import edu.housesearcher.crawler.manager.AWebpageManager;
 import edu.housesearcher.crawler.parser.IWebPageParser;
-import edu.housesearcher.crawler.saver.CommonPageDataDBSaver;
+import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
-import edu.housesearcher.crawler.utils.HibernateUtil;
+
+
 
 /**
  * @功能 爬取房屋信息
  * @author robothy
  *
  */
+@Component
 public class LianJiaHouseMessageCrawler extends AWebpageManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -124,7 +121,7 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 	    }
 	};
 	
-	IPageDataSaver saver = new CommonPageDataDBSaver(EntHouse.class);
+	IPageDataSaver saver = new CommonPageDataDBSave(EntHouse.class);
 	
 	
 	do{
@@ -145,6 +142,8 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 		}
 		
 		List<Map<String, String>> data = parse(parser);
+		for(Map<String, String> map : data) map.put("HHref", href);//把链接添加进去，才能更新。
+		
 		
 		/**
 		 * 统计连续获取到的不包含目标数据的页面的数量

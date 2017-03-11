@@ -12,7 +12,12 @@ public class CrawlerClient {
      */
     public static void main(String[] args) {
 	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
+	
 	controller.runThreads();
+	
+//	ThreadController controller = new ThreadController(new LianJiaHouseMessageCrawler(), 5);
+//	controller.runThreads();
+	
 	HibernateUtil.closeSessionFactory();
 	System.exit(0);
     }

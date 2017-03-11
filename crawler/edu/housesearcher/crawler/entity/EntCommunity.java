@@ -6,6 +6,10 @@ package edu.housesearcher.crawler.entity;
  */
 public class EntCommunity implements java.io.Serializable {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 1L;
     private Integer dataId;
     private String CHref;
     private String CLocation;

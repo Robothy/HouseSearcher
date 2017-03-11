@@ -35,7 +35,7 @@
      <!-- 日志信息输出到文件和控制台，当程序处于开发状态时，level设置为debug，当程序发布之后，level设置为info -->
      <Logger name="crawlerLogger" level="debug" additivity="false" >
      	<AppenderRef ref="Console"/>
-     	<AppenderRef ref="HbmLogFile" />
+     	<AppenderRef ref="LogFile" />
      </Logger>
      
      <!-- hibernate 的SQL日志信息 -->

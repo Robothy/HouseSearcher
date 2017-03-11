@@ -8,18 +8,28 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.mapping.Constraint;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
+import edu.housesearcher.crawler.entity.EntHouse;
 import edu.housesearcher.crawler.getter.AWebPageGetter;
 import edu.housesearcher.crawler.getter.IWebPageGetter;
 import edu.housesearcher.crawler.hrefprovider.AHrefProvider;
 import edu.housesearcher.crawler.manager.AWebpageManager;
 import edu.housesearcher.crawler.parser.IWebPageParser;
-import edu.housesearcher.crawler.saver.CommonPageDataDBSaver;
+import edu.housesearcher.crawler.saver.APageDataDBSaver;
+import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
-
+import edu.housesearcher.crawler.utils.HibernateUtil;
+@Component
 public class LianJiaHrefListCrawler extends AWebpageManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,7 +40,7 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
     private static AHrefProvider hrefProvider = new AHrefProvider() {
 	    private static final long serialVersionUID = 1L;
 	    
-	    private Integer seqNum = 0;
+	    private Integer seqNum = 450;
 	    
 	    /**
 	     * 获取一条url，包含生成序列化url的规则。
@@ -39,7 +49,7 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 	     */
 	    @Override
 	    public synchronized String getHref() {
-		if(seqNum>=10) setIsContinueProvide(false);
+		if(seqNum>=3500) setIsContinueProvide(false);
 		seqNum++;
 		return "http://sh.lianjia.com/zufang/d"+seqNum.toString();
 	    }
@@ -58,7 +68,11 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 		/**
 		 * 该页面没有房屋信息列表，即 class = 'house-lst' 的 ul 标签下的子节点个数为 0 。
 		 */
-		if(document.select("ul[id=house-lst]").isEmpty()) result = false ;
+		if(document.select("ul[id=house-lst]").isEmpty()) {
+		    CRAWLER_LOGGER.debug(document.data());
+		    CRAWLER_LOGGER.debug("没有房屋列表！");
+		    result = false ;
+		}
 		
 		return result;
 	    }
@@ -88,7 +102,43 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 	    }
 	};
 	
-	IPageDataSaver saver = new CommonPageDataDBSaver(edu.housesearcher.crawler.entity.EntHouse.class);
+	IPageDataSaver saver = new IPageDataSaver() {
+	    @Override
+	    public void doSave(List<Map<String, String>> datas) {
+
+		Session session = HibernateUtil.getSession();
+		Transaction transaction = session.beginTransaction();
+		for(Map<String, String> data : datas){
+		    Criteria criteria = session.createCriteria(EntHouse.class);
+		    criteria.add(Restrictions.eq("HHref", data.get("HHref")));
+		    List<EntHouse> houses = null;
+		    try{
+			houses = criteria.list();
+		    }catch(Exception e){
+			CRAWLER_LOGGER.error("从EntHouse表中查询数据失败！",e);
+			e.printStackTrace();
+			continue;
+		    }
+		    if(houses.size()>0) continue; //存在的对象,跳过
+		    EntHouse obj = new EntHouse();
+		    obj.setHHref(data.get("HHref"));
+		    obj.setIsGetMsg(data.get("IsGetMsg"));
+		    try{
+			session.save(obj);
+		    }catch(Exception e){
+			CRAWLER_LOGGER.error("保存数据到EntHouse中失败",e);
+			e.printStackTrace();
+			continue;
+		    }
+		}
+		transaction.commit();
+		session.close();
+		datas.clear();
+	    }
+	    
+	    @Override
+	    public void doSave(Map<String, String> data) {}
+	};
 	
 	Integer invalidPagesCount = 0;
 	Integer emptyPagesCount = 0;
@@ -103,9 +153,12 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 	     * 统计连续获取到的空页面的次数
 	     */
 	    if (document == null) {
-		CRAWLER_LOGGER.debug("获取到一个不合法的页面!");
+		CRAWLER_LOGGER.debug("获取到一个不合法的页面!"+super.getHref());
 		invalidPagesCount ++;
-		if(invalidPagesCount>=5) hrefProvider.setIsContinueProvide(false);
+		if(invalidPagesCount>=5) {
+		    CRAWLER_LOGGER.info("连续获取到了 " + invalidPagesCount + " 个不合法的页面！");
+		    hrefProvider.setIsContinueProvide(false);
+		}
 	    }else {
 		invalidPagesCount = 0;
 		super.setDocument(document);

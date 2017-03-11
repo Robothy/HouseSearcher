@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+
+  <Properties>
+  	 <Property name="ErrorFileName" value="logs/err.log" />
+  	 <Property name="InfoFileName" value="logs/info.log" />
+  	 <Property name="DebugFileName" value="logs/debug-log.log" />
+  	 <Property name="HbmLogFileName" value="logs/hibernate.log" ></Property>
+  </Properties>
+
+  <Appenders>
+  	<!-- 输出日志信息到控制台 -->
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d [%t] %-6level %l - %msg%n"/>
+    </Console>
+    
+    <!-- 输出Error日志信息到单独文件中 -->
+    <File name="ErrorFile" filename="${ErrorFileName}">
+      <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n"/>
+    </File>
+    
+    <!-- 输入日志信息到文件 -->
+    <File name="LogFile" filename="${InfoFileName}">
+      <PatternLayout pattern="%d [%t] %-6level %l - %msg%n" />
+    </File>
+    
+    <!-- 输出hibernate日志信息到文件 -->
+    <File name="HbmLogFile" filename="${HbmLogFileName}" >
+      <PatternLayout pattern="%d [%t] %-6level - %msg%n" />
+    </File>
+    
+  </Appenders>
+  
+  <Loggers>     
+     <!-- 日志信息输出到文件和控制台，当程序处于开发状态时，level设置为debug，当程序发布之后，level设置为info -->
+     <Logger name="crawlerLogger" level="debug" additivity="false" >
+     	<AppenderRef ref="Console"/>
+     	<AppenderRef ref="LogFile" />
+     </Logger>
+     
+     <!-- hibernate 的SQL日志信息 -->
+     <logger name="org.hibernate.SQL" level="debug" additivity="false" >   
+       <appender-ref ref="Console" />
+       <appender-ref ref="HbmLogFile" />
+     </logger>
+
+	<logger name="org.hibernate.type" level="TRACE" additivity="false" >
+ 	  <appender-ref ref="Console" />
+ 	  <appender-ref ref="HbmLogFile" />
+	</logger>
+     
+     <!-- Error,Warn 日志信息输出到单独的文件，当然，这些信息在${InfoFileName}文件中也会有 -->
+    <Root level="WARN">
+      <AppenderRef ref="ErrorFile" />
+    </Root>
+  </Loggers>
+</Configuration>

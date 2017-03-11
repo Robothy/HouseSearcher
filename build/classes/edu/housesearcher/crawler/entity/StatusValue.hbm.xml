@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-11 9:42:55 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+ <class catalog="housesearcher"
+  name="edu.housesearcher.crawler.entity.StatusValue" table="status_value">
+  <id name="statusKey" type="string">
+   <column length="100" name="status_key"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="statusValue" type="string">
+   <column length="200" name="status_value"/>
+  </property>
+  <property generated="never" lazy="false" name="enabled" type="string">
+   <column length="1" name="enabled"/>
+  </property>
+  <property generated="never" lazy="false" name="createTime" type="string">
+   <column length="19" name="create_time"/>
+  </property>
+ </class>
+</hibernate-mapping>

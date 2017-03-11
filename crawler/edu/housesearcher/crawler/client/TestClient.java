@@ -1,9 +1,12 @@
 package edu.housesearcher.crawler.client;
 
+import java.lang.reflect.AnnotatedArrayType;
 import java.util.Date;
+import java.util.Map.Entry;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.boot.jaxb.hbm.spi.PluralAttributeInfoPrimitiveArrayAdapter;
 import org.junit.Test;
 
 import edu.housesearcher.crawler.entity.EntHouse;
@@ -18,7 +21,6 @@ public class TestClient {
 	System.exit(0);
     }
 
-    @Test
     public void test2017030901(){
 	DBHrefProvider dbHrefProvider = new DBHrefProvider("EntHouse", "HHref");
 	while(dbHrefProvider.getIsContinueProvide()){
@@ -30,6 +32,30 @@ public class TestClient {
     public void test(){
 	String str ="setSetString";
 	System.out.println(str.substring(3));
+    }
+    
+    private void binTree(){
+	
+    }
+    
+    @Test
+    public void test2017030902(){
+	Integer[] array = {3,1,3,4,5,6,7,10,6,13,28,50,31,22};
+	
+	for(int i=0,k;  i<array.length; i++){
+	    k = i;
+	    for(int j=i; j<array.length;j++){
+		if(Math.pow(-2, array[j]) > Math.pow(-2, array[k])) k = j; 
+	    }
+	    if(k!=i){
+		array[k]^=array[i];
+		array[i]^=array[k];
+		array[k]^=array[i];
+	    }
+	}
+	for(Integer n: array){
+	    System.out.print(n+", ");
+	}
     }
     
     

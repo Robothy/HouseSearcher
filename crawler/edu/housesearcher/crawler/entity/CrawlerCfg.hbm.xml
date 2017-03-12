@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-12 20:48:46 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.housesearcher.crawler.entity.CrawlerCfg" table="crawler_cfg" catalog="housesearcher">
+        <id name="dataId" type="java.lang.Integer">
+            <column name="data_id" />
+            <generator class="identity" />
+        </id>
+        <property name="website" type="string">
+            <column name="website" length="50" />
+        </property>
+        <property name="crawler" type="string">
+            <column name="crawler" length="100" />
+        </property>
+        <property name="enabled" type="string">
+            <column name="enabled" length="1" />
+        </property>
+        <property name="lastExeTime" type="string">
+            <column name="last_exe_time" length="19" />
+        </property>
+        <property name="createTime" type="string">
+            <column name="create_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

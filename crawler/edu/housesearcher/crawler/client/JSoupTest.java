@@ -1,5 +1,7 @@
 package edu.housesearcher.crawler.client;
 
+import java.io.IOException;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -52,8 +54,32 @@ public class JSoupTest {
     }
     
     @Test
+    public void test2017031102(){
+	try {
+	    Document document = Jsoup.connect("http://sh.lianjia.com/fdsafasd").get();
+	    System.out.println(document.baseUri());
+	    System.out.println(document.baseUri().replaceAll("[^\\d]", ""));
+	} catch (IOException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
+    }
+    
+    
     public void test(){
 	System.out.println("一层/12放到".replaceAll("[^0-9]", ""));
     }
+    
+    public void test2017031101(){
+	try {
+	    Document document = Jsoup.connect("http://sh.lianjia.com/fdsafasd").get();
+	    System.out.println(document.html());
+	} catch (IOException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
+    }
+    
+    
     
 }

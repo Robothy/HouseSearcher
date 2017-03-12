@@ -32,6 +32,7 @@ public class DBHrefProvider implements IHrefProvider {
      */
     private Integer count = 1;
     
+
     public DBHrefProvider(String persistence,String field) {
 	this.persistence = persistence;
 	this.field = field;
@@ -59,7 +60,6 @@ public class DBHrefProvider implements IHrefProvider {
 
     @Override
     public String getHref() {
-	// TODO Auto-generated method stub
 	return null;
     }
     
@@ -71,4 +71,12 @@ public class DBHrefProvider implements IHrefProvider {
         this.isContinueProvide = isContinueProvide;
     }
 
+    public Integer getCount() {
+	return count;
+    }
+    
+    public DBHrefProvider setCount(Integer count) {
+	this.count = count;
+	return this;
+    }
 }

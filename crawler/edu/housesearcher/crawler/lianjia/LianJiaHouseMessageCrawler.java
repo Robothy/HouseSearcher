@@ -1,6 +1,8 @@
 package edu.housesearcher.crawler.lianjia;
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -21,6 +23,7 @@ import edu.housesearcher.crawler.manager.AWebpageManager;
 import edu.housesearcher.crawler.parser.IWebPageParser;
 import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
+import edu.housesearcher.crawler.utils.StatusValueUtil;
 
 
 
@@ -42,6 +45,17 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 	    
 	    @Override
 	    public Boolean isValidPage(Document document) {
+		
+		/**
+		 * 判断是否因为访问过于频繁，而导致服务器返回不正常的页面！
+		 * 如果返回了不正常的页面，则停止进行数据的爬取！
+		 */
+		Elements elements = document.select("p[class=errorMessageInfo]");
+		if(elements!=null){
+		    if(elements.size()!=0&&elements.get(0).text().contains("服务器开小差了，请稍后重试哦")){
+			hrefProvider.setIsContinueProvide(false);
+		    }
+		}
 		
 		//判断是否已下架
 		if(document.select("div[class=tag tag_yixiajia]").size()==0){

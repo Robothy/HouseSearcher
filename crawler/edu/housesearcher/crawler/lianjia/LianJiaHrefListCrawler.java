@@ -33,7 +33,7 @@ import edu.housesearcher.crawler.saver.IPageDataSaver;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.crawler.utils.StatusValueUtil;
 @Component
-public class LianJiaHrefListCrawler extends AWebpageManager implements Serializable {
+public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -71,6 +71,14 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 	    public Boolean isValidPage(Document document) {
 		
 		Boolean result = true;
+		
+		/**
+		 * 遇到反扒机制
+		 */
+		if(isMeetCrawlerForbider(document)){
+		    hrefProvider.setIsContinueProvide(false);
+		    return false;
+		}
 		
 		/**
 		 * 该页面没有房屋信息列表，即 class = 'house-lst' 的 ul 标签下的子节点个数为 0 。

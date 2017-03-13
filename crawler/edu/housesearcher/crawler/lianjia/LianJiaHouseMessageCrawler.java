@@ -1,5 +1,6 @@
 package edu.housesearcher.crawler.lianjia;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -9,10 +10,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.junit.Test;
 import org.springframework.stereotype.Component;
 
 import edu.housesearcher.crawler.entity.EntHouse;
@@ -21,8 +26,11 @@ import edu.housesearcher.crawler.getter.IWebPageGetter;
 import edu.housesearcher.crawler.hrefprovider.DBHrefProvider;
 import edu.housesearcher.crawler.manager.AWebpageManager;
 import edu.housesearcher.crawler.parser.IWebPageParser;
+import edu.housesearcher.crawler.saver.APageDataDBSaver;
 import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
+import edu.housesearcher.crawler.utils.DateTimeUtil;
+import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.crawler.utils.StatusValueUtil;
 
 
@@ -33,11 +41,14 @@ import edu.housesearcher.crawler.utils.StatusValueUtil;
  *
  */
 @Component
-public class LianJiaHouseMessageCrawler extends AWebpageManager implements Serializable {
+public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    /**
+     * 定义一个来源于数据表中的hrefProvider
+     */
     private static final DBHrefProvider hrefProvider = new DBHrefProvider("EntHouse", "HHref");
+    
     
     @Override
     public void run() {
@@ -47,26 +58,23 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 	    public Boolean isValidPage(Document document) {
 		
 		/**
-		 * 判断是否因为访问过于频繁，而导致服务器返回不正常的页面！
-		 * 如果返回了不正常的页面，则停止进行数据的爬取！
+		 * 遇到反扒机制
 		 */
-		Elements elements = document.select("p[class=errorMessageInfo]");
-		if(elements!=null){
-		    if(elements.size()!=0&&elements.get(0).text().contains("服务器开小差了，请稍后重试哦")){
-			hrefProvider.setIsContinueProvide(false);
-		    }
+		if(isMeetCrawlerForbider(document)){
+		    hrefProvider.setIsContinueProvide(false);
+		    return false;
 		}
 		
 		//判断是否已下架
-		if(document.select("div[class=tag tag_yixiajia]").size()==0){
+		if(document.select("div[class=tag tag_yixiajia]").size()!=0){
 		    CRAWLER_LOGGER.info("该房子已下架！ "+document.baseUri());
 		    return false;
 		}
 		//根据页面的标题判断是否跳转到首页（当链接无效时网站会自动跳转）
-		if(Arrays.stream(new String[]{"上海租房","链家网上海站","上海租房网"}).parallel().anyMatch(document.title()::contains)) {
-		    CRAWLER_LOGGER.debug("该链接无效！ " + document.baseUri());
-		    return false;
-		}
+//		if(Arrays.stream(new String[]{"上海租房","链家网上海站","上海租房网"}).parallel().anyMatch(document.title()::contains)) {
+//		    CRAWLER_LOGGER.debug("该链接无效！ " + document.baseUri());
+//		    return false;
+//		}
 		//简单盘判断页面是否包含房屋的基本信息
 		if(document.select("div[class=content forRent]").size()==0) {
 		    CRAWLER_LOGGER.debug("该房屋不包含房屋的基本信息！" + document.baseUri());
@@ -82,6 +90,11 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 	    @Override
 	    public List<Map<String, String>> doParse(Document document) {
 		
+		if(document == null){
+		    CRAWLER_LOGGER.warn("Document 对象为空");
+		    return null;
+		}
+ 		
 		List<Map<String, String>> result = new ArrayList<Map<String, String>>();
 		
 		//获取包含房屋基本信息的节点
@@ -94,8 +107,7 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 		    String HType = "{\"room\":"+contentForRent.select("div[class=room]").first()
 			    .select("div[class=mainInfo]").first().text()
 			    .replace("室", ",\"hall\":").replace("厅", "}");
-		    String Area = contentForRent.select("div[class=area]").select("div").first().ownText();
-		    
+		    String Area = contentForRent.select("div[class=area]").select("div").first().text().replace("平", "");
 		    String PubDate = null;
 		    String HLevel = null;
 		    String HOrientation = null;
@@ -135,11 +147,57 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 	    }
 	};
 	
-	IPageDataSaver saver = new CommonPageDataDBSave(EntHouse.class);
+	IPageDataSaver saver = new IPageDataSaver(){
+
+	    @Override
+	    public void doSave(Map<String, String> data) {
+	    }
+
+	    @Override
+	    public void doSave(List<Map<String, String>> datas) {
+		Session session = HibernateUtil.getSession();
+		Transaction transaction = session.beginTransaction();
+		for(Map<String, String> data : datas){
+		    String hqlUpdate = "update EntHouse set "
+			    + "price = :Price, "
+			    + "HType = :HType, "
+			    + "pubDate = :PubDate, "
+			    + "HLevel = :HLevel, "
+			    + "HOrientation = :HOrientation, "
+			    + "CHref = :CHref,"
+			    + "AHref = :AHref,"
+			    + "area = :Area,"
+			    + "createTime = :CreateTime,"
+			    + "isGetMsg = 'Y' "
+			    + "where HHref = :HHref";
+		    int updateEntities = session.createQuery(hqlUpdate)
+			    .setString("Price", data.get("Price"))
+			    .setString("HType", data.get("HType"))
+			    .setString("PubDate", data.get("PubDate"))
+			    .setString("HLevel", data.get("HLevel"))
+			    .setString("HOrientation", data.get("HOrientation"))
+			    .setString("CHref", data.get("CHref"))
+			    .setString("AHref", data.get("AHref"))
+			    .setString("Area", data.get("Area").equals("")?null:data.get("Area"))
+			    .setString("HHref", data.get("HHref"))
+			    .setString("CreateTime", DateTimeUtil.getNowAsString())
+			    .executeUpdate();
+		    CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");
+		    if(updateEntities>1){
+			CRAWLER_LOGGER.warn("警告： 更新了 " + updateEntities + " 条数据！");
+		    }
+		}
+		transaction.commit();
+		session.close();
+	    }
+	    
+	};
+	    
+	
 	
 	
 	do{
-	    String[] hrefs = hrefProvider.getHrefs(30);
+	    String[] hrefs = hrefProvider.getHrefs(20);
 	    for(String href : hrefs){
 		super.setHref(href);
 		CRAWLER_LOGGER.debug("正在处理 " + super.getHref());
@@ -149,29 +207,35 @@ public class LianJiaHouseMessageCrawler extends AWebpageManager implements Seria
 		/**
 		 * 统计连续获取到的空页面的次数
 		 */
+		
+		List<Map<String, String>> datas = null;
 		if (document == null) {
 		    CRAWLER_LOGGER.debug("获取到一个不合法的页面!" + href);
 		}else {
 		    super.setDocument(document);
+		    datas = parse(parser);
+		    for(Map<String, String> map : datas) map.put("HHref", href);//把链接添加进去，才能更新。
 		}
-		
-		List<Map<String, String>> data = parse(parser);
-		for(Map<String, String> map : data) map.put("HHref", href);//把链接添加进去，才能更新。
 		
 		
 		/**
 		 * 统计连续获取到的不包含目标数据的页面的数量
 		 */
-		if(data.size()==0){
-		    CRAWLER_LOGGER.debug("获取到一个不包含目标数据的页面!" + href );
+		if(datas==null){
+		    CRAWLER_LOGGER.debug("未能解析页面!" + href );
+		}else if(datas.size()<1){
+		    CRAWLER_LOGGER.debug("页面中不包含目标数据！ " + href);
 		}else {
-		    super.setData(data);
+		    super.setData(datas);
+		    save(saver);
 		}
-		save(saver);
+		if(hrefProvider.getIsContinueProvide()) break;
 	    }
 	}while(hrefProvider.getIsContinueProvide());
 	
 	
     }
+
+    
 
 }

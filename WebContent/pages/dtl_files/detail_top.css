@@ -1,0 +1,73 @@
+/*******************************
+  		zufang baseinfo
+******************************/
+.zf-top .cj-cun{clear:both;padding:36px}
+.zf-top .cj-cun .album-box{width:455px;height:425px;float:left}
+.zf-top .cj-cun .album-box .pic-panel{position:relative;width:455px;height:340px;overflow:hidden;}
+.zf-top .cj-cun .album-box .pic-panel img{width:455px;height:340px}
+.zf-top .cj-cun .album-box .pic-panel .label {
+	height:30px;line-height:30px;background:rgba(33,33,33,0.5);
+	color:#fff;padding:0 12px;font-size:12px;font-weight:normal;
+	position:absolute; top:310px; left:0px;width:431px;clear:both;
+}
+.zf-top .cj-cun .album-box .pic-panel .label_ziru {
+	width:80px;height:32px;line-height:32px;background: #F1B541;
+	color:#fff; font-size:14px; text-align:center;
+	position:absolute; z-index:1; top:0; left:0
+}
+.zf-top .cj-cun .album-box .pic-panel .tag {width:175px;height:115px;color:#fff;margin:15px 15px 0 0;position:absolute;top:0;right:0}
+.zf-top .cj-cun .album-box .pic-panel .tag_yixiajia {background:url(../../img/ershoufang/tag_yixiajia.png) no-repeat left top;background-size: 175px 115px}
+.zf-top .cj-cun .album-box .album-panel{position:relative;width:455px;height:83px}
+.zf-top .cj-cun .album-box .album-panel i{width:32px;height:77px;position:absolute;z-index:99}
+.zf-top .cj-cun .album-box .album-panel i.ico-arr-top{background-position:0 -109px;top:5px}
+.zf-top .cj-cun .album-box .album-panel i.ico-arr-bottom{background-position:-37px -109px;right:0;top:5px}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap{width:455px;height:81px;margin:0}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li{width:110px;height:77px;padding-right:5px;cursor:pointer;}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li .playerMask{
+	width:110px;height:77px;background:rgba(0,0,0,0.4) url(../../img/ershoufang/videoPlayer_small.png)  no-repeat center center;
+	background:rgba(0,0,0,0.4) -webkit-image-set(url(../../img/ershoufang/videoPlayer_small.png) 1x, url("../../img/ershoufang/videoPlayer_small@2x.png") 2x) no-repeat center center;
+	margin-top:-77px;position:relative;z-index:2;
+}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li.current .playerMask{width:106px;height:73px;margin-top:-75px;margin-left: 2px}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li img{width:110px;height:77px}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li img:hover{width:106px;height:73px;border:2px solid #00AE66}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li.current img{width:106px;height:73px;border:2px solid #00AE66}
+.zf-top .cj-cun .album-box .album-panel .album-view-wrap li a{width:108px;height:75px;border:0}
+.zf-top .cj-cun .album-box .album-panel .dt-ico{background:url(../../img/new-version/sprite_cj.png) no-repeat}
+.zf-top .cj-cun .content{float:right;width:437px;line-height:1}
+.zf-top .cj-cun .content .houseInfo{box-sizing:border-box;width:100%;height:82px;border:1px solid #e4e3e3;padding:15px 0;background-color:#fcfcfc}
+.zf-top .cj-cun .content .houseInfo .mainInfo{text-align:center;font-size:30px;color:#333;padding-top:15px;}
+.zf-top .cj-cun .content .houseInfo .mainInfo.bold{font-weight:bold}
+.zf-top .cj-cun .content .houseInfo .mainInfo .unit{font-size:16px;margin-left:5px;font-weight:normal}
+.zf-top .cj-cun .content .houseInfo .room{display:table-cell;width:120px;border-left:1px solid #e4e3e3;border-right:1px solid #e4e3e3}
+.zf-top .cj-cun .content .houseInfo .area{display:table-cell;width:135px}
+.zf-top .cj-cun .content .houseInfo .price{display:table-cell;width:180px; color:#e4393c}
+.zf-top .cj-cun .content .houseInfo .price .mainInfo{color:#e4393c}
+.zf-top .cj-cun .content .houseInfo.ziru_hezu .price{width:218px; border-right:1px solid #e4e3e3}
+.zf-top .cj-cun .content .houseInfo.ziru_hezu .area{width:218px}
+.zf-top .cj-cun .content .houseInfo.ziru_zhengzu .price{width:230px}
+.zf-top .cj-cun .content .houseInfo.ziru_zhengzu .area{width:105px}
+.zf-top .cj-cun .content .houseInfo.ziru_zhengzu .room{width:130px}
+.zf-top .cj-cun .content .aroundInfo{padding:15px 0;border-bottom:1px solid #eee;font-size:14px}
+.zf-top .cj-cun .content .aroundInfo td{padding:8px 0}
+.zf-top .cj-cun .content .aroundInfo .title{color:#888;text-align:right}
+.zf-top .cj-cun .content .aroundInfo a,
+.zf-top .cj-cun .content .aroundInfo a:hover{color:#009de8}
+.zf-top .cj-cun .content .aroundInfo .addrEllipsis{max-width:380px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.zf-top .cj-cun .content .brokerInfo{font-size:0;padding:22px 0;padding-bottom:15px;border-bottom:1px solid #e4e3e3}
+.zf-top .cj-cun .content .brokerInfo img{width:55px;height:72px;transition-property:opacity;transition-duration:.15s;transition-timing-function:linear;transition-delay:0}
+.zf-top .cj-cun .content .brokerInfo img:hover{opacity:.8;filter:alpha(opacity=80)}
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText{display:inline-block;width:340px;margin-left:21px}
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .brokerName .name{vertical-align:middle;font-size:18px;color:#333;margin-right:10px  }
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .brokerName .tag{
+	vertical-align:middle;display:inline-block;line-height:20px;font-size:12px;
+	color:#888888;border:1px solid #d8d7d8;padding:0 6px;margin-right:6px}
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .brokerName .tag.first{color:#999;background:#f1f1f1;border:none}
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .evaluate{margin-top:12px;font-size:12px;vertical-align:middle}
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .evaluate .rate{color:#333;position:relative;top:-2px}
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .phone{margin-top:4px;font-size:20px;line-height:24px;color:#e4393c;letter-spacing:-1px  }
+.zf-top .cj-cun .content .brokerInfo .brokerInfoText .phone span{padding:0 6px;font-size:14px}
+.zf-top .cj-cun .content .brokerInfo .noData{color:#999;font-size:14px}
+.zf-top .cj-cun .content .houseRecord{margin-top:20px;font-size:12px;color:#333333;text-align:justify}
+.zf-top .cj-cun .content .houseRecord .report{color:#1ba1e1;margin-right:12px;font-size:12px}
+.zf-top .cj-cun .content .houseRecord .detail{color:#999;font-size:12px}

@@ -1,6 +1,5 @@
 package edu.housesearcher.crawler.client;
 
-import java.lang.reflect.AnnotatedArrayType;
 import java.util.Date;
 import java.util.Map.Entry;
 

@@ -20,6 +20,8 @@ import org.jsoup.select.Elements;
 import org.junit.Test;
 import org.springframework.stereotype.Component;
 
+import edu.housesearcher.crawler.entity.EntAgent;
+import edu.housesearcher.crawler.entity.EntCommunity;
 import edu.housesearcher.crawler.entity.EntHouse;
 import edu.housesearcher.crawler.getter.AWebPageGetter;
 import edu.housesearcher.crawler.getter.IWebPageGetter;
@@ -186,6 +188,23 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		    if(updateEntities>1){
 			CRAWLER_LOGGER.warn("警告： 更新了 " + updateEntities + " 条数据！");
 		    }
+		    
+		    /**
+		     * 将 A_Href 插入到 Ent_Agent 表中
+		     */
+		    EntAgent agent = new EntAgent();
+		    agent.setIsGetMsg("N");
+		    agent.setAHref(data.get("AHref"));
+		    session.save(agent);
+		    
+		    /**
+		     * 将 C_Href 插入到 Ent_Community 表中。
+		     */
+		    EntCommunity community = new EntCommunity();
+		    community.setIsGetMsg("N");
+		    community.setCHref(data.get("CHref"));
+		    session.save(community);
+		    
 		}
 		transaction.commit();
 		session.close();
@@ -229,7 +248,7 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		    super.setData(datas);
 		    save(saver);
 		}
-		if(hrefProvider.getIsContinueProvide()) break;
+		if(!hrefProvider.getIsContinueProvide()) break;
 	    }
 	}while(hrefProvider.getIsContinueProvide());
 	

@@ -1,6 +1,5 @@
 package edu.housesearcher.crawler.client;
 
-import java.lang.reflect.AnnotatedArrayType;
 import java.util.Date;
 import java.util.Map.Entry;
 
@@ -45,7 +44,10 @@ public class TestClient {
 	for(int i=0,k;  i<array.length; i++){
 	    k = i;
 	    for(int j=i; j<array.length;j++){
-		if(Math.pow(-2, array[j]) > Math.pow(-2, array[k])) k = j; 
+		Boolean A = (array[k]&0x01)==1;//k 为奇数
+		Boolean B = (array[j]&0x01)==1;//j 为奇数 
+		Boolean C = array[k]<array[j]; //k<j
+		if((!A&&B)||(A&&B&&C)||(!A&&!B&&!C)) k = j; 
 	    }
 	    if(k!=i){
 		array[k]^=array[i];

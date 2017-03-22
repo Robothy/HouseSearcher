@@ -23,10 +23,6 @@ import edu.housesearcher.crawler.utils.ICrawlerLogger;
 
 
 public abstract class AWebpageManager implements Runnable,ICrawlerLogger {
-    
-    
-    
-    
 
     /**
      * 当前需要获取HTML文本的URL

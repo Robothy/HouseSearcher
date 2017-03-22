@@ -10,8 +10,8 @@
   <property name="hibernate.current_session_context_class">thread</property>
   <property name="hibernate.default_schema">housesearcher</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-  <!-- <property name="hibernate.show_sql">true</property>
-  <property name="hibernate.format_sql">true</property> 
+  <property name="hibernate.show_sql">true</property>
+  <!-- <property name="hibernate.format_sql">true</property> 
  
     <mapping class="edu.housesearcher.crawler.entity.EntHouse" resource="edu/housesearcher/crawler/entity/EntHouse.hbm.xml"/>
   <mapping class="edu.housesearcher.crawler.entity.EntAgent" resource="edu/housesearcher/crawler/entity/EntAgent.hbm.xml"/>

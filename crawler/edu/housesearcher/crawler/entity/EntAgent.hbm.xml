@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2017-3-15 16:05:56 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="EntAgent" table="ent_agent" catalog="housesearcher">
+    <class name="edu.housesearcher.crawler.entity.EntAgent" table="ent_agent" catalog="housesearcher">
         <id name="dataId" type="java.lang.Integer">
             <column name="DATA_ID" />
             <generator class="identity" />

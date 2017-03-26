@@ -1,0 +1,714 @@
+.lianjiaim {
+  position: fixed;
+  right: 38px;
+  bottom: 0;
+  font-family: "Hiragino Sans GB","Microsoft Yahei UI","Microsoft Yahei","微软雅黑",'Segoe UI',Tahoma,"宋体b8b\4f53",SimSun,sans-serif;
+  z-index: 1000;
+  transition: bottom .2s;
+}
+
+.lianjiaim-window {
+  position: relative;
+  float: right;
+  width: 380px;
+  height: 434px;
+  border-right: 1px solid #ddd;
+  background: #fff;
+  z-index: 1;
+}
+.lianjiaim-wintitle {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+}
+.im-online .lianjiaim-wintitle i {
+  background: #009de8;
+}
+.lianjiaim-wintitle i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px 0 14px;
+  border-radius: 50%;
+  text-indent: 999em;
+  overflow: hidden;
+}
+.im-wt-name {
+  font: 400 14px/40px "microsoft yahei","\5FAE\8F6F\96C5\9ED1","simhei","\9ED1\4F53","san-serif";
+  color: #333;
+}
+.im-wt-closebtn {
+  position: absolute;
+  right: 15px;
+  top: 13px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  text-indent: 999em;
+  overflow: hidden;
+  background: url("../img/weiliao/lianjiaim.png") no-repeat 0 -91px;
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim.png") 1x, url("../img/weiliao/lianjiaim@2x.png") 2x) no-repeat 0 -91px;
+  cursor: pointer;
+}
+.im-offline .im-wc-hint {
+  display: block;
+  height: 40px;
+}
+.im-online .im-wc-hint {
+  display: none;
+  height: 40px;
+}
+.im-wc-hint {
+  color: #9a6a3f;
+  text-align: center;
+  line-height: 40px;
+  background: #ffeca1;
+}
+.im-online .im-wc-chat {
+  height: 270px;
+}
+.im-wc-chat {
+  border-bottom: 1px solid #e0e0e0;
+  background: #f3f3f3;
+  overflow: auto;
+}
+
+.im-offline .im-wc-chat {
+  height: 230px;
+}
+.im-wc-chat ul {
+  /*position: relative;*/
+}
+.im-wc-chat .chat-block {
+  margin: 16px 0;
+}
+.im-wc-chat .chat-in .chat-avatar, .im-wc-chat .chat-in .chat-content {
+  float: left;
+  border-top-left-radius: 0;
+}
+.im-wc-chat .chat-in .chat-content {
+  color: #333;
+  background: #fff;
+}
+.im-wc-chat .chat-avatar a {
+  display: inline-block;
+  vertical-align: top;
+}
+.im-wc-chat .chat-avatar a.jingjiren {
+  opacity:.8;filter:alpha(opacity=80)
+}
+
+.im-wc-chat .chat-content p {
+  font: 400 12px/20px "microsoft yahei","\5FAE\8F6F\96C5\9ED1","simhei","\9ED1\4F53","san-serif";
+}
+
+.im-wc-chat .chat-content .xia-jia-tag{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #4a4a4a;
+  color: #fff;
+  text-align: center;
+}
+
+.im-wc-chat .chat-out .chat-avatar, .im-wc-chat .chat-out .chat-content,.im-wc-chat .chat-out .chat-wait {
+  float: right;
+  border-top-right-radius: 0;
+}
+.im-wc-chat .chat-avatar {
+  width: 59px;
+  text-align: center;
+}
+.im-wc-chat .chat-avatar img {
+  border-radius: 50%;
+}
+.im-wc-chat .chat-out .chat-content {
+  color: #fff;
+  background: #009de8;
+}
+.im-wc-chat .chat-content p {
+  font: 400 12px/20px "microsoft yahei","\5FAE\8F6F\96C5\9ED1","simhei","\9ED1\4F53","san-serif";
+}
+.im-input-container {
+  position: relative;
+  width: 339px;
+  height: 28px;
+  margin: 10px 9px 0 10px;
+  padding: 10px 10px 23px 10px;
+  border: 1px solid #d9d9d9;
+}
+.im-btn-container {
+  height: 50px;
+  padding: 0 9px 0 15px;
+  line-height: 50px;
+}
+.im-input-container textarea {
+  width: 339px;
+  height: 28px;
+  border: none;
+  color: #999;
+  line-height: 14px;
+  font-size: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+.im-btn-container a {
+  color: #009de8;
+  font-size: 12px;
+}
+.im-wc-chat ul li a {
+  text-decoration: none;
+  outline: none;
+}
+.im-wc-chat ul li.chat-out a{
+  color: #fff !important;
+}
+.im-btn-container input[type="button"] {
+  float: right;
+  display: inline-block;
+  width: 77px;
+  height: 31px;
+  margin: 10px 0 9px 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  line-height: 31px;
+  color: #fff;
+  text-align: center;
+  background: #009de8;
+  cursor: pointer;
+}
+.lianjiaim-shandow {
+  box-shadow: 0 0 30px 0 rgba(0,0,0,0.45);
+}
+.clear {
+  display: block;
+}
+.lianjiaim-wrap {
+  position: relative;
+  float: right;
+  z-index: 2;
+}
+.lianjiaim-head {
+  width: 200px;
+  height: 40px;
+  padding-left: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+  background: url("../img/weiliao/lianjiaim.png") no-repeat 12px 12px #fff;
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim.png") 1x, url("../img/weiliao/lianjiaim@2x.png") 2x) no-repeat 12px 12px #fff;
+  cursor: pointer;
+}
+.lianjiaim-body {
+  height: 393px;
+  background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.lianjiaim-head span {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.lianjiaim-head-num {
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+  padding: 0 5px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  background: #e4393c;
+}
+.lianjiaim-head-closebtn {
+  float: right;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-indent: 999em;
+  overflow: hidden;
+  background: url("../img/weiliao/lianjiaim.png") no-repeat 12px -108px;
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim.png") 1x, url("../img/weiliao/lianjiaim@2x.png") 2x) no-repeat 12px -108px;
+  cursor: pointer;
+}
+
+
+/*经纪人card*/
+.lianjiaim-personcard {
+  position: absolute;
+  width: 364px;
+  height: 170px;
+  padding: 2px 3px 13px 2px;
+  margin: -180px 0 0 -185px;
+  background: url("../img/weiliao/lianjiaim-personcard-bg.png") no-repeat 0 0;
+  z-index: 1001;
+}
+.im-personcard-top {
+  height: 116px;
+  background: #3f3f3f;
+  overflow: hidden;
+}
+.im-personcard-avatar {
+  float: left;
+  width: 78px;
+  height: 116px;
+  padding: 0 22px;
+  line-height: 116px;
+}
+.im-personcard-detail {
+  float: left;
+  height: 86px;
+  padding: 15px 0;
+}
+.im-personcard-avatar img {
+  display: inline-block;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.im-personcard-detail .im-personname-wrap {
+  padding-bottom: 6px;
+}
+.im-personcard-detail .im-personname {
+  padding-right: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.im-personcard-detail span {
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+}
+.lianjiaim-personcard .im-gray {
+  color: #d2d2d2;
+}
+
+.im-personcard-bottom table {
+  width: 100%;
+  height: 12px;
+  margin-top: 16px;
+}
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+td, th {
+  display: table-cell;
+  vertical-align: inherit;
+}
+.im-personcard-bottom td {
+  width: 33%;
+  height: 12px;
+  border-right: 1px solid #cbcbcb;
+  color: #333;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+}
+.lianjiaim-personcard .im-red {
+  font-weight: 700;
+  color: #e4393c;
+}
+
+.im-fold.lianjiaim {
+  bottom: -394px;
+  transition: bottom .2s;
+}
+.im-fold .lianjiaim-head-closebtn {
+  display: none;
+}
+.lianjiaim-head.offline {
+  background-position: 12px -24px;
+}
+.lianjiaim-noagent {
+  margin-top: 85px;
+  padding-top: 90px;
+  text-align: center;
+  background-image: url("../img/weiliao/lianjiaim_noagent.png");
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim_noagent.png") 1x, url("../img/weiliao/lianjiaim_noagent@2x.png") 2x);
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+}
+.lianjiaim-noagent-nobody {
+  margin-top: 85px;
+  padding-top: 90px;
+  text-align: center;
+  background-image: url("../img/weiliao/lianjiaim_noagent.png");
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim_noagent.png") 1x, url("../img/weiliao/lianjiaim_noagent@2x.png") 2x);
+  background-position: 50% 0px;
+  background-repeat: no-repeat;
+}
+.noagent-title {
+  padding-bottom: 10px;
+  color: #5A5A5A;
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.noagent-sub {
+  color: #888;
+  font-size: 12px;
+}
+.lianjiaim-noagent a{
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 80px;
+  height: 24px;
+  display: inline-block;
+  color: green;
+  line-height: 24px;
+  margin: 15px 0;
+}
+.lianjiaim-body-item {
+  position: relative;
+  height: 71px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.lianjiaim-body-item .im-item-show {
+  position: relative;
+  height: 70px;
+  margin-left: 15px;
+  border-bottom: 1px solid #e9f0ec;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity .2s;
+}
+.lianjiaim-body-item .im-item-delete {
+  position: absolute;
+  right: -240px;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  padding: 15px 0 16px 0;
+  text-align: center;
+  background: #e96063;
+  transition: right .2s;
+}
+.lianjiaim-body-item .im-item-show table {
+  width: 100%;
+  padding: 0;
+  border-collapse: collapse;
+}
+.lianjiaim-body-item.offline .im-item-show .im-item-avatar {
+  opacity: .5;
+}
+.lianjiaim-body-item .im-item-avatar {
+  position: relative;
+  width: 40px;
+  height: 70px;
+  line-height: 70px;
+}
+.lianjiaim-body-item .im-item-cont {
+  height: 40px;
+  padding: 15px 3px 15px 12px;
+}
+.lianjiaim-body-item .im-item-avatar img {
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.lianjiaim-body-item .im-item-avatar i {
+  position: absolute;
+  right: 0;
+  top: 16px;
+  /*display: inline-block;*/
+  height: 16px;
+  line-height: 16px;
+  padding: 0 5px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  background: #e4393c;
+}
+.lianjiaim-body-item .im-item-cont .name {
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+}
+.lianjiaim-body-item .im-item-cont span {
+  display: block;
+  width: 150px;
+  line-height: 20px;
+  white-space: nowrap;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lianjiaim-body-item .im-item-cont .text {
+  color: #666;
+  font-size: 12px;
+}
+.lianjiaim-body-item .im-item-delete div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.lianjiaim-body-item .im-item-delete .im-item-delbtnwrap {
+  margin-left: 15px;
+}
+.lianjiaim-body-item .im-item-delete .title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.lianjiaim-body-item .im-item-delete .cont {
+  font-size: 12px;
+}
+.lianjiaim-body-item .im-item-delete .im-btn {
+  display: inline-block;
+  width: 41px;
+  height: 30px;
+  margin: 5px 0 5px 5px;
+  line-height: 30px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: #e4393c;
+}
+.lianjiaim-body-item .im-item-delbtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: none;
+  padding: 0 5px;
+  color: #5a5a5a;
+  font-size: 12px;
+  font-family: 'simsun',serif;
+}
+.lianjiaim-body-item .im-item-time {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  color: #999;
+  font-size: 12px;
+}
+.lianjiaim-body-item.del .im-item-delete {
+  right: 0;
+  transition: right .2s;
+}
+.im-wc-chat .chat-tophint {
+  height: 12px;
+  padding: 16px 0 16px 0;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+}
+.im-wc-chat .chat-content {
+  position: relative;
+  max-width: 220px;
+  min-height: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  word-break: break-all;
+}
+.im-wc-chat .chat-time {
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+}
+
+.hideit{
+  display:none;
+}
+a.btnOpH24, a.btnOpH24:hover{
+  border-radius:4px;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+a.btnOpH24{
+  height:22px;
+  line-height:22px;
+  padding:0 14px;
+  font-size:12px;
+  box-sizing: content-box;
+}
+a.h24Silver{
+  color: #333;
+  background-color: #f3f3f3;
+  border: 1px solid #b7b7b7;
+  background-image: -webkit-linear-gradient(bottom, #e7e7e7, #fff);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),0 1px 2px rgba(0, 0, 0, 0.05);
+}
+a.h24Silver:hover{
+  color: #333;
+  background-image: -webkit-linear-gradient(bottom, #e5e5e5, #d0d0d0);
+}
+a.h24Silver:active{
+  color: #333;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,.2);
+}
+.in_block {
+  display:-moz-inline-stack;
+  vertical-align:top;
+  display:inline-block;
+  zoom:1;
+  *display:inline
+}
+.im-input-container .im-input-insertpic {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  text-indent: 999em;
+  overflow: hidden;
+  background: url("../img/weiliao/lianjiaim.png") no-repeat 0 -72px;
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim.png") 1x, url("../img/weiliao/lianjiaim@2x.png") 2x) no-repeat 0 -72px;
+  cursor: pointer;
+}
+.im-wc-chat .chat-content .im-housecard {
+  display: block;
+  width: 220px;
+  height: 54px;
+  font-size: 0;
+  overflow: hidden;
+}
+.im-wc-chat .chat-content img {
+  max-width: 220px;
+  height: 100px;
+}
+.im-wc-chat .chat-content .im-housecard-detail {
+  display: inline-block;
+  width: 155px;
+  height: 54px;
+  margin-left: 11px;
+  color: #333;
+  font-size: 12px;
+  line-height: 12px;
+  overflow: hidden;
+}
+.im-wc-chat .chat-out .im-housecard .im-housecard-title, .im-wc-chat .chat-out .im-housecard .im-housecard-describe, .im-wc-chat .chat-out .im-housecard .im-housecard-price {
+  color: #fff;
+}
+
+.im-housecard-detail.xia-jia span{
+  text-decoration: line-through;
+}
+
+.im-wc-chat .chat-content .im-housecard-describe em {
+  margin-right: 8px;
+}
+strong, b, em, i {
+  font-weight: 400;
+  font-style: normal;
+}
+.im-wc-chat .chat-content .im-housecard-detail span {
+  display: block;
+  width: 155px;
+  padding-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.im-wc-chat .chat-content .im-housecard-price {
+  color: #de6843;
+}
+.im-wc-chat .chat-content .im-housecard-title {
+  font-size: 14px;
+  font-weight: 700;
+  height: 14px;
+  line-height: 14px;
+}
+.im-btn-container input[type="button"]:hover {
+  background: #00a25a;
+}
+
+.im-wt-closebtn2 {
+  position: absolute;
+  right: 15px;
+  top: 56px;
+  width: 14px;
+  height: 14px;
+  text-indent: 999em;
+  overflow: hidden;
+  background: url("../img/weiliao/lianjiaim.png") no-repeat 0 -91px;
+  background: -webkit-image-set(url("../img/weiliao/lianjiaim.png") 1x, url("../img/weiliao/lianjiaim@2x.png") 2x) no-repeat 0 -91px;
+  cursor: pointer;
+}
+.im-offline .lianjiaim-wintitle i {
+  background: #dadada;
+}
+.chat-wait{
+  margin-top: 10px;
+}
+.lianjiaim-createtalk{
+  display:inline-block !important;
+  width:16px;
+  height:16px;
+  background:url(../img/weiliao/lianjiaim-talk.png) 0 0 no-repeat;
+  background:-webkit-image-set(url(../img/weiliao/lianjiaim-talk.png) 1x, url(../img/weiliao/lianjiaim-talk@2x.png) 2x) no-repeat;
+  padding:0 !important;margin:0 4px !important;
+  vertical-align:middle !important;
+  cursor:pointer !important
+}
+.lianjiaim-createtalkAll{
+  display:inline-block !important;
+  width:76px;
+  height:20px;
+  background:url(../img/weiliao/lianjiaim-talk01.png) 0 0 no-repeat;
+  background:-webkit-image-set(url(../img/weiliao/lianjiaim-talk01.png) 1x, url(../img/weiliao/lianjiaim-talk01@2x.png) 2x) no-repeat;
+  padding:0 !important;
+  margin:0 4px !important;
+  vertical-align:middle !important;
+  cursor:pointer !important
+}
+.lianjiaim-createtalkOld{
+  display:inline-block !important;
+  width:52px;
+  height:20px;
+  background:url(../img/weiliao/lianjiaim-talk02.png) 0 0 no-repeat;
+  background:-webkit-image-set(url(../img/weiliao/lianjiaim-talk02.png) 1x, url(../img/weiliao/lianjiaim-talk02@2x.png) 2x) no-repeat;
+  padding:0 !important;
+  margin:0 4px !important;
+  vertical-align:middle !important;
+  cursor:pointer !important
+}
+#print-wall .wBreak{
+    word-break: break-word;
+    word-wrap: break-word; /* IE */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap; /* HP printers */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+}
+
+/* 微聊抢答相关样式 */
+.im-btn-container input[type="button"].btn-disabled { background: rgb(218, 218, 218); }
+.lianjiaim .qiangda-tips-bar {
+  display: block;
+  color: #000;
+  background-color: #c9f0e0;
+}
+.lianjiaim .qiangda-fail-tips {
+  width: 70%;
+  margin: 10px auto;
+  padding: 5px 25px;
+  color: #797979;
+  background-color: #d8d8d8;
+  border-radius: 5px;
+}
+.lianjiaim-blue {
+  color: #009de8;
+}
+.lianjiaim-bg-grey {
+  background: #f3f3f3;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {display:none !important;}

@@ -18,8 +18,8 @@ import edu.housesearcher.crawler.utils.HibernateUtil;
  */
 public class SearchHouseAction implements Action  {
 
-    List<EntHouse> houses = null;
-    String searchResult = SUCCESS;//查询结果
+    private List<EntHouse> houses = null;
+    private String searchResult = SUCCESS;//查询结果
     
     @Override
     public String execute() throws Exception {

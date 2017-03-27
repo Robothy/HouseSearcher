@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="s" uri="/struts-tags" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -359,20 +362,6 @@
         	 }*/
     </script>
     <!--begin: searchs Top -->
-
-    <!--begin: 面包屑--
-    <div class="intro clear">
-        <div class="container">
-            <div class="fl l-txt">
-                <i class="icon"></i>&nbsp;
-                <a href="http://sh.lianjia.com/">链家网上海站</a><span class="stp">&nbsp;&gt;&nbsp;</span>
-                <a href="http://sh.lianjia.com/zufang/">上海租房</a>
-
-            </div>
-            <div class="fr r-txt"></div>
-        </div>
-    </div>
-    <!--end: 面包屑-->
 
     <!--begin: 正文-->
 
@@ -805,7 +794,9 @@
 				
                 <div class="list-wrap">
                     <ul id="house-lst" class="house-lst">
-
+                    	<s:iterator var="house" value="#request['houses']" >
+                    	
+                    	
                         <li>
                             <div class="pic-panel">
                                 <a name="selectDetail" class="rent" gahref="results_click_order_1" key="sh3804714" target="_blank" href="http://sh.lianjia.com/zufang/shz3804714.html">
@@ -820,42 +811,39 @@
                                 <div class="col-1">
                                     <div class="where">
                                         <a class="laisuzhou" href="http://sh.lianjia.com/xiaoqu/5011000011180.html"><span class="nameEllipsis" title="沧源小区">沧源小区</span></a>&nbsp;&nbsp;
-                                        <span>2室1厅&nbsp;&nbsp;</span>
-                                        <span>57平&nbsp;&nbsp;</span>
+                                        <span>${house["HType"]} 室1厅&nbsp;&nbsp;</span>
+                                        <span>${house["area"] }平&nbsp;&nbsp;</span>
                                     </div>
                                     <div class="other">
                                         <div class="con">
                                             <a href="http://sh.lianjia.com/zufang/minhang/">闵行</a>
                                             <a href="http://sh.lianjia.com/zufang/laominhang/">老闵行</a>
 
-                                            <span>| </span> 高区/6层
+                                            <span>| </span> ${house["HLevel"]}楼
 
-                                            <span>| </span>朝南
+                                            <span>| </span>朝${house["HOrientation"] }
 
                                         </div>
                                     </div>
                                     <div class="chanquan">
                                         <div class="left agency">
                                             <div class="view-label left">
-
-                                                <span class="fang-subway"></span>
-                                                <span class="fang-subway-ex"><span>距离5号线东川路站887米</span></span>
-
                                                 <span class="anytime"></span>
                                                 <span class="anytime-ex"><span>随时看房</span></span>
-
+                                                
+                                                <span class="anytime-ex"><span>厨房</span></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="price">
-                                        <span class="num">2600</span>元/月
+                                        <span class="num">${house["price"]}</span>元/月
 
-                                        <img src="./house-lists_files/animatedec.gif">
+                                        <!-- <img src="./house-lists_files/animatedec.gif"> -->
 
                                     </div>
-                                    <div class="price-pre">2017.02.28 上架
+                                    <div class="price-pre">${house["pubDate"] }
                                     </div>
                                 </div>
                                 <div class="col-2">
@@ -863,197 +851,14 @@
                                         <div>
                                             <span class="num">12</span>人
                                         </div>
-                                        <div class="col-look">看过此房</div>
+                                        <div class="col-look">收藏过</div>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                    
+                    	</s:iterator>
 
-                        <li>
-                            <div class="pic-panel">
-                                <a name="selectDetail" class="rent" gahref="results_click_order_2" key="sh3763376" target="_blank" href="http://sh.lianjia.com/zufang/shz3763376.html">
-                                    <img onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;" src="./house-lists_files/90085085-ab4d-4f05-af3d-afdab406b5ab.jpg_200x150.jpg" data-img-real="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160405/90085085-ab4d-4f05-af3d-afdab406b5ab.jpg_200x150.jpg" data-img-layout="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160411/27283ef2-b426-49af-b48e-eff92dbadd1b.jpg_200x150.jpg" data-original="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160405/90085085-ab4d-4f05-af3d-afdab406b5ab.jpg_200x150.jpg" class="lj-lazy" alt="控江路1200弄，上下楼方便，出行方便，多次带看" style="display: inline;">
-
-                                </a>
-                            </div>
-                            <div class="info-panel">
-                                <h2><a name="selectDetail" gahref="results_click_order_2" key="sh3763376" target="_blank" href="http://sh.lianjia.com/zufang/shz3763376.html" title="控江路1200弄，上下楼方便，出行方便，多次带看">控江路1200弄，上下楼方便，出行方便，多次带看</a>
-
-						</h2>
-                                <div class="col-1">
-                                    <div class="where">
-                                        <a class="laisuzhou" href="http://sh.lianjia.com/xiaoqu/5011000002567.html"><span class="nameEllipsis" title="控江路1200弄">控江路1200弄</span></a>&nbsp;&nbsp;
-                                        <span>1室1厅&nbsp;&nbsp;</span>
-                                        <span>35平&nbsp;&nbsp;</span>
-                                    </div>
-                                    <div class="other">
-                                        <div class="con">
-                                            <a href="http://sh.lianjia.com/zufang/yangpu/">杨浦</a>
-                                            <a href="http://sh.lianjia.com/zufang/kongjianglu/">控江路</a>
-
-                                            <span>| </span> 低区/5层
-
-                                            <span>| </span>朝南
-
-                                        </div>
-                                    </div>
-                                    <div class="chanquan">
-                                        <div class="left agency">
-                                            <div class="view-label left">
-
-                                                <span class="fang-subway"></span>
-                                                <span class="fang-subway-ex"><span>距离8号线黄兴路站135米</span></span>
-
-                                                <span class="anytime"></span>
-                                                <span class="anytime-ex"><span>随时看房</span></span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="price">
-                                        <span class="num">3300</span>元/月
-
-                                        <img src="./house-lists_files/animatedec.gif">
-
-                                    </div>
-                                    <div class="price-pre">2017.02.11 上架
-                                    </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="square">
-                                        <div>
-                                            <span class="num">10</span>人
-                                        </div>
-                                        <div class="col-look">看过此房</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="pic-panel">
-                                <a name="selectDetail" class="rent" gahref="results_click_order_3" key="sh3723018" target="_blank" href="http://sh.lianjia.com/zufang/shz3723018.html">
-                                    <img onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;" src="./house-lists_files/b6cb1571-574f-4f47-8b6b-89628d183b39.jpg_200x150.jpg" data-img-real="http://cdn1.dooioo.com/fetch/vp/fy/gi/20161102/b6cb1571-574f-4f47-8b6b-89628d183b39.jpg_200x150.jpg" data-img-layout="http://cdn1.dooioo.com/fetch/vp/fy/gi/20161106/522e4120-d33f-498f-adf8-4beeae0b1629.jpg_200x150.jpg" data-original="http://cdn1.dooioo.com/fetch/vp/fy/gi/20161102/b6cb1571-574f-4f47-8b6b-89628d183b39.jpg_200x150.jpg" class="lj-lazy" alt="一链倾城，附近有地铁，多次带看，高清实拍" style="display: inline;">
-
-                                </a>
-                            </div>
-                            <div class="info-panel">
-                                <h2><a name="selectDetail" gahref="results_click_order_3" key="sh3723018" target="_blank" href="http://sh.lianjia.com/zufang/shz3723018.html" title="一链倾城，附近有地铁，多次带看，高清实拍">一链倾城，附近有地铁，多次带看，高清实拍</a>
-
-						</h2>
-                                <div class="col-1">
-                                    <div class="where">
-                                        <a class="laisuzhou" href="http://sh.lianjia.com/xiaoqu/5011000018247.html"><span class="nameEllipsis" title="高荣小区">高荣小区</span></a>&nbsp;&nbsp;
-                                        <span>1室0厅&nbsp;&nbsp;</span>
-                                        <span>36平&nbsp;&nbsp;</span>
-                                    </div>
-                                    <div class="other">
-                                        <div class="con">
-                                            <a href="http://sh.lianjia.com/zufang/jingan/">静安</a>
-                                            <a href="http://sh.lianjia.com/zufang/caojiadu/">曹家渡</a>
-
-                                            <span>| </span> 低区/6层
-
-                                            <span>| </span>朝南
-
-                                        </div>
-                                    </div>
-                                    <div class="chanquan">
-                                        <div class="left agency">
-                                            <div class="view-label left">
-
-                                                <span class="fang-subway"></span>
-                                                <span class="fang-subway-ex"><span>距离13号线武宁路站740米</span></span>
-
-                                                <span class="anytime"></span>
-                                                <span class="anytime-ex"><span>随时看房</span></span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="price">
-                                        <span class="num">4800</span>元/月
-
-                                    </div>
-                                    <div class="price-pre">2017.01.13 上架
-                                    </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="square">
-                                        <div>
-                                            <span class="num">11</span>人
-                                        </div>
-                                        <div class="col-look">看过此房</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div class="pic-panel">
-                                <a name="selectDetail" class="rent" gahref="results_click_order_4" key="sh3839341" target="_blank" href="http://sh.lianjia.com/zufang/shz3839341.html">
-                                    <img onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;" src="./house-lists_files/bcaf1373-ebe1-411c-8da9-95dfb7a3e2c8.jpg_200x150.jpg" data-img-real="http://cdn1.dooioo.com/fetch/vp/fy/gi/20170315/bcaf1373-ebe1-411c-8da9-95dfb7a3e2c8.jpg_200x150.jpg" data-img-layout="http://cdn1.dooioo.com/fetch/vp/fy/gi/20161130/f5aa64ec-d746-4283-ad7b-d7c1e03bdef3.jpg_200x150.jpg" data-original="http://cdn1.dooioo.com/fetch/vp/fy/gi/20170315/bcaf1373-ebe1-411c-8da9-95dfb7a3e2c8.jpg_200x150.jpg" class="lj-lazy" alt="视野开阔，地铁沿线，温馨一室，放心好房" style="display: inline;">
-
-                                </a>
-                            </div>
-                            <div class="info-panel">
-                                <h2><a name="selectDetail" gahref="results_click_order_4" key="sh3839341" target="_blank" href="http://sh.lianjia.com/zufang/shz3839341.html" title="视野开阔，地铁沿线，温馨一室，放心好房">视野开阔，地铁沿线，温馨一室，放心好房</a>
-
-						</h2>
-                                <div class="col-1">
-                                    <div class="where">
-                                        <a class="laisuzhou" href="http://sh.lianjia.com/xiaoqu/5011000008286.html"><span class="nameEllipsis" title="场中路1985弄">场中路1985弄</span></a>&nbsp;&nbsp;
-                                        <span>1室0厅&nbsp;&nbsp;</span>
-                                        <span>37平&nbsp;&nbsp;</span>
-                                    </div>
-                                    <div class="other">
-                                        <div class="con">
-                                            <a href="http://sh.lianjia.com/zufang/zhabei/">闸北</a>
-                                            <a href="http://sh.lianjia.com/zufang/pengpu/">彭浦</a>
-
-                                            <span>| </span> 高区/6层
-
-                                            <span>| </span>朝南
-
-                                        </div>
-                                    </div>
-                                    <div class="chanquan">
-                                        <div class="left agency">
-                                            <div class="view-label left">
-
-                                                <span class="fang-subway"></span>
-                                                <span class="fang-subway-ex"><span>距离1号线彭浦新村站706米</span></span>
-
-                                                <span class="anytime"></span>
-                                                <span class="anytime-ex"><span>随时看房</span></span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="price">
-                                        <span class="num">3500</span>元/月
-
-                                    </div>
-                                    <div class="price-pre">2017.03.15 上架
-                                    </div>
-                                </div>
-                                <div class="col-2">
-                                    <div class="square">
-                                        <div>
-                                            <span class="num">3</span>人
-                                        </div>
-                                        <div class="col-look">看过此房</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-						
                     </ul>
 
                 </div>

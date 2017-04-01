@@ -2,6 +2,8 @@ package edu.housesearcher.crawler.lianjia;
 
 
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,8 +31,9 @@ import edu.housesearcher.crawler.saver.APageDataDBSaver;
 import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
 import edu.housesearcher.crawler.utils.HibernateUtil;
+import edu.housesearcher.crawler.utils.StatusValueUtil;
 @Component
-public class LianJiaHrefListCrawler extends AWebpageManager implements Serializable {
+public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -40,7 +43,11 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
     private static AHrefProvider hrefProvider = new AHrefProvider() {
 	    private static final long serialVersionUID = 1L;
 	    
-	    private Integer seqNum = 450;
+	    private Integer seqNum = Integer.parseInt(StatusValueUtil.getStatusValue("edu.housesearcher.crawler.lianjia.LianJiaHrefListCrawler.seqNum")) - 5; 
+	    
+	    public Integer getSeqNum(){
+		return seqNum;
+	    }
 	    
 	    /**
 	     * 获取一条url，包含生成序列化url的规则。
@@ -66,14 +73,52 @@ public class LianJiaHrefListCrawler extends AWebpageManager implements Serializa
 		Boolean result = true;
 		
 		/**
+		 * 遇到反扒机制
+		 */
+		if(isMeetCrawlerForbider(document)){
+		    hrefProvider.setIsContinueProvide(false);
+		    return false;
+		}
+		
+		/**
 		 * 该页面没有房屋信息列表，即 class = 'house-lst' 的 ul 标签下的子节点个数为 0 。
 		 */
 		if(document.select("ul[id=house-lst]").isEmpty()) {
-		    CRAWLER_LOGGER.debug(document.data());
+		    CRAWLER_LOGGER.debug(document.html());
 		    CRAWLER_LOGGER.debug("没有房屋列表！");
 		    result = false ;
 		}
 		
+		/**
+		 * 判断是否因为访问过于频繁，而导致服务器返回不正常的页面！
+		 * 如果返回了不正常的页面，则停止进行数据的爬取！
+		 */
+		Elements elements = document.select("p[class=errorMessageInfo]");
+		if(elements!=null){
+		    if(elements.size()!=0&&elements.get(0).text().contains("服务器开小差了，请稍后重试哦")){
+			//保存运行时的数据状态
+			String value = "" ;
+			Method getSeqNum = null ;
+			try {
+			    getSeqNum = hrefProvider.getClass().getMethod("getSeqNum");//获取无参数方法 getSeqNum
+			} catch (NoSuchMethodException | SecurityException e) {
+			    CRAWLER_LOGGER.error("获取 getSeqNum 方法失败!", e);
+			    e.printStackTrace();
+			}
+			if(getSeqNum!=null){
+			    try {
+				value = ((Integer) getSeqNum.invoke(hrefProvider)).toString() ;
+			    } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+				CRAWLER_LOGGER.error("调用 getSeqNum 失败！", e);
+				e.printStackTrace();
+			    }
+			}
+			if(!value.equals("")){
+			    StatusValueUtil.setStatusValue("edu.housesearcher.crawler.lianjia.LianJiaHrefListCrawler.seqNum",value );
+			}
+			hrefProvider.setIsContinueProvide(false);
+		    }
+		}
 		return result;
 	    }
 	};

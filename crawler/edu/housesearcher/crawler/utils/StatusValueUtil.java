@@ -64,6 +64,10 @@ public class StatusValueUtil implements ICrawlerLogger {
     }
     
     @Test
+    public void test2017031201(){
+	System.out.println(StatusValueUtil.getStatusValue("edu.housesearcher.crawler.lianjia.LianJiaHrefListCrawler.seqNum"));
+    }
+    
     public void test(){
 	StatusValueUtil.setStatusValue("lianjia", "不恋家");
 	System.out.println(StatusValueUtil.getStatusValue("lianjia"));

@@ -11,11 +11,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.mapping.Constraint;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -25,10 +23,7 @@ import edu.housesearcher.crawler.entity.EntHouse;
 import edu.housesearcher.crawler.getter.AWebPageGetter;
 import edu.housesearcher.crawler.getter.IWebPageGetter;
 import edu.housesearcher.crawler.hrefprovider.AHrefProvider;
-import edu.housesearcher.crawler.manager.AWebpageManager;
 import edu.housesearcher.crawler.parser.IWebPageParser;
-import edu.housesearcher.crawler.saver.APageDataDBSaver;
-import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.crawler.utils.StatusValueUtil;
@@ -132,13 +127,19 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 		    return null;
 		}
 		List<Map<String, String>> result = new ArrayList<Map<String, String>>();
-		Elements elements = document.select("a[class=rent]");
+		Elements elements = document.select("ul[id=house-lst] li");
 		Iterator<Element> iterator = elements.iterator();
 		while(iterator.hasNext()){
 		    Element element = iterator.next();
-		    String key = element.attr("href");
-		    String value = "http://sh.lianjia.com" + key;
+		    String key = element.select("a[class=rent]").attr("href");
+		    String value = "http://sh.lianjia.com" + key;//住房超链接
+		    String image = element.select("img").attr("src");  //图片超链接
+		    String title = element.select("img").attr("alt");//标题
+		    String tags = element.select("div[class=chanquan] span[class=fang-subway-ex] span").text()+",";//标签
 		    Map<String, String> e = new HashMap<String,String>();
+		    e.put("ImgHref", image);
+		    e.put("HTitle",title);
+		    e.put("HTags",tags);
 		    e.put("HHref", value);
 		    e.put("IsGetMsg", "N");
 		    result.add(e);
@@ -168,6 +169,9 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 		    EntHouse obj = new EntHouse();
 		    obj.setHHref(data.get("HHref"));
 		    obj.setIsGetMsg(data.get("IsGetMsg"));
+		    obj.setHTitle(data.get("HTitle"));
+		    obj.setImgHref(data.get("ImgHref"));
+		    obj.setHTags(data.get("HTags"));
 		    try{
 			session.save(obj);
 		    }catch(Exception e){

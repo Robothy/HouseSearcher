@@ -2,8 +2,6 @@ package edu.housesearcher.crawler.client;
 
 
 import edu.housesearcher.crawler.lianjia.LianJiaAgentMessageCrawler;
-import edu.housesearcher.crawler.lianjia.LianJiaHouseMessageCrawler;
-import edu.housesearcher.crawler.lianjia.LianJiaHrefListCrawler;
 import edu.housesearcher.crawler.threadcontroller.ThreadController;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 

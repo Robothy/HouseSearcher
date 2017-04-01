@@ -25,12 +25,12 @@ import edu.housesearcher.crawler.utils.ICrawlerLogger;
  * Servlet Filter implementation class IndexPageFilter
  */
 @WebFilter("/pages/house-list.jsp")
-public class IndexPageFilter implements Filter,ICrawlerLogger {
+public class HouseListFilter implements Filter,ICrawlerLogger {
     
     /**
      * Default constructor. 
      */
-    public IndexPageFilter() {
+    public HouseListFilter() {
     }
     
     /**

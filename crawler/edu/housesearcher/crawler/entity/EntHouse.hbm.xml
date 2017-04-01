@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-3-9 16:31:56 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2017-4-1 11:33:22 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="edu.housesearcher.crawler.entity.EntHouse" table="ent_house" catalog="housesearcher">
         <id name="dataId" type="java.lang.Integer">
@@ -9,16 +9,22 @@
             <generator class="identity" />
         </id>
         <property name="HHref" type="string">
-            <column name="H_HREF" length="100" unique="true" />
+            <column name="h_href" length="100" unique="true" />
+        </property>
+        <property name="HTitle" type="string">
+            <column name="h_title" length="100" />
+        </property>
+        <property name="HTags" type="string">
+            <column name="h_tags" length="100" />
         </property>
         <property name="pubDate" type="string">
-            <column name="PUB_DATE" length="10" />
+            <column name="pub_date" length="10" />
         </property>
         <property name="area" type="string">
-            <column name="Area" precision="22" scale="0" />
+            <column name="area" precision="22" scale="0" />
         </property>
         <property name="price" type="string">
-            <column name="Price" precision="22" scale="0" />
+            <column name="price" precision="22" scale="0" />
         </property>
         <property name="HType" type="string">
             <column name="h_type" length="0" />
@@ -27,13 +33,16 @@
             <column name="h_level" />
         </property>
         <property name="HOrientation" type="string">
-            <column name="h_orientation" length="2" />
+            <column name="h_orientation" length="4" />
+        </property>
+        <property name="imgHref" type="string">
+            <column name="img_href" length="100" />
         </property>
         <property name="CHref" type="string">
             <column name="c_href" length="100" />
         </property>
         <property name="AHref" type="string">
-            <column name="A_href" length="100" />
+            <column name="a_href" length="100" />
         </property>
         <property name="isGetMsg" type="string">
             <column name="is_get_msg" length="1" />

@@ -799,13 +799,14 @@
                     	
                         <li>
                             <div class="pic-panel">
-                                <a name="selectDetail" class="rent" gahref="results_click_order_1" key="sh3804714" target="_blank" href="http://sh.lianjia.com/zufang/shz3804714.html">
-                                    <img onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;" src="./house-lists_files/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" data-img-real="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160624/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" data-img-layout="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160430/52b7e060-9a63-457b-b013-1c03290f5bc4.jpg_200x150.jpg" data-original="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160624/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" class="lj-lazy" alt="沧源小区，有钥匙房源，上门实拍，交通方便" style="display: inline;">
-
+                                <a name="selectDetail" class="rent" target="_blank" href="${house['HHref'] }">
+                                	<object data="./img/img-err.jpg" type="image/jpg">
+                                    <img src="${house['imgHref'] }" data-img-real="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160624/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" data-img-layout="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160430/52b7e060-9a63-457b-b013-1c03290f5bc4.jpg_200x150.jpg" data-original="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160624/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" class="lj-lazy" alt="沧源小区，有钥匙房源，上门实拍，交通方便" style="display: inline;">
+                                	</object>
                                 </a>
                             </div>
                             <div class="info-panel">
-                                <h2><a name="selectDetail" gahref="results_click_order_1" key="sh3804714" target="_blank" href="http://sh.lianjia.com/zufang/shz3804714.html" title="沧源小区，有钥匙房源，上门实拍，交通方便">沧源小区，有钥匙房源，上门实拍，交通方便</a>
+                                <h2><a name="selectDetail" gahref="results_click_order_1" key="sh3804714" target="_blank" href="${house['HHref']}" title="沧源小区，有钥匙房源，上门实拍，交通方便">沧源小区，有钥匙房源，上门实拍，交通方便</a>
 
 						</h2>
                                 <div class="col-1">
@@ -821,7 +822,7 @@
 
                                             <span>| </span> ${house["HLevel"]}楼
 
-                                            <span>| </span>朝${house["HOrientation"] }
+                                            <span>| </span> 朝${house["HOrientation"] }
 
                                         </div>
                                     </div>

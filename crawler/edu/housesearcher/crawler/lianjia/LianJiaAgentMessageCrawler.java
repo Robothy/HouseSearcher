@@ -120,27 +120,9 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		    if(updateEntities>1){
 			CRAWLER_LOGGER.warn("警告： 更新了 " + updateEntities + " 条数据！");
 		    }
-		    
-		    /**
-		     * 将 A_Href 插入到 Ent_Agent 表中
-		     */
-		    EntAgent agent = new EntAgent();
-		    agent.setIsGetMsg("N");
-		    agent.setAHref(data.get("AHref"));
-		    session.save(agent);
-		    
-		    /**
-		     * 将 C_Href 插入到 Ent_Community 表中。
-		     */
-		    EntCommunity community = new EntCommunity();
-		    community.setIsGetMsg("N");
-		    community.setCHref(data.get("CHref"));
-		    session.save(community);
-		    
 		}
 		transaction.commit();
 		session.close();
-	    
 	    }
 	    
 	    @Override

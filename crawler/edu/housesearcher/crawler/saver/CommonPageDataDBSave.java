@@ -8,14 +8,31 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
 
-import edu.housesearcher.crawler.utils.DeepCloner;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 
 public class CommonPageDataDBSave implements IPageDataSaver {
+    
+    /**
+     * 除主键之外受唯一性约束的列, 列名应对应 hibernate persistence 字段名
+     */
+    private List<String> uniqueColumns = null;
+    
+    public List<String> getUniqueColumns() {
+        return uniqueColumns;
+    }
+
+    public void setUniqueColumns(List<String> uniqueColumns) {
+        this.uniqueColumns = uniqueColumns;
+    }
+
     private Class<?> persistenceClass ;
     
     public CommonPageDataDBSave(Class<?> persistenceClass) {
@@ -158,19 +175,39 @@ public class CommonPageDataDBSave implements IPageDataSaver {
 	/**
 	 * 调用 hibernate 事务API，存储数据
 	 */
-	Session session = HibernateUtil.getSession();
-	Transaction transaction = session.beginTransaction();
 	for(Object object : persistenceObjects){
 	    try{
+		Session session = HibernateUtil.getSession();
+		Transaction transaction = session.beginTransaction();
 		session.saveOrUpdate(object);
-	    }catch(Exception e){
-		CRAWLER_LOGGER.error("异常： " + e );
+		transaction.commit();
+		session.close();
+	    }catch(Exception e){			//这里的异常将很容易出现，大多数情况是由于 唯一性约束引起的
+		CRAWLER_LOGGER.debug("异常： " + e );	
 		continue;
 	    }
 	}
-	transaction.commit();
-	session.close();
 	datas.clear();
     }
+
+    //判断该行数据是否已存在
+    private Boolean isExistsRow(Map<String, String> persistenceData){
+	Boolean result = false;
+	Session session = HibernateUtil.getSession();
+	Transaction transaction = session.beginTransaction();
+	String hql = "from" + persistenceClass.getName() + "where ";
+	for(String uniqueColumn : this.uniqueColumns){
+	    hql+= uniqueColumn + " = '" + persistenceData.get(uniqueColumn) + "' and "; 
+	}
+	hql = hql.replaceAll("and $", hql);//去除末尾的and
+	Integer number = session.createQuery(hql).list().size();
+	if(number.intValue() > 0){//已经存在
+	    result = true;
+	}
+	transaction.commit();
+	session.close();
+	return false;
+    }
+    
     
 }

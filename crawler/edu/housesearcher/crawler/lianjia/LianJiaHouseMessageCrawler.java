@@ -129,7 +129,7 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 			}
 		    }
 		    String AHref =  contentForRent.select("div[class=brokerName]").first().select("a").first().attr("href");//经纪人
-		    AHref = AHref.contains("lianjia") ? AHref : "http://sh.lianjia.com" + AHref.replaceAll("\\?.{1,}$", "") ;
+		    AHref = (AHref.contains("lianjia") ? AHref : "http://sh.lianjia.com").replaceAll("\\?.{1,}$", "");
 		    
 		    Map<String, String> node = new HashMap<String, String>();
 		    node.put("Price", Price);

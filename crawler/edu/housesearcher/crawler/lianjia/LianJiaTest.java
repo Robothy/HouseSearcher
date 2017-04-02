@@ -14,9 +14,10 @@ public class LianJiaTest {
 	System.out.println("b = " + b);
     }
     
-    public static void test(Integer reference, int primitive){
-	reference = new Integer(2);
-	primitive ++;
+    public void test(){
+	String href = "http://sh.lianjia.com/jingjiren/detail/190944.html?phone=4007675011,601784";
+	href = href.replaceAll("\\?.{1,}$", "");
+	System.out.println(href);
     }
     
     public void TestLianJiaHresListCrawler(){
@@ -34,5 +35,6 @@ public class LianJiaTest {
 	System.exit(0);
     }
     
+   
 
 }

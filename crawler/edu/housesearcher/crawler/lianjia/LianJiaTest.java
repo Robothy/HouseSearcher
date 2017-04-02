@@ -19,7 +19,6 @@ public class LianJiaTest {
 	primitive ++;
     }
     
-    
     public void TestLianJiaHresListCrawler(){
 	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
 	controller.runThreads();

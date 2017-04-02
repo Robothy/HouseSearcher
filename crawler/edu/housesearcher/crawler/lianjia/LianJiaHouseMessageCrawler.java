@@ -13,6 +13,7 @@ import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -190,20 +191,30 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		    }
 		    
 		    /**
-		     * 将 A_Href 插入到 Ent_Agent 表中
+		     * 将 A_Href 插入到 Ent_Agent 表中, 插入之前判断是否村存在相同的数据
 		     */
-		    EntAgent agent = new EntAgent();
-		    agent.setIsGetMsg("N");
-		    agent.setAHref(data.get("AHref"));
-		    session.saveOrUpdate(agent);
+		    Criteria criteria = session.createCriteria(EntAgent.class);
+		    criteria.add(Restrictions.eq("AHref", data.get("AHref")));
+		    if(criteria.list().size()<=0){
+			EntAgent agent = new EntAgent();
+			agent.setIsGetMsg("N");
+			agent.setAHref(data.get("AHref"));
+			session.saveOrUpdate(agent);
+		    }		    
+		    
 		    
 		    /**
 		     * 将 C_Href 插入到 Ent_Community 表中。
 		     */
-		    EntCommunity community = new EntCommunity();
-		    community.setIsGetMsg("N");
-		    community.setCHref(data.get("CHref"));
-		    session.saveOrUpdate(community);
+		    criteria = session.createCriteria(EntCommunity.class);
+		    criteria.add(Restrictions.eq("CHref", data.get("CHref")));
+		    if(criteria.list().size()<=0){
+			EntCommunity community = new EntCommunity();
+			community.setIsGetMsg("N");
+			community.setCHref(data.get("CHref"));
+			session.saveOrUpdate(community);
+		    }
+		    
 		    
 		}
 		transaction.commit();

@@ -8,25 +8,32 @@ import edu.housesearcher.crawler.utils.HibernateUtil;
 public class LianJiaTest {
 
     public static void main(String[] args) {
-//	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
-//	
-//	controller.runThreads();
-//	
-//	ThreadController controller = new ThreadController(new LianJiaHouseMessageCrawler(), 5);
-//	controller.runThreads();
-	
-
-	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 2);
+	Integer a = new Integer(0);
+	int b = 0;
+	System.out.println("a = " + a);
+	System.out.println("b = " + b);
+    }
+    
+    public static void test(Integer reference, int primitive){
+	reference = new Integer(2);
+	primitive ++;
+    }
+    
+    
+    public void TestLianJiaHresListCrawler(){
+	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
 	controller.runThreads();
-	
 	HibernateUtil.closeSessionFactory();
 	System.exit(0);
     }
     
     @Test
-    public void TestLianJiaHresListCrawler(){
-	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
+    public void TestLianjiaHouseMessageCrawler(){
+	ThreadController controller = new ThreadController(new LianJiaHouseMessageCrawler(), 5);
 	controller.runThreads();
+	HibernateUtil.closeSessionFactory();
+	System.exit(0);
     }
+    
 
 }

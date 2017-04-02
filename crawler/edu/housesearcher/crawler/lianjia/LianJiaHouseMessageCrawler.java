@@ -128,7 +128,7 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 			}
 		    }
 		    String AHref =  contentForRent.select("div[class=brokerName]").first().select("a").first().attr("href");//经纪人
-		    AHref = AHref.contains("lianjia") ? AHref : "http://sh.lianjia.com" + AHref ;
+		    AHref = AHref.contains("lianjia") ? AHref : "http://sh.lianjia.com" + AHref.replaceAll("\\?.{1,}$", "") ;
 		    
 		    Map<String, String> node = new HashMap<String, String>();
 		    node.put("Price", Price);
@@ -195,7 +195,7 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		    EntAgent agent = new EntAgent();
 		    agent.setIsGetMsg("N");
 		    agent.setAHref(data.get("AHref"));
-		    session.save(agent);
+		    session.saveOrUpdate(agent);
 		    
 		    /**
 		     * 将 C_Href 插入到 Ent_Community 表中。
@@ -203,7 +203,7 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		    EntCommunity community = new EntCommunity();
 		    community.setIsGetMsg("N");
 		    community.setCHref(data.get("CHref"));
-		    session.save(community);
+		    session.saveOrUpdate(community);
 		    
 		}
 		transaction.commit();

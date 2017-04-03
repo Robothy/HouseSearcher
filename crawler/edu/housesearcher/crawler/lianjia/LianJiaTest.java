@@ -20,6 +20,7 @@ public class LianJiaTest {
 	System.out.println(href);
     }
     
+    @Test
     public void TestLianJiaHresListCrawler(){
 	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
 	controller.runThreads();
@@ -27,7 +28,6 @@ public class LianJiaTest {
 	System.exit(0);
     }
     
-    @Test
     public void TestLianjiaHouseMessageCrawler(){
 	ThreadController controller = new ThreadController(new LianJiaHouseMessageCrawler(), 5);
 	controller.runThreads();

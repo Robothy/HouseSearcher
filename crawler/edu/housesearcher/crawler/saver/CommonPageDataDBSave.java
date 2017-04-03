@@ -183,8 +183,8 @@ public class CommonPageDataDBSave implements IPageDataSaver {
 		transaction.commit();
 		session.close();
 	    }catch(Exception e){			//这里的异常将很容易出现，大多数情况是由于 唯一性约束引起的
-		CRAWLER_LOGGER.debug("异常： " + e );	
-		continue;
+		CRAWLER_LOGGER.debug("异常： " + e );	//为了保证程序的正常运行，因而将每一条数据的保存都当成一个事务
+		continue;				//这部分代码应该修改一下，以提高效率，不过目前没有想到好的办法
 	    }
 	}
 	datas.clear();

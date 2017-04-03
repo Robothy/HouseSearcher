@@ -24,6 +24,7 @@ import edu.housesearcher.crawler.getter.AWebPageGetter;
 import edu.housesearcher.crawler.getter.IWebPageGetter;
 import edu.housesearcher.crawler.hrefprovider.AHrefProvider;
 import edu.housesearcher.crawler.parser.IWebPageParser;
+import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.crawler.utils.StatusValueUtil;
@@ -148,46 +149,7 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 	    }
 	};
 	
-	IPageDataSaver saver = new IPageDataSaver() {
-	    @Override
-	    public void doSave(List<Map<String, String>> datas) {
-
-		Session session = HibernateUtil.getSession();
-		Transaction transaction = session.beginTransaction();
-		for(Map<String, String> data : datas){
-		    Criteria criteria = session.createCriteria(EntHouse.class);
-		    criteria.add(Restrictions.eq("HHref", data.get("HHref")));
-		    List<EntHouse> houses = null;
-		    try{
-			houses = criteria.list();
-		    }catch(Exception e){
-			CRAWLER_LOGGER.error("从EntHouse表中查询数据失败！",e);
-			e.printStackTrace();
-			continue;
-		    }
-		    if(houses.size()>0) continue; //存在的对象,跳过
-		    EntHouse obj = new EntHouse();
-		    obj.setHHref(data.get("HHref"));
-		    obj.setIsGetMsg(data.get("IsGetMsg"));
-		    obj.setHTitle(data.get("HTitle"));
-		    obj.setImgHref(data.get("ImgHref"));
-		    obj.setHTags(data.get("HTags"));
-		    try{
-			session.save(obj);
-		    }catch(Exception e){
-			CRAWLER_LOGGER.error("保存数据到EntHouse中失败",e);
-			e.printStackTrace();
-			continue;
-		    }
-		}
-		transaction.commit();
-		session.close();
-		datas.clear();
-	    }
-	    
-	    @Override
-	    public void doSave(Map<String, String> data) {}
-	};
+	IPageDataSaver saver = new CommonPageDataDBSave(EntHouse.class);
 	
 	Integer invalidPagesCount = 0;
 	Integer emptyPagesCount = 0;

@@ -36,8 +36,6 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
      */
     private static final DBHrefProvider hrefProvider = new DBHrefProvider("EntAgent", "AHref");
     
-    
-    
     @Override
     public void run() {
 	IWebPageGetter getter = new AWebPageGetter() {

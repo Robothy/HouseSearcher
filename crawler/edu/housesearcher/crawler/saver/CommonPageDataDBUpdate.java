@@ -89,7 +89,9 @@ public class CommonPageDataDBUpdate implements IPageDataSaver {
 
     @Override
     public void doSave(List<Map<String, String>> datas) {
-	
+	for(Map<String, String> data : datas){
+	    this.doSave(data);
+	}
     }
 
     

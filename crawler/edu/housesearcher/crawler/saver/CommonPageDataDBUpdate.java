@@ -1,15 +1,12 @@
 package edu.housesearcher.crawler.saver;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.junit.Test;
 
 import edu.housesearcher.crawler.utils.HibernateUtil;
 
@@ -67,7 +64,7 @@ public class CommonPageDataDBUpdate implements IPageDataSaver {
 	Transaction transaction = session.beginTransaction();
 	String hql = "from " + this.persistenceName + restrictionString;
 	Query query = session.createQuery(hql);
-	if(query.list().size()>=maxUpdateRows){
+	if(query.list().size()>maxUpdateRows){
 	    CRAWLER_LOGGER.warn("将更新超过 " + maxUpdateRows + " 条数据， 操作跳过！您可以通过设置 maxUpdateRows（default value: 1）来使程序运行下去 ");
 	    transaction.commit();
 	    session.close();

@@ -20,8 +20,16 @@ public class LianJiaTest {
 	System.out.println(href);
     }
     
+
     @Test
-    public void TestLianJiaHresListCrawler(){
+    public void TestLianJiaCommunityMsgCrawler(){
+	ThreadController controller = new ThreadController(new LianJiaCommunityMsgCrawler(), 5);
+	controller.runThreads();
+	HibernateUtil.closeSessionFactory();
+	System.exit(0);
+    }
+    
+    public void TestLianJiaHrefListCrawler(){
 	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
 	controller.runThreads();
 	HibernateUtil.closeSessionFactory();
@@ -34,7 +42,5 @@ public class LianJiaTest {
 	HibernateUtil.closeSessionFactory();
 	System.exit(0);
     }
-    
-   
 
 }

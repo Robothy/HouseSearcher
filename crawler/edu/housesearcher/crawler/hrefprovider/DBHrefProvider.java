@@ -54,7 +54,7 @@ public class DBHrefProvider implements IHrefProvider {
 	}
 	transaction.commit();
 	count+=num;
-	if(hrefs.size()<num) setIsContinueProvide(false);
+	if(hrefs.size()==0) setIsContinueProvide(false);
 	return result;
     }
 

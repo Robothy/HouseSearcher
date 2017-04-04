@@ -1,11 +1,19 @@
 package edu.housesearcher.web.dao;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.sun.org.apache.bcel.internal.generic.IF_ICMPGE;
 
 import edu.housesearcher.crawler.entity.EntAgent;
 import edu.housesearcher.crawler.entity.EntCommunity;
@@ -36,6 +44,56 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 
     @Override
     public HouseDetails getInstanceByHouseHref(String houseHref) {
+	
+	Document document = null;
+	try {
+	    document = Jsoup.connect(houseHref).get();
+	} catch (IOException e) {
+	    e.printStackTrace();
+	}
+	if(document!=null){
+	    
+	    //获取图片
+	    List<String[]> images = new ArrayList<String[]>();
+	    Elements imgEles = document.select("div[class=album-view-wrap] li img");
+	    for(Element e : imgEles){
+		String[] img = new String[3];
+		img[0] = e.attr("data-large");
+		img[1] = e.attr("src");
+		img[3] = e.attr("img-title");
+		images.add(img);
+	    }
+	    
+	    //价格
+	    String price = document.select("div[class=price] div").text();
+	    //户型
+	    String type = document.select("div[class=room] div").text().replaceAll("[室|厅]", "-");
+	    String room = type.split("-")[0];
+	    String hall = type.split("-")[1];
+	    //面积
+	    String area = document.select("div[class=area] div").text();
+	    //详情，这里为了简单起见直接把html弄下来了
+	    String level = document.select("table[class=aroundInfo]").html();
+	    //经济人超链接
+	    String agentHref = document.select("div[class=brokerName] a").attr("href").replaceAll("\\?.{1,}$", "");
+	    //经纪人图片
+	    String agentImg = document.select("div[class=brokerInfo] img").attr("src");
+
+	    EntAgent agent = (new EntAgentDao()).getInstanceByAgentHref(agentHref);
+	    //经纪人姓名
+	    String agentName = agent.getName();
+	    //经济人好评率
+	    String favorateRate  = agent.getPraiseRate();
+	    //经纪人电话
+	    String phone = agent.getPhone();
+	    //经纬度
+	    String longitude = document.select("div[id=zoneMap]").attr("longitude");
+	    String latitude = document.select("div[id=zoneMap]").attr("latitude");
+	    
+	}else{
+	    CRAWLER_LOGGER.debug("获取页面失败！");
+	}
+	
 	return null;
     }
 
@@ -64,9 +122,18 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	}catch(Exception e){
 	    e.printStackTrace();
 	    CRAWLER_LOGGER.debug("获取EntHouse实例出现异常！");
+	    return null;
 	}
 	
-	List agentLists = session.createQuery("from EntAgent where AHref = '" + house.getAHref() + "'").list();
+	try{
+	    List agentLists = session.createQuery("from EntAgent where AHref = '" + house.getAHref() + "'").list();
+	    if(agentLists.size()==0){
+		CRAWLER_LOGGER.debug("未能检索到");
+	    }
+	}catch(Exception e){
+	    CRAWLER_LOGGER.;
+	}
+	
 	
 	transaction.commit();
 	session.close();

@@ -57,6 +57,7 @@ public class HouseListElement implements ICrawlerLogger{
 	this.AHref = house.getAHref();
 	this.isGetMsg = house.getIsGetMsg();
 	this.createTime = house.getCreateTime();
+	this.getRelatedPropertiesValue();
     }
     
     public HouseListElement(String HHref, String HTitle, String HTags, String pubDate, String area, String price, String HType,
@@ -82,9 +83,9 @@ public class HouseListElement implements ICrawlerLogger{
      * 获取相关变量的值
      */
     private void getRelatedPropertiesValue(){
+	//获取小区名称的值
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
-	
 	Criteria criteria = session.createCriteria(EntCommunity.class);
 	criteria.add(Restrictions.eq("CHref", CHref));
 	List<EntCommunity> result = null;
@@ -97,13 +98,29 @@ public class HouseListElement implements ICrawlerLogger{
 	if(result.size()!=0){
 	    this.CName = ((EntCommunity)(result.get(0))).getCName();
 	}
-	
-	
-	
 	transaction.commit();
 	session.close();
+	
+	//获取收藏人数属性 collectNum 的值
+	collectNum = "12";
     }
     
+    public String getCName() {
+        return CName;
+    }
+
+    public void setCName(String cName) {
+        CName = cName;
+    }
+
+    public String getCollectNum() {
+        return collectNum;
+    }
+
+    public void setCollectNum(String collectNum) {
+        this.collectNum = collectNum;
+    }
+
     public Integer getDataId() {
 	return this.dataId;
     }

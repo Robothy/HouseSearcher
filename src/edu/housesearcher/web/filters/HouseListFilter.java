@@ -1,6 +1,7 @@
 package edu.housesearcher.web.filters;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.Filter;
@@ -20,6 +21,7 @@ import org.hibernate.Transaction;
 import edu.housesearcher.crawler.entity.EntHouse;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.crawler.utils.ICrawlerLogger;
+import edu.housesearcher.web.beans.HouseListElement;
 
 /**
  * Servlet Filter implementation class IndexPageFilter
@@ -45,19 +47,21 @@ public class HouseListFilter implements Filter,ICrawlerLogger {
     @SuppressWarnings("unchecked")
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 	String searchResult = "success";
-	List<EntHouse> houses = (List<EntHouse>)(request.getAttribute("houses"));
+	List<HouseListElement> houses = (List<HouseListElement>)(request.getAttribute("houses"));
 	/**
 	 * 系统检索出的条目数为null或0, 系统自动推荐结果。
 	 */
 	if(houses==null||houses.size()==0){
+	    houses = new ArrayList<HouseListElement>();
 	    CRAWLER_LOGGER.debug("过滤器未能检测到 houses 对象， 执行自动赋值。");
 	    Session session = HibernateUtil.getSession();
 	    Transaction transaction = session.beginTransaction();
-	    Query query = session.createQuery("from EntHouse");
-	    query.setFirstResult(5);
-	    query.setMaxResults(20);	
+	    Query query = session.createQuery("from EntHouse where is_get_msg = 'Y'");
+	    query.setFirstResult(1);
+	    query.setMaxResults(20);
+	    List<EntHouse> queryResults = null;
 	    try {
-		houses = query.list();
+		queryResults = query.list();
 		transaction.commit();
 	    } catch (Exception e) {
 		searchResult = "none";
@@ -65,10 +69,13 @@ public class HouseListFilter implements Filter,ICrawlerLogger {
 		session.close();
 	    }
 	    
+	    if(queryResults!=null)
+	    for(EntHouse h : queryResults){
+		houses.add(new HouseListElement((EntHouse)h));
+	    }
+	    
 	    request.setAttribute("searchResult", searchResult);
 	    request.setAttribute("houses", houses);
-	    
-	    
 	}
 	// pass the request along the filter chain
 	chain.doFilter(request, response);

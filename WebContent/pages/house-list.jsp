@@ -806,19 +806,19 @@
                                 </a>
                             </div>
                             <div class="info-panel">
-                                <h2><a name="selectDetail" gahref="results_click_order_1" key="sh3804714" target="_blank" href="${house['HHref']}" title="沧源小区，有钥匙房源，上门实拍，交通方便">沧源小区，有钥匙房源，上门实拍，交通方便</a>
+                                <h2><a name="selectDetail" gahref="results_click_order_1" key="sh3804714" target="_blank" href="${house['HHref']}" title="${house['HTitle'] }">${house['HTitle'] }</a>
 
 						</h2>
                                 <div class="col-1">
                                     <div class="where">
-                                        <a class="laisuzhou" href="http://sh.lianjia.com/xiaoqu/5011000011180.html"><span class="nameEllipsis" title="沧源小区">沧源小区</span></a>&nbsp;&nbsp;
+                                        <a class="laisuzhou" href="${house['CHref']}"><span class="nameEllipsis" title="${house['CName']}">${house['CName']}</span></a>&nbsp;&nbsp;
                                         <span>${house["HType"]} 室1厅&nbsp;&nbsp;</span>
                                         <span>${house["area"] }平&nbsp;&nbsp;</span>
                                     </div>
                                     <div class="other">
                                         <div class="con">
-                                            <a href="http://sh.lianjia.com/zufang/minhang/">闵行</a>
-                                            <a href="http://sh.lianjia.com/zufang/laominhang/">老闵行</a>
+                                            <!-- <a href="http://sh.lianjia.com/zufang/minhang/">闵行</a>
+                                            <a href="http://sh.lianjia.com/zufang/laominhang/">老闵行</a> -->
 
                                             <span>| </span> ${house["HLevel"]}楼
 
@@ -829,10 +829,10 @@
                                     <div class="chanquan">
                                         <div class="left agency">
                                             <div class="view-label left">
-                                                <span class="anytime"></span>
-                                                <span class="anytime-ex"><span>随时看房</span></span>
+                                            	<s:iterator var="c" value="#house.HTags.split(',')" >
+                                                	<span class="anytime-ex"><span>${c}</span></span>
+                                            	</s:iterator>
                                                 
-                                                <span class="anytime-ex"><span>厨房</span></span>
                                             </div>
                                         </div>
                                     </div>

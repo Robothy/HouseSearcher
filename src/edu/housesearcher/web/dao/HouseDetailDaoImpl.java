@@ -89,12 +89,22 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    //经纬度
 	    String longitude = document.select("div[id=zoneMap]").attr("longitude");
 	    String latitude = document.select("div[id=zoneMap]").attr("latitude");
-	    
+	
+	    return (new HouseDetails())
+		    .setAgentHref(agentHref)
+		    .setAgentImg(agentImg)
+		    .setArea(area)
+		    .setHall(hall)
+		    .setImages(images)
+		    .setLatitude(latitude)
+		    .setLevel(level)
+		    .setLongitude(longitude)
+		    .setPrice(price)
+		    .setRoom(room);
 	}else{
 	    CRAWLER_LOGGER.debug("获取页面失败！");
 	}
-	
-	return null;
+	return null;	
     }
 
     @Override
@@ -102,43 +112,4 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	return null;
     }
     
-    private HouseDetails query(String hql){
-	
-	EntHouse house = null;
-	EntAgent agent = null;
-	EntCommunity community = null;
-	
-	Session session = HibernateUtil.getSession();
-	Transaction transaction = session.beginTransaction();
-	Query query = session.createQuery(hql);
-	try{
-	    List results = query.list();
-	    if(results.size()==0){
-		CRAWLER_LOGGER.debug("未能从数据库中查到数据。");
-	    }else{
-		house = (EntHouse)(results.get(0));
-	    }
-	    
-	}catch(Exception e){
-	    e.printStackTrace();
-	    CRAWLER_LOGGER.debug("获取EntHouse实例出现异常！");
-	    return null;
-	}
-	
-	try{
-	    List agentLists = session.createQuery("from EntAgent where AHref = '" + house.getAHref() + "'").list();
-	    if(agentLists.size()==0){
-		CRAWLER_LOGGER.debug("未能检索到");
-	    }
-	}catch(Exception e){
-	    CRAWLER_LOGGER.;
-	}
-	
-	
-	transaction.commit();
-	session.close();
-	
-	return null;
-    }
-
 }

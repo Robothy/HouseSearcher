@@ -14,8 +14,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.sun.org.apache.bcel.internal.generic.F2D;
-
 import edu.housesearcher.crawler.entity.EntAgent;
 import edu.housesearcher.crawler.entity.EntCommunity;
 import edu.housesearcher.crawler.getter.AWebPageGetter;
@@ -38,102 +36,97 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
      */
     private static final DBHrefProvider hrefProvider = new DBHrefProvider("EntAgent", "AHref");
     
+    IWebPageGetter getter = new AWebPageGetter() {
+	@Override
+	public Boolean isValidPage(Document document) {
+	    /**
+	     * 遇到反扒机制
+	     */
+	    if(isMeetCrawlerForbider(document)){
+		hrefProvider.setIsContinueProvide(false);
+		return false;
+	    }
+	    
+	    if(document.title().contains("页面没有找到")) return false;
+	    return true;
+	}
+    };
+    
+    IWebPageParser parser = new IWebPageParser() {
+	
+	@Override
+	public List<Map<String, String>> doParse(Document document) {
+	    
+	    if(document == null){
+		CRAWLER_LOGGER.warn("Document 对象为空");
+		return null;
+	    }
+	    
+	    List<Map<String, String>> result = new ArrayList<Map<String, String>>();
+	    try{
+		String aegntName = document.select("span[class=agentName]").first().text();//经纪人姓名
+		String phoneNumber = document.select("span[class=tel]").first().text();//电话号码
+		String cHref = document.select("div[class=majorProperty] a").first().attr("href");//小区
+		
+		String praiseRate = "0";	//好评率
+		Elements es =  document.select("p[class=subTitle]");//
+		for (Element e : es){
+		    if(e.text().contains("%")) praiseRate = e.text().replaceAll("[^0-9]", ""); 
+		}
+		Map<String,String> node = new HashMap<String,String>();
+		node.put("agentName", aegntName);
+		node.put("phoneNumber", phoneNumber);
+		node.put("cHref", cHref);
+		node.put("praiseRate", praiseRate);
+		result.add(node);
+	    }catch (Exception e) {
+		CRAWLER_LOGGER.error("未能解析页面！ " + document.baseUri() );
+		return null;
+	    }
+	    
+	    return result;
+	}
+    };
+    
+    IPageDataSaver saver = new IPageDataSaver() {
+	
+	@Override
+	public void doSave(List<Map<String, String>> datas) {
+	    
+	    Session session = HibernateUtil.getSession();
+	    Transaction transaction = session.beginTransaction();
+	    for(Map<String, String> data : datas){
+		String hqlUpdate = "update EntAgent set "
+			+ "name = :agentName, "
+			+ "phone = :phoneNumber,"
+			+ "praiseRate = :praiseRate,"
+			+ "CHref = :CHref,"
+			+ "createTime = :createTime,"
+			+ "isGetMsg = 'Y' "
+			+ "where AHref = :AHref";
+		int updateEntities = session.createQuery(hqlUpdate)
+			.setString("agentName", data.get("agentName"))
+			.setString("phoneNumber", data.get("phoneNumber"))
+			.setString("praiseRate", data.get("praiseRate"))
+			.setString("CHref", data.get("CHref"))
+			.setString("AHref", data.get("aHref"))
+			.setString("createTime", DateTimeUtil.getNowAsString())
+			.executeUpdate();
+		CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");
+		if(updateEntities>1){
+		    CRAWLER_LOGGER.warn("警告： 更新了 " + updateEntities + " 条数据！");
+		}
+	    }
+	    transaction.commit();
+	    session.close();
+	}
+	
+	@Override
+	public void doSave(Map<String, String> data) {}
+    };
+    
     @Override
     public void run() {
-	IWebPageGetter getter = new AWebPageGetter() {
-	    @Override
-	    public Boolean isValidPage(Document document) {
-		/**
-		 * 遇到反扒机制
-		 */
-		if(isMeetCrawlerForbider(document)){
-		    hrefProvider.setIsContinueProvide(false);
-		    return false;
-		}
-		
-		if(document.title().contains("页面没有找到")) return false;
-		return true;
-	    }
-	};
-	
-	IWebPageParser parser = new IWebPageParser() {
-	    
-	    @Override
-	    public List<Map<String, String>> doParse(Document document) {
-		
-		if(document == null){
-		    CRAWLER_LOGGER.warn("Document 对象为空");
-		    return null;
-		}
-		
-		List<Map<String, String>> result = new ArrayList<Map<String, String>>();
-		try{
-		    String aegntName = document.select("span[class=agentName]").first().text();//经纪人姓名
-		    String phoneNumber = document.select("span[class=tel]").first().text();//电话号码
-		    
-		    
-		    String cHref = "";//小区,获取经纪人营业的小区链接，链接之间用逗号分隔，最多4个链接
-		    Elements communityHrefElements = document.select("div[class=majorProperty] a");
-		    for(int i=0; i<5&&i<communityHrefElements.size();i++){
-			 cHref+=(communityHrefElements.get(i).attr("href") + ",");
-		    }
-		    
-		    String praiseRate = "0";	//好评率
-		    Elements es =  document.select("p[class=subTitle]");//
-		    for (Element e : es){
-			if(e.text().contains("%")) praiseRate = e.text().replaceAll("[^0-9]", ""); 
-		    }
-		    Map<String,String> node = new HashMap<String,String>();
-		    node.put("agentName", aegntName);
-		    node.put("phoneNumber", phoneNumber);
-		    node.put("CHref", cHref);
-		    node.put("praiseRate", praiseRate);
-		    result.add(node);
-		}catch (Exception e) {
-		    CRAWLER_LOGGER.error("未能解析页面！ " + document.baseUri() );
-		    return null;
-		}
-		
-		return result;
-	    }
-	};
-	
-	IPageDataSaver saver = new IPageDataSaver() {
-	    
-	    @Override
-	    public void doSave(List<Map<String, String>> datas) {
-
-		Session session = HibernateUtil.getSession();
-		Transaction transaction = session.beginTransaction();
-		for(Map<String, String> data : datas){
-		    String hqlUpdate = "update EntAgent set "
-			    + "name = :agentName, "
-			    + "phone = :phoneNumber,"
-			    + "praiseRate = :praiseRate,"
-			    + "CHref = :CHref,"
-			    + "createTime = :createTime,"
-			    + "isGetMsg = 'Y' "
-			    + "where AHref = :AHref";
-		    int updateEntities = session.createQuery(hqlUpdate)
-			    .setString("agentName", data.get("agentName"))
-			    .setString("phoneNumber", data.get("phoneNumber"))
-			    .setString("praiseRate", data.get("praiseRate"))
-			    .setString("CHref", data.get("CHref"))
-			    .setString("AHref", data.get("aHref"))
-			    .setString("createTime", DateTimeUtil.getNowAsString())
-			    .executeUpdate();
-		    CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");
-		    if(updateEntities>1){
-			CRAWLER_LOGGER.warn("警告： 更新了 " + updateEntities + " 条数据！");
-		    }
-		}
-		transaction.commit();
-		session.close();
-	    }
-	    
-	    @Override
-	    public void doSave(Map<String, String> data) {}
-	};
 	
 	
 	do{
@@ -150,7 +143,6 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		}else {
 		    super.setDocument(document);
 		    datas = parse(parser);
-		    if(datas!=null)
 		    for(Map<String, String> map : datas) map.put("aHref", href);//把链接添加进去，才能更新。
 		}
 		
@@ -167,6 +159,14 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 	    }
 	}while(hrefProvider.getIsContinueProvide());
 	
+    }
+
+    @Override
+    public Boolean appendDataByHref(String href) {
+	Document document = getter.doGet(href);
+	List<Map<String, String>> datas = parser.doParse(document);
+	saver.doSave(datas);
+	return true;
     }
 
 }

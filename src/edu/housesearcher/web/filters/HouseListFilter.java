@@ -46,6 +46,8 @@ public class HouseListFilter implements Filter,ICrawlerLogger {
      */
     @SuppressWarnings("unchecked")
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	
+	CRAWLER_LOGGER.debug("执行过滤器 HouseListFilter");
 	String searchResult = "success";
 	List<HouseListElement> houses = (List<HouseListElement>)(request.getAttribute("houses"));
 	/**

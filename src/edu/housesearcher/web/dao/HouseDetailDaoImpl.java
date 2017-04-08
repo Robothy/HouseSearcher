@@ -60,7 +60,7 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 		String[] img = new String[3];
 		img[0] = e.attr("data-large");
 		img[1] = e.attr("src");
-		img[3] = e.attr("img-title");
+		img[2] = e.attr("img-title");
 		images.add(img);
 	    }
 	    
@@ -81,11 +81,21 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 
 	    EntAgent agent = (new EntAgentDao()).getInstanceByAgentHref(agentHref);
 	    //经纪人姓名
-	    String agentName = agent.getName();
+	    String agentName = "";
 	    //经济人好评率
-	    String favorateRate  = agent.getPraiseRate();
+	    String favorateRate  = "";
 	    //经纪人电话
-	    String phone = agent.getPhone();
+	    String phone = "";
+	    if(agent!=null){	//经纪人数据能够从数据库中检索得到
+		agentName = agent.getName();
+		favorateRate = agent.getPraiseRate();
+		phone = agent.getPhone();
+	    }else{	//经纪人数据不能从数据库中检索得到,直接从网站上获取，并更新数据库
+		
+	    }
+	    
+	    
+	    
 	    //经纬度
 	    String longitude = document.select("div[id=zoneMap]").attr("longitude");
 	    String latitude = document.select("div[id=zoneMap]").attr("latitude");

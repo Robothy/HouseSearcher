@@ -25,6 +25,15 @@ import edu.housesearcher.crawler.utils.ICrawlerLogger;
 public abstract class AWebpageManager implements Runnable,ICrawlerLogger {
 
     /**
+     * 
+     * @功能 根据 href 新增一条数据，一般用于当需要使用到某条数据，而数据库
+     * 	中不存在数据时，直接从站点获取数据。
+     * @param href 超链接
+     * @return 若更新成功，则返回 true ， 否则返回 false
+     */
+    public abstract Boolean appendDataByHref(String href);
+    
+    /**
      * 当前需要获取HTML文本的URL
      */
     private String href=null;

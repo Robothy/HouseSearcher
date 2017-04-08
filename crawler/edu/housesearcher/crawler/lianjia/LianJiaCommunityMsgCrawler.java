@@ -28,50 +28,49 @@ public class LianJiaCommunityMsgCrawler extends ALianJiaCrawlerManager implement
     
     
     
+    IWebPageGetter getter = new AWebPageGetter() {
+	
+	@Override
+	public Boolean isValidPage(Document document) {
+	    if(isMeetCrawlerForbider(document)){
+		hrefProvider.setIsContinueProvide(false);
+		return false;
+	    }
+	    if(document.title().contains("页面没有找到")) return false;
+	    return true;
+	}
+    };
+    
+    IWebPageParser parser = new IWebPageParser() {
+	
+	@Override
+	public List<Map<String, String>> doParse(Document document) {
+	    
+	    List<Map<String, String>> datas = new ArrayList<Map<String, String>>();
+	    Map<String, String> data = new HashMap<String, String>();
+	    try {		    
+		String CName = document.select("h1").text();
+		String CLocation = document.select("span[class=adr]").attr("title");
+		CLocation = CLocation.length()<200?CLocation:CLocation.substring(0, 199);
+		Element coordElement = document.select("div[class=zone-map js_content]").first();
+		String coord = coordElement.attr("longitude") + "," + coordElement.attr("latitude");
+		data.put("CName", CName);
+		data.put("CLocation",CLocation);
+		data.put("coord",coord);
+		data.put("isGetMsg", "Y");
+		data.put("createTime", DateTimeUtil.getNowAsString());
+		datas.add(data);
+	    } catch (Exception e) {
+		CRAWLER_LOGGER.debug("文档解析出错!"+document.baseUri(),e);;
+	    }
+	    return datas;
+	}
+    };
+    
+    CommonPageDataDBUpdate saver = new CommonPageDataDBUpdate("EntCommunity");
+    
     @Override
     public void run() {
-	
-	IWebPageGetter getter = new AWebPageGetter() {
-	    
-	    @Override
-	    public Boolean isValidPage(Document document) {
-		if(isMeetCrawlerForbider(document)){
-		    hrefProvider.setIsContinueProvide(false);
-		    return false;
-		}
-		if(document.title().contains("页面没有找到")) return false;
-		return true;
-	    }
-	};
-	
-	IWebPageParser parser = new IWebPageParser() {
-	    
-	    @Override
-	    public List<Map<String, String>> doParse(Document document) {
-
-		List<Map<String, String>> datas = new ArrayList<Map<String, String>>();
-		Map<String, String> data = new HashMap<String, String>();
-		try {		    
-		    String CName = document.select("h1").text();
-		    String CLocation = document.select("span[class=adr]").attr("title");
-		    CLocation = CLocation.length()<200?CLocation:CLocation.substring(0, 199);
-		    Element coordElement = document.select("div[class=zone-map js_content]").first();
-		    String coord = coordElement.attr("longitude") + "," + coordElement.attr("latitude");
-		    data.put("CName", CName);
-		    data.put("CLocation",CLocation);
-		    data.put("coord",coord);
-		    data.put("isGetMsg", "Y");
-		    data.put("createTime", DateTimeUtil.getNowAsString());
-		    datas.add(data);
-		} catch (Exception e) {
-		    CRAWLER_LOGGER.debug("文档解析出错!"+document.baseUri(),e);;
-		}
-		return datas;
-	    }
-	};
-	
-	CommonPageDataDBUpdate saver = new CommonPageDataDBUpdate("EntCommunity");
-	
 	Map<String, String> restrictions = new HashMap<String, String>();
 	
 	do{
@@ -97,8 +96,16 @@ public class LianJiaCommunityMsgCrawler extends ALianJiaCrawlerManager implement
 		}
 	    }
 	}while(hrefProvider.getIsContinueProvide());
-	
-	
+    }
+
+    @Override
+    public Boolean appendDataByHref(String href) {
+
+	Document document = getter.doGet(href);
+	List<Map<String, String>> datas = parser.doParse(document);
+	saver.doSave(datas);
+	return true;
+    
     }
 
 }

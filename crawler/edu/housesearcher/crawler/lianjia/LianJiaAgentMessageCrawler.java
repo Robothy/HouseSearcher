@@ -14,6 +14,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import com.sun.org.apache.bcel.internal.generic.F2D;
+
 import edu.housesearcher.crawler.entity.EntAgent;
 import edu.housesearcher.crawler.entity.EntCommunity;
 import edu.housesearcher.crawler.getter.AWebPageGetter;
@@ -68,7 +70,13 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		try{
 		    String aegntName = document.select("span[class=agentName]").first().text();//经纪人姓名
 		    String phoneNumber = document.select("span[class=tel]").first().text();//电话号码
-		    String cHref = document.select("div[class=majorProperty] a").first().attr("href");//小区
+		    
+		    
+		    String cHref = "";//小区,获取经纪人营业的小区链接，链接之间用逗号分隔，最多4个链接
+		    Elements communityHrefElements = document.select("div[class=majorProperty] a");
+		    for(int i=0; i<5&&i<communityHrefElements.size();i++){
+			 cHref+=(communityHrefElements.get(i).attr("href") + ",");
+		    }
 		    
 		    String praiseRate = "0";	//好评率
 		    Elements es =  document.select("p[class=subTitle]");//
@@ -78,7 +86,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		    Map<String,String> node = new HashMap<String,String>();
 		    node.put("agentName", aegntName);
 		    node.put("phoneNumber", phoneNumber);
-		    node.put("cHref", cHref);
+		    node.put("CHref", cHref);
 		    node.put("praiseRate", praiseRate);
 		    result.add(node);
 		}catch (Exception e) {

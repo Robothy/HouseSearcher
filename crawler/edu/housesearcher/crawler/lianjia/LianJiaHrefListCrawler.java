@@ -58,9 +58,6 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 	    }
 	};
     
-    @Override
-    public void run() {
-	
 	IWebPageGetter getter = new AWebPageGetter() {
 	    
 	    @Override
@@ -150,6 +147,9 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 	};
 	
 	IPageDataSaver saver = new CommonPageDataDBSave(EntHouse.class);
+    @Override
+    public void run() {
+	
 	
 	Integer invalidPagesCount = 0;
 	Integer emptyPagesCount = 0;
@@ -191,6 +191,16 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 	    
 	    save(saver);
 	}while(hrefProvider.getIsContinueProvide());
+    }
+
+    @Override
+    public Boolean appendDataByHref(String href) {
+
+	Document document = getter.doGet(href);
+	List<Map<String, String>> datas = parser.doParse(document);
+	saver.doSave(datas);
+	return true;
+    
     }
 
 }

@@ -18,7 +18,9 @@ public class EntCommunityDao {
 	Query query = session.createQuery(hql);
 	try{
 	    List resultSet = query.list();
-	    house = (EntCommunity)resultSet.get(0);
+	    if(resultSet.size()>0){
+		house = (EntCommunity)resultSet.get(0);
+	    }
 	    transaction.commit();
 	}catch(Exception e){
 	    e.printStackTrace();

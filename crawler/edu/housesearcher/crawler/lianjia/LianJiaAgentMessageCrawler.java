@@ -150,6 +150,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		}else {
 		    super.setDocument(document);
 		    datas = parse(parser);
+		    if(datas!=null)
 		    for(Map<String, String> map : datas) map.put("aHref", href);//把链接添加进去，才能更新。
 		}
 		

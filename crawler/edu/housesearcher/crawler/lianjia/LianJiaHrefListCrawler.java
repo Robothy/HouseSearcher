@@ -26,7 +26,6 @@ import edu.housesearcher.crawler.hrefprovider.AHrefProvider;
 import edu.housesearcher.crawler.parser.IWebPageParser;
 import edu.housesearcher.crawler.saver.CommonPageDataDBSave;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
-import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.crawler.utils.StatusValueUtil;
 @Component
 public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Serializable {

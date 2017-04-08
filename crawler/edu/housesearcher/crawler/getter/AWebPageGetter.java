@@ -1,6 +1,7 @@
 package edu.housesearcher.crawler.getter;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 import org.jsoup.Connection;
 import org.jsoup.Connection.Response;
@@ -8,7 +9,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 
-public abstract class AWebPageGetter implements IWebPageGetter {
+public abstract class AWebPageGetter implements IWebPageGetter,Serializable {
 
     @Override
     public Document doGet(String href) {

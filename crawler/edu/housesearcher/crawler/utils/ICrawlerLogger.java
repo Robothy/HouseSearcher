@@ -1,5 +1,7 @@
 package edu.housesearcher.crawler.utils;
 
+import java.io.Serializable;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -8,6 +10,6 @@ import org.apache.log4j.Logger;
  * @author robothy
  *
  */
-public interface ICrawlerLogger {
+public interface ICrawlerLogger extends Serializable {
     public static final Logger CRAWLER_LOGGER = LogManager.getLogger("crawlerLogger");
 }

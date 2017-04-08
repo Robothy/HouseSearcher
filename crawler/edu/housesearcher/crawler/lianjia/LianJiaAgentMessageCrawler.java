@@ -171,6 +171,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
     public Boolean appendDataByHref(String href) {
 	Document document = getter.doGet(href);
 	List<Map<String, String>> datas = parser.doParse(document);
+	datas.get(0).put("aHref", href);
 	saver.doSave(datas);
 	return true;
     }

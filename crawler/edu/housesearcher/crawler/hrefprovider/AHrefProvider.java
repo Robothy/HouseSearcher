@@ -1,5 +1,7 @@
 package edu.housesearcher.crawler.hrefprovider;
 
+import java.io.Serializable;
+
 /**
  * @抽象类 实现一次性获取多条href的方法。 
  * 
@@ -8,7 +10,7 @@ package edu.housesearcher.crawler.hrefprovider;
  * @author robothy
  *
  */
-public abstract class AHrefProvider implements IHrefProvider {
+public abstract class AHrefProvider implements IHrefProvider,Serializable {
 
     private static final long serialVersionUID = 1L;
     

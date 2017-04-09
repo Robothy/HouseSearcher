@@ -176,15 +176,16 @@ public class CommonPageDataDBSave implements IPageDataSaver {
 	 * 调用 hibernate 事务API，存储数据
 	 */
 	for(Object object : persistenceObjects){
+	    Session session = HibernateUtil.getSession();
 	    try{
-		Session session = HibernateUtil.getSession();
 		Transaction transaction = session.beginTransaction();
 		session.saveOrUpdate(object);
 		transaction.commit();
-		session.close();
 	    }catch(Exception e){			//这里的异常将很容易出现，大多数情况是由于 唯一性约束引起的
 		CRAWLER_LOGGER.debug("异常： " + e );	//为了保证程序的正常运行，因而将每一条数据的保存都当成一个事务
 		continue;				//这部分代码应该修改一下，以提高效率，不过目前没有想到好的办法
+	    }finally {
+		session.close();
 	    }
 	}
 	datas.clear();

@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <script type="text/javascript" async="" src="./dtl_files/analytics.js"></script>
@@ -13,7 +12,7 @@
       <meta name="format-detection" content="telephone=no">
       <link href="http://sh.lianjia.com/public/img/favicon.ico" type="image/x-icon" rel="icon">
       <link href="http://sh.lianjia.com/public/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
-      <title>详细信息</title>
+      <title>dtl</title>
       <meta name="keywords" content="两室户，钥匙房，生活很便利，空气清新海天公寓推荐租房房源,海天公寓优质租房">
       <meta name="description" content="两室户，钥匙房，生活很便利，空气清新 租房推荐，两室户，钥匙房，生活很便利，空气清新 用户值得关注的好房源，向上海租房用户推荐海天公寓优质租房房源。">
       <link rel="stylesheet" href="./dtl_files/common.css">
@@ -368,7 +367,6 @@
          <div class="title-wrapper">
             <div class="content">
                <div class="title">
-               	<br><br>
                   <h1 class="main" title="两室户，钥匙房，生活很便利，空气清新">两室户，钥匙房，生活很便利，空气清新</h1>
                </div>
                <div class="btnContainer">
@@ -1291,6 +1289,8 @@
                  },
                  
                  {
+                     
+                     
                      photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20170217/0f544bbe-2f70-4c79-959c-9373959ed5cf.jpg_200x150.jpg",
                      
                      price: "7800",
@@ -1363,8 +1363,135 @@
 	  <div style="height:30px"></div>
 	  
       <!--end: 登录弹层-->
-      
-      <!-- 右下角弹出窗 -->
+      <!--begin: footer--
+      <div id="footer-wrapper-placeholder">
+         <div class="footer js_footer">
+            <div class="wrapper">
+               <div class="f-title">
+                  <div class="fl">
+                     <ul>
+                        <li><a href="http://sh.lianjia.com/about/zhuanti.html" target="_blank">了解链家网</a></li>
+                        <li><a href="http://sh.lianjia.com/about/aboutlianjia.html" rel="nofollow" target="_blank">关于链家</a></li>
+                        <li><a href="http://sh.lianjia.com/about/contactus.html" rel="nofollow" target="_blank">联系我们</a></li>
+                        <li><a href="http://sh.lianjia.com/about/joinagent.html" rel="nofollow" target="_blank">加入我们</a></li>
+                        <li><a href="http://sh.lianjia.com/about/privacy.html" rel="nofollow" target="_blank">隐私声明</a></li>
+                        <li><a href="http://sh.lianjia.com/about/sitemap.html" target="_blank">网站地图</a></li>
+                        <li><a href="http://sh.lianjia.com/about/notice.html" target="_blank">友情链接</a></li>
+                        <li><a href="https://www.ehomepay.com.cn/" rel="nofollow" target="_blank">理房通</a></li>
+                        <li><a href="http://agent.sh.lianjia.com/" rel="nofollow">经纪人登录</a></li>
+                     </ul>
+                  </div>
+                  <div class="fr">服务热线 4007-001-001</div>
+               </div>
+               <div class="lianjia-link-box js_lianjiaLinkBox" style="overflow: hidden;">
+                  <div class="fl js_footerLinkContainer">
+                     <div class="tab js_footer_tab_wrapper"><span class="js_tabItem hover" related_content="js_footerContent_0">上海找房大推荐</span><span class="js_tabItem" related_content="js_footerContent_1">上海小区列表</span><span class="js_tabItem" related_content="js_footerContent_2">热门城市新房</span><span class="js_tabItem" related_content="js_footerContent_3">热门城市租房网</span><span class="js_tabItem" related_content="js_footerContent_4">合作与友情链接</span></div>
+                     <div class="link-list js_footer_content_wrapper">
+                        <div class="js_footerContent js_footerContent_0" style="display: block;">
+                           <dd><a target="_blank" href="http://m.sh.lianjia.com/ershoufang/">手机找上海二手房</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000009061.html">底特律财富天地</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000009660.html">新城金郡</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014575.html">同润菲诗艾伦</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012033.html">三湘四季花城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012332.html">上海康城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017872.html">世茂滨江花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015174.html">奥林匹克花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014141.html">中远两湾城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000013259.html">浦发绿城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000013546.html">绿洲康城亲水湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000016116.html">三盛颐景园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000016197.html">地杰国际城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000009586.html">开元地中海</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014093.html">九城湖滨国际</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014198.html">紫东新苑</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014745.html">莱顿小城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012581.html">保利西子湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012041.html">中环一号</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000013692.html">大华二村</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000004375.html">上海源花城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017860.html">仁恒滨江园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012349.html">浦东星河湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014189.html">馨佳园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015555.html">仁恒河滨花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015960.html">尚海湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017981.html">丽水华庭</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000018329.html">凯欣豪园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014068.html">华润置地橡树湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017211.html">财富海景花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015954.html">上海春城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000011257.html">上海星河湾</a></dd>
+                        </div>
+                        <div class="js_footerContent js_footerContent_1" style="display: none;">
+                           <dd><a target="_blank" href="http://sh.lianjia.com/ershoufang/jingan/">静安</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xuhui/">徐汇</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/huangpu/">黄浦</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/minhang/">闵行</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/changning/">长宁</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/putuo/">普陀</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/zhabei/">闸北</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/hongkou/">虹口</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/yangpu/">杨浦</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/baoshan/">宝山</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jinshan/">金山</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jiading/">嘉定</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/fengxian/">奉贤</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/songjiang/">松江</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/qingpu/">青浦</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/caojiadu/">曹家渡</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jiangninglu/">江宁路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jingansi/">静安寺</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/nanjingxilu/">南京西路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/huadongligong/">华东理工</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/hengshanlu/">衡山路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jianguoxilu/">建国西路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/longhua/">龙华</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/shanghainanzhan/">上海南站</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/wantiguan/">万体馆</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xujiahui/">徐家汇</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/penglaigongyuan/">蓬莱公园</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/renminguangchang/">人民广场</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xintiandi/">新天地</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xijiao/">西郊</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/zhongshangongyuan/">中山公园</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/kangqiao/">康桥</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/lujiazui/">陆家嘴</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/songbao/">淞宝</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/buyecheng/">不夜城</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/gumei/">古美</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/nanxiang/">南翔</a></dd>
+                        </div>
+                        <div class="js_footerContent js_footerContent_2" style="display: none;">
+                           <dd><a target="_blank" href="http://bj.fang.lianjia.com/">北京新房</a><a target="_blank" href="http://tj.fang.lianjia.com/">天津新房</a><a target="_blank" href="http://sh.fang.lianjia.com/">上海新房</a><a target="_blank" href="http://qd.fang.lianjia.com/">青岛新房</a><a target="_blank" href="http://dl.fang.lianjia.com/">大连新房</a><a target="_blank" href="http://nj.fang.lianjia.com/">南京新房</a><a target="_blank" href="http://hz.fang.lianjia.com/">杭州新房</a><a target="_blank" href="http://cd.fang.lianjia.com/">成都新房</a><a target="_blank" href="http://wh.fang.lianjia.com/">武汉新房</a><a target="_blank" href="http://sz.fang.lianjia.com/">深圳新房</a><a target="_blank" href="http://cq.fang.lianjia.com/">重庆新房</a><a target="_blank" href="http://cs.fang.lianjia.com/">长沙新房</a><a target="_blank" href="http://xa.fang.lianjia.com/">西安新房</a></dd>
+                        </div>
+                        <div class="js_footerContent js_footerContent_3" style="display: none;">
+                           <dd><a target="_blank" href="http://tj.lianjia.com/zufang/">天津租房</a><a target="_blank" href="http://hz.lianjia.com/zufang/">杭州租房</a><a target="_blank" href="http://cd.lianjia.com/zufang/">成都租房</a><a target="_blank" href="http://dl.lianjia.com/zufang/">大连租房</a><a target="_blank" href="http://qd.lianjia.com/zufang/">青岛租房</a><a target="_blank" href="http://xm.lianjia.com/zufang/">厦门租房</a><a target="_blank" href="http://sz.lianjia.com/zufang/">深圳租房</a><a target="_blank" href="http://wh.lianjia.com/zufang/">武汉租房</a><a target="_blank" href="http://cs.lianjia.com/zufang/">长沙租房</a><a target="_blank" href="http://cq.lianjia.com/zufang/">重庆租房</a><a target="_blank" href="http://jn.lianjia.com/zufang/">济南租房</a><a target="_blank" href="http://gz.lianjia.com/zufang/">广州租房</a></dd>
+                        </div>
+                        <div class="js_footerContent js_footerContent_4" style="display: none;">
+                           <dd><a target="_blank" href="http://www.lianjia.com/">房产网</a><a target="_blank" href="http://bj.lianjia.com/baike/">买房注意事项</a><a target="_blank" href="http://bj.lianjia.com/jingjiren/">北京房屋经纪人</a><a target="_blank" href="http://bj.lianjia.com/yezhu/">北京业主委托</a><a target="_blank" href="http://m.lianjia.com/">手机房产网</a><a target="_blank" href="http://gz.esf.focus.cn/">广州二手房</a><a target="_blank" href="http://sh.cityhouse.cn/">上海房产</a><a target="_blank" href="http://sh.zu.anjuke.com/">上海租房网</a><a target="_blank" href="http://sh.house.sina.com.cn/">上海房产</a><a target="_blank" href="http://home.fang.com/">家居网</a><a target="_blank" href="http://www.oppein.cn/">定制家具</a><a target="_blank" href="http://www.fuwo.com/">装修网</a><a target="_blank" href="http://sh.loupan.com/">上海楼盘网</a><a target="_blank" href="http://www.rexian.net.cn/">武汉热线房产网</a><a target="_blank" href="http://sh.jiwu.com/">上海买房网</a><a target="_blank" href="http://sh.to8to.com/">上海装修网</a><a target="_blank" href="http://sheji.pchouse.com.cn/">家居设计</a><a target="_blank" href="http://sh.focus.cn/">上海房产</a><a target="_blank" href="http://www.ljia.net/">邯郸房产</a><a target="_blank" href="http://jsgc168.com/">工程信息</a><a target="_blank" href="http://guju.com.cn/">家居装修</a><a target="_blank" href="http://www.0731fdc.com/">长沙房产网</a><a target="_blank" href="http://www.juwai.com/">海外房产</a></dd>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="fr">
+                     <div class="ewmWrap">
+                        <div class="js_downloadApp" source="dbewm" ewmimgw="129" ewmimgh="129" style="position: relative;">
+                           <canvas width="129" height="129"></canvas>
+                           <img class="js_qrCodeIcon" src="./dtl_files/qrCodeIcon_lj.png" style="position: absolute; top: 50%; left: 50%; margin-top: -24.5px; margin-left: -24.5px; width: 43px; height: 43px; border: 3px solid rgb(255, 255, 255); border-radius: 8px; background: rgb(255, 255, 255);">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="bottom">
+                  <div class="copyright fl">	                                            北京链家房地产经纪有限公司 | 网络经营许可证 京ICP备11024601号-12<br>© Copyright©2010-2017 链家网Lianjia.com版权所有	                                        </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--end: footer-->
+      <!--begin: fix-right--
+      <div id="side-bar-tools-placeholder">
+         <div class="fix-right-v2" id="back-top" daty-id="index">
+            <table>
+               <tbody>
+                  <tr>
+                     <td>
+                        <div class="sidebar-wrap">
+                           <ul id="ul_myfav">
+                              <li class="myfav">	                                    <a title="我关注的房源" href="javascript:;" id="link_myFav" gahref="right_link_myFav">我关注的房源</a>	                                    <span class="popup"><i></i>我关注的房源</span>	                                </li>
+                           </ul>
+                           <div class="sidebar-line" id="line_myfav"></div>
+                           <ul>
+                              <li class="sell">	                                    <a title="在线卖房" href="http://sh.lianjia.com/yezhu/" target="_blank" gahref="right_link_yezhu">在线卖房</a>	                                    <span class="popup"><i></i>在线卖房</span>	                                </li>
+                           </ul>
+                           <div class="sidebar-line"></div>
+                           <ul class="js_otherTools">
+                              <li class="download">
+                                 <a href="http://sh.lianjia.com/client?source=pccbl" title="" target="_blank" gahref="right_link_app"上海链家APP</a>	                                    
+                                 <span class="popup popup-qr">
+                                    <i></i>	                                        
+                                    <div class="js_qrcodeWrapper" source="cbewm" ewmimgw="80" ewmimgh="80" style="position: relative;">
+                                       <canvas width="80" height="80"></canvas>
+                                       <img class="js_qrCodeIcon" src="./dtl_files/qrCodeIcon_lj.png" style="position: absolute; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width: 26px; height: 26px; border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(255, 255, 255);">
+                                    </div>
+                                    <em class="qr-title">AP</em>	                                    
+                                 </span>
+                              </li>
+                              <li class="phone">	                                    <a title="客服热线">客服热线</a>	                                    <span class="popup"><i></i>客服热线 4007 001 001</span>	                                </li>
+                              <li class="feedback" id="feedback">	                                    <a title="意见反馈" gahref="right_open_feedback_pop">意见反馈</a>	                                    <span class="popup"><i></i>意见反馈</span>	                                </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+            <ul>
+               <li class="gotop" id="gotop" style="display: none;">	                                <a title="返回顶部" href="file:///C:/Users/robothy/Desktop/details.htm#top" gahref="right_back_to_top">返回顶部</a>	                                <span class="popup"><i></i>返回顶部</span>	                            </li>
+            </ul>
+            <div class="js_feedbackPlaceholder">
+               <div class="feedbackContainer">
+                  <div class="overlay_bg" id="feedbackOverlay"></div>
+                  <div class="feedback-box animated bounceIn">
+                     <div class="complain">
+                        <div id="feedback_content" class="js_tabBox">
+                           <p>您对新版链家网有任何意见和建议，或使用中遇到的问题，请在本页面反馈。我们会每天关注并不断优化产品，为您提供更好的服务！</p>
+                           <div class="box">	                                        <span>反馈内容<label id="erro-tips">请输入反馈内容</label></span>	                                        <textarea id="feedbackContent" placeholder="我们非常乐意收到您使用网站过程中的感受和意见" autofocus=""></textarea>	                                    </div>
+                           <div class="box">	                                        <span>联系方式<i>(选填)</i></span>	                                        <input type="text" id="feedbackContact" placeholder="手机号、Email、QQ均可">	                                    </div>
+                           <div class="clear"></div>
+                           <div class="fl">	                                        <button id="btn_feedbackSubmit" gahref="feedback_pop_submit">提交反馈</button>	                                        <span id="tips"></span>	                                    </div>
+                           <div class="fr has"></div>
+                        </div>
+                        <div id="feedback_tousu" class="js_tabBox tab-box appeal" style="display: none">
+                           <div class="tel">	                                        <i></i>投诉热线/4007001001	                                    </div>
+                           <b>处理流程</b>	                                    
+                           <p>您可以通过链家网投诉热线提交投诉，我们会在24小时内（工作时间）反馈解决方案。</p>
+                           <div id="tousu">
+                              <b>投诉公示（<a href="http://sh.lianjia.com/tousu" target="_blank">点此查看公示页面</a>）</b>	                                        
+                              <ul id="list"></ul>
+                              <p>如果你愿意公开您的投诉，我们会在投诉公示页面进行展示，欢迎您的监督。</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="feedback_success">	                                反馈成功，感谢您的反馈。	                            </div>
+                     <div class="closebok" id="feedbackPopClose" gahref="right_close_feedback_pop">	                                <img src="./dtl_files/close.png">	                            </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--end: fix-right-->
+      <!-- 微聊 -->
       <div id="ng-app" ng-app="weiliaoApp" style="position: absolute;" class="ng-scope">
           
          <div weiliao-win="">
@@ -1389,7 +1516,7 @@
          </div>
           
       </div>
-      <!-- 右下角弹出窗  end-->
+      <!-- 微聊  end-->
       <script src="./dtl_files/loginpoplayer.js"></script>
       <script src="./dtl_files/jquery.lazyload.min.js"></script>
       <script src="./dtl_files/passport.js"></script>
@@ -1406,6 +1533,7 @@
       <script src="./dtl_files/zufang_detail.js"></script>
       <script src="./dtl_files/around.js"></script>
    </body>
-
-
 </html>
+
+
+

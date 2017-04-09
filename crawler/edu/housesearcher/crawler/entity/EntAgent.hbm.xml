@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-4-1 11:33:22 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2017-4-9 11:08:43 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="edu.housesearcher.crawler.entity.EntAgent" table="ent_agent" catalog="housesearcher">
         <id name="dataId" type="java.lang.Integer">
@@ -18,10 +18,13 @@
             <column name="phone" length="20" />
         </property>
         <property name="CHref" type="string">
-            <column name="c_href" length="100" />
+            <column name="c_href" length="250" />
         </property>
         <property name="praiseRate" type="string">
             <column name="praise_rate" precision="22" scale="0" />
+        </property>
+        <property name="agentImg" type="string">
+            <column name="agent_img" length="50" />
         </property>
         <property name="isGetMsg" type="string">
             <column name="is_get_msg" length="1" />

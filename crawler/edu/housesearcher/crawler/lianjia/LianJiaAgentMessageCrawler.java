@@ -73,6 +73,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		    cHref+=(communityHrefElements.get(i).attr("href") + ",");
 		}
 		
+		String agentImg = document.select("div[class=clear userinfo] img").attr("src");//经纪人图片
 		
 		String praiseRate = "0";	//好评率
 		Elements es =  document.select("p[class=subTitle]");//
@@ -83,6 +84,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		node.put("agentName", aegntName);
 		node.put("phoneNumber", phoneNumber);
 		node.put("CHref", cHref);
+		node.put("agentImg", agentImg);
 		node.put("praiseRate", praiseRate);
 								 
 		result.add(node);
@@ -109,7 +111,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			+ "praiseRate = :praiseRate,"
 			+ "CHref = :CHref,"
 			+ "createTime = :createTime,"
-						   
+			+ "agentImg = :agentImg,"			   
 			+ "isGetMsg = 'Y' "
 			+ "where AHref = :AHref";
 		int updateEntities = session.createQuery(hqlUpdate)
@@ -118,7 +120,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			.setString("praiseRate", data.get("praiseRate"))
 			.setString("CHref", data.get("CHref"))
 			.setString("AHref", data.get("aHref"))
-											   
+			.setString("agentImg", data.get("agentImg"))								   
 			.setString("createTime", DateTimeUtil.getNowAsString())
 			.executeUpdate();
 		CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");

@@ -84,6 +84,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		node.put("phoneNumber", phoneNumber);
 		node.put("CHref", cHref);
 		node.put("praiseRate", praiseRate);
+								 
 		result.add(node);
 	    }catch (Exception e) {
 		CRAWLER_LOGGER.error("未能解析页面！ " + document.baseUri() );
@@ -108,6 +109,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			+ "praiseRate = :praiseRate,"
 			+ "CHref = :CHref,"
 			+ "createTime = :createTime,"
+						   
 			+ "isGetMsg = 'Y' "
 			+ "where AHref = :AHref";
 		int updateEntities = session.createQuery(hqlUpdate)
@@ -116,6 +118,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			.setString("praiseRate", data.get("praiseRate"))
 			.setString("CHref", data.get("CHref"))
 			.setString("AHref", data.get("aHref"))
+											   
 			.setString("createTime", DateTimeUtil.getNowAsString())
 			.executeUpdate();
 		CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");

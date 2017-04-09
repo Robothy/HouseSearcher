@@ -14,6 +14,39 @@ public class HouseDetails {
     String agentImg;
     String longitude;
     String latitude;
+    String agentName;
+    String praiseRate;
+    String agentPhone;
+    String houseHref;
+    
+    public String getHouseHref() {
+        return houseHref;
+    }
+    public HouseDetails setHouseHref(String houseHref) {
+        this.houseHref = houseHref;
+        return this;
+    }
+    public String getAgentName() {
+        return agentName;
+    }
+    public HouseDetails setAgentName(String agentName) {
+        this.agentName = agentName;
+        return this;
+    }
+    public String getPraiseRate() {
+        return praiseRate;
+    }
+    public HouseDetails setPraiseRate(String praiseRate) {
+        this.praiseRate = praiseRate;
+        return this;
+    }
+    public String getAgentPhone() {
+        return agentPhone;
+    }
+    public HouseDetails setAgentPhone(String agentPhone) {
+        this.agentPhone = agentPhone;
+        return this;
+    }
     public List<String[]> getImages() {
         return images;
     }

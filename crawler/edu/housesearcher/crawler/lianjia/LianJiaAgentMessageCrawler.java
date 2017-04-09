@@ -66,8 +66,14 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 	    try{
 		String aegntName = document.select("span[class=agentName]").first().text();//经纪人姓名
 		String phoneNumber = document.select("span[class=tel]").first().text();//电话号码
-		String cHref = document.select("div[class=majorProperty] a").first().attr("href");//小区
-		String agentImg = document.select("div[class=clear userinfo] img").attr("src");//经纪人图片
+		
+		String cHref = "";//小区,获取经纪人营业的小区链接，链接之间用逗号分隔，最多4个链接
+		Elements communityHrefElements = document.select("div[class=majorProperty] a");
+		for(int i=0; i<5&&i<communityHrefElements.size();i++){
+		    cHref+=(communityHrefElements.get(i).attr("href") + ",");
+		}
+		
+		
 		String praiseRate = "0";	//好评率
 		Elements es =  document.select("p[class=subTitle]");//
 		for (Element e : es){
@@ -76,9 +82,9 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		Map<String,String> node = new HashMap<String,String>();
 		node.put("agentName", aegntName);
 		node.put("phoneNumber", phoneNumber);
-		node.put("cHref", cHref);
+		node.put("CHref", cHref);
 		node.put("praiseRate", praiseRate);
-		node.put("agentImg", agentImg);
+								 
 		result.add(node);
 	    }catch (Exception e) {
 		CRAWLER_LOGGER.error("未能解析页面！ " + document.baseUri() );
@@ -103,7 +109,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			+ "praiseRate = :praiseRate,"
 			+ "CHref = :CHref,"
 			+ "createTime = :createTime,"
-			+ "agentImg = :agentImg"
+						   
 			+ "isGetMsg = 'Y' "
 			+ "where AHref = :AHref";
 		int updateEntities = session.createQuery(hqlUpdate)
@@ -112,7 +118,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			.setString("praiseRate", data.get("praiseRate"))
 			.setString("CHref", data.get("CHref"))
 			.setString("AHref", data.get("aHref"))
-			.setString("agentImg", data.get("agentImg"))
+											   
 			.setString("createTime", DateTimeUtil.getNowAsString())
 			.executeUpdate();
 		CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");
@@ -168,6 +174,7 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
     public Boolean appendDataByHref(String href) {
 	Document document = getter.doGet(href);
 	List<Map<String, String>> datas = parser.doParse(document);
+	datas.get(0).put("aHref", href);
 	saver.doSave(datas);
 	return true;
     }

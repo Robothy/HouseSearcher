@@ -123,158 +123,22 @@
       <div class="lj_searchs">
          <div class="wrapper clear">
             <a href="file:///C:/" class="lj_logo fl"></a>
-            <div class="label fl">租房</div>
+            <!-- <div class="label fl">租房</div> -->
             <div class="search-txt fr">
                <form id="formSearch" class="clear" action="file:///C:/zufang/rs" actdata="zufang" method="post">
                   <div class="search-tab">
                      <i class="icon"></i>
                      <div class="check" id="channelChked" formact="/zufang/rs" actdata="zufang" gahref="search_channel">租房</div>
-                     <ul class="tabs" style="display: none;">
-                        <!--<li><label formact="/ershoufang/rs" tips="请输入区域、板块或小区名开始找房" actdata="ershoufang">二手房</label></li>-->
+                     <!-- <ul class="tabs" style="display: none;">
+                        <li><label formact="/ershoufang/rs" tips="请输入区域、板块或小区名开始找房" actdata="ershoufang">二手房</label></li>
                         <li><label formact="http://sh.fang.lianjia.com/loupan/search" tra="_blank" tips="请输入区域、板块或楼盘名开始找房" actdata="xinfang">新房</label></li>
                         <li><label formact="/zufang/rs" tra="_blank" tips="请输入区域、板块或小区名开始找房" actdata="zufang">租房</label></li>
                         <li><label formact="/xiaoqu/rs" tra="_blank" tips="请输入小区名" actdata="xiaoqu">小区</label></li>
-                     </ul>
+                     </ul> -->
                      <div class="txt-serach">
                         <a href="javascript:;" class="saveSearchTotal" id="saveSearchTotal"><span></span>条已保存搜索</a>
                         <input value="" pagetype="zufang" class="left txt autoSuggest" name="keyword" autocomplete="off" placeholder="请输入区域、板块或小区名开始找房" id="keyword-box" popdiv="suggestion" maxlength="20" gahref="search_keyword_box">
-                        <div class="hot-sug" id="hot-sug" style="display: none;">
-                           <ul id="ershoufang">
-                              <div class="js_hotList js_history">
-                                 <li class="hot-name">搜索历史
-                                    <a href="javascript:;" class="del js_delHisSuggest">清空搜索记录</a>
-                                 </li>
-                                 <div class="list">
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_hot">
-                                 <li class="hot-name">热门搜索</li>
-                                 <div class="list">
-                                    <li><a href="file:///C:/ershoufang/rs%E4%B8%8A%E6%B5%B7%E5%BA%B7%E5%9F%8E" gahref="search_hot_ershoufang_click_order_1">上海康城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E6%85%A7%E8%8A%9D%E6%B9%96%E8%8A%B1%E5%9B%AD" gahref="search_hot_ershoufang_click_order_2">慧芝湖花园</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%8A%B1%E5%9B%AD" gahref="search_hot_ershoufang_click_order_3">奥林匹克花园</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E" gahref="search_hot_ershoufang_click_order_4">中远两湾城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E4%B8%9C%E6%96%B9%E6%9B%BC%E5%93%88%E9%A1%BF" gahref="search_hot_ershoufang_click_order_5">东方曼哈顿</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E6%96%B0%E6%B9%96%E6%98%8E%E7%8F%A0%E5%9F%8E" gahref="search_hot_ershoufang_click_order_6">新湖明珠城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E7%BB%8F%E7%BA%AC%E5%9F%8E%E5%B8%82%E7%BB%BF%E6%B4%B2" gahref="search_hot_ershoufang_click_order_7">经纬城市绿洲</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/ershoufang/rs%E4%BF%9D%E5%88%A9%E8%A5%BF%E5%AD%90%E6%B9%BE" gahref="search_hot_ershoufang_click_order_8">保利西子湾</a></li>
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_saveSearch" style="display:block">
-                                 <!--已保存搜索，模板生成-->
-                              </div>
-                           </ul>
-                           <ul id="xinfang">
-                              <div class="js_hotList js_history">
-                                 <li class="hot-name">搜索历史
-                                    <a href="javascript:;" class="del">清空搜索记录</a>
-                                 </li>
-                                 <div class="list">
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_hot">
-                                 <li class="hot-name">热门搜索</li>
-                                 <div class="list">
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%BB%BF%E5%9C%B0%E9%95%BF%E5%B2%9B?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_1">热门搜索</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%81%92%E5%A4%A7%E6%B5%B7%E4%B8%8A%E5%A8%81%E5%B0%BC%E6%96%AF?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_2">热门搜索</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%A2%A7%E6%A1%82%E5%9B%AD%E4%B8%96%E7%BA%AA%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_3">热门搜索碧桂园世纪城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%AD%E6%A2%81%E7%A7%80%E6%B9%96%E5%A3%B9%E5%8F%B7%E9%99%A2?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_4">热门搜索中梁秀湖壹号院</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%99%BA%E6%85%A7%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_5">热门搜索智慧城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BC%9F%E9%B9%8F%E9%87%91%E9%83%A1?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_6">热门搜索伟鹏金郡</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%80%9B%E6%B5%B7%E8%8A%B1%E5%A2%85?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_7">热门搜索瀛海花墅</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BD%B3%E5%85%86%E4%B8%9A%E5%9F%8E%E5%B8%82%E5%B9%BF%E5%9C%BA?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_8">热门搜索佳兆业城市广场</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%8A%E6%B5%B7%E9%99%A2%E5%AD%90?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_9">上热门搜索海院子</a></li>
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_saveSearch" style="display:block">
-                                 <!--已保存搜索，模板生成-->
-                              </div>
-                           </ul>
-                           <ul id="zufang">
-                              <div class="js_hotList js_history">
-                                 <li class="hot-name">搜索历史
-                                    <a href="javascript:;" class="del">清空搜索记录</a>
-                                 </li>
-                                 <div class="list">
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_hot">
-                                 <li class="hot-name">热门搜索</li>
-                                 <div class="list">
-                                    <li><a href="file:///C:/zufang/rs%E9%9D%99%E5%AE%89%E6%96%B0%E5%9F%8E" gahref="search_hot_zufang_click_order_1">静安新城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E5%A4%A7%E5%8D%8E%E9%94%A6%E7%BB%A3%E5%8D%8E%E5%9F%8E" gahref="search_hot_zufang_click_order_2">大华锦绣华城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E" gahref="search_hot_zufang_click_order_3">中远两湾城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E7%91%9E%E8%99%B9%E6%96%B0%E5%9F%8E" gahref="search_hot_zufang_click_order_4">瑞虹新城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E9%98%B3%E5%85%89%E5%A8%81%E5%B0%BC%E6%96%AF" gahref="search_hot_zufang_click_order_5">阳光威尼斯</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA" gahref="search_hot_zufang_click_order_6">万达广场</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E4%B8%8A%E6%B5%B7%E5%BA%B7%E5%9F%8E" gahref="search_hot_zufang_click_order_7">上海康城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E9%A6%A8%E4%BD%B3%E5%9B%AD" gahref="search_hot_zufang_click_order_8">馨佳园</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E4%B9%9D%E6%AD%8C%E4%B8%8A%E9%83%A1" gahref="search_hot_zufang_click_order_9">九歌上郡</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/zufang/rs%E5%9C%B0%E6%9D%B0%E5%9B%BD%E9%99%85%E5%9F%8E" gahref="search_hot_zufang_click_order_10">地杰国际城</a></li>
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_saveSearch" style="display:block">
-                                 <!--已保存搜索，模板生成-->
-                              </div>
-                           </ul>
-                           <ul id="xiaoqu">
-                              <div class="js_hotList js_history">
-                                 <li class="hot-name">搜索历史
-                                    <a href="javascript:;" class="del">清空搜索记录</a>
-                                 </li>
-                                 <div class="list">
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_hot">
-                                 <li class="hot-name">热门搜索</li>
-                                 <div class="list">
-                                    <li><a href="file:///C:/xiaoqu/rs%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E" gahref="search_hot_xiaoqu_click_order_1">中远两湾城</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%8A%B1%E5%9B%AD" gahref="search_hot_xiaoqu_click_order_2">奥林匹克花园</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E4%B8%96%E8%8C%82%E6%BB%A8%E6%B1%9F%E8%8A%B1%E5%9B%AD" gahref="search_hot_xiaoqu_click_order_3">世茂滨江花园</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E4%BF%9D%E5%88%A9%E8%A5%BF%E5%AD%90%E6%B9%BE" gahref="search_hot_xiaoqu_click_order_4">保利西子湾</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E6%96%B0%E9%AB%98%E8%8B%91" gahref="search_hot_xiaoqu_click_order_5">新高苑</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E4%B9%9D%E5%9F%8E%E6%B9%96%E6%BB%A8%E5%9B%BD%E9%99%85" gahref="search_hot_xiaoqu_click_order_6">九城湖滨国际</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E5%90%8C%E6%B6%A6%E8%8F%B2%E8%AF%97%E8%89%BE%E4%BC%A6" gahref="search_hot_xiaoqu_click_order_7">同润菲诗艾伦</a></li>
-                                    <li class="line"></li>
-                                    <li><a href="file:///C:/xiaoqu/rs%E4%BB%81%E6%81%92%E6%BB%A8%E6%B1%9F%E5%9B%AD" gahref="search_hot_xiaoqu_click_order_8">仁恒滨江园</a></li>
-                                 </div>
-                              </div>
-                              <div class="js_hotList js_saveSearch" style="display:block">
-                                 <!--已保存搜索，模板生成-->
-                              </div>
-                           </ul>
-                           <ul style="border:0;"></ul>
-                        </div>
+                        
                         <div id="suggest-cont" class="suggest-wrap" style="width:628px; display:none">
                            <ul style="width: 100%; display: none;" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="suggestion">
                            </ul>
@@ -346,22 +210,7 @@
           }*/
       </script>
       <!--begin: searchs Top -->
-      <!--begin: 面包屑
-         <div class="intro clear">
-                   <div class="container">
-                       <div class="fl l-txt">
-                           <i class="icon"></i>&nbsp;
-                           <a href="file:///C:/">链家网上海站</a><span class="stp">&nbsp;&gt;&nbsp;</span>
-                           <a href="file:///C:/zufang/">上海租房</a><span class="stp">&nbsp;&gt;&nbsp;</span>
-                           <a href="file:///C:/zufang/xuhui/">徐汇租房</a><span class="stp">&nbsp;&gt;&nbsp;</span>
-                           <a href="file:///C:/zufang/xujiahui/">徐家汇租房</a><span class="stp">&nbsp;&gt;&nbsp;</span>
-                          <a href="file:///C:/zufang/q5011000015263">海天公寓小区租房</a><span class="stp">&nbsp;&gt;&nbsp;</span>
-                           <span>当前房源</span>
-                       </div>
-                       <div class="fr r-txt"></div>
-                   </div>
-               </div>	
-         --end: 面包屑-->
+      
       <!--begin:正文-->
       <!--begin: 房源概况-->
       <div class="zf-top">

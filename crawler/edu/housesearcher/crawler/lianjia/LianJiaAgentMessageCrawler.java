@@ -24,6 +24,7 @@ import edu.housesearcher.crawler.parser.IWebPageParser;
 import edu.housesearcher.crawler.saver.IPageDataSaver;
 import edu.housesearcher.crawler.utils.DateTimeUtil;
 import edu.housesearcher.crawler.utils.HibernateUtil;
+import sun.java2d.pipe.AATileGenerator;
 
 public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager implements Serializable {
 
@@ -124,6 +125,20 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 			.setString("createTime", DateTimeUtil.getNowAsString())
 			.executeUpdate();
 		CRAWLER_LOGGER.info("更新了" + updateEntities + "条数据！");
+		
+		//表示数据不存在，需要插入
+		if(updateEntities==0){
+		    EntAgent agt = new EntAgent();
+		    agt.setAgentImg(data.get("agentImg"));
+		    agt.setAHref(data.get("aHref"));
+		    agt.setCHref(data.get("CHref"));
+		    agt.setCreateTime(DateTimeUtil.getNowAsString());
+		    agt.setIsGetMsg("Y");
+		    agt.setName(data.get("agentName"));
+		    agt.setPhone(data.get("phoneNumber"));
+		    agt.setPraiseRate(data.get("praiseRate"));
+		}
+		
 		if(updateEntities>1){
 		    CRAWLER_LOGGER.warn("警告： 更新了 " + updateEntities + " 条数据！");
 		}

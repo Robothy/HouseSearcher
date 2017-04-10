@@ -28,7 +28,6 @@ public class LianJiaTest {
 	System.exit(0);
     }
     
-    @Test
     public void TestLianJiaHrefListCrawler(){
 	ThreadController controller = new ThreadController(new LianJiaHrefListCrawler(), 5);
 	controller.runThreads();
@@ -36,6 +35,7 @@ public class LianJiaTest {
 	System.exit(0);
     }
     
+    @Test
     public void TestLianJiaAgentMessageCrawler(){
 	ThreadController controller = new ThreadController(new LianJiaAgentMessageCrawler(), 5);
 	controller.runThreads();

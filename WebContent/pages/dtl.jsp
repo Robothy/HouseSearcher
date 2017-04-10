@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
    <head>
@@ -181,23 +182,23 @@
                               <div class="js_hotList js_hot">
                                  <li class="hot-name">热门搜索</li>
                                  <div class="list">
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%BB%BF%E5%9C%B0%E9%95%BF%E5%B2%9B?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_1">绿地长岛</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%BB%BF%E5%9C%B0%E9%95%BF%E5%B2%9B?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_1">热门搜索</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%81%92%E5%A4%A7%E6%B5%B7%E4%B8%8A%E5%A8%81%E5%B0%BC%E6%96%AF?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_2">恒大海上威尼斯</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%81%92%E5%A4%A7%E6%B5%B7%E4%B8%8A%E5%A8%81%E5%B0%BC%E6%96%AF?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_2">热门搜索</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%A2%A7%E6%A1%82%E5%9B%AD%E4%B8%96%E7%BA%AA%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_3">碧桂园世纪城</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%A2%A7%E6%A1%82%E5%9B%AD%E4%B8%96%E7%BA%AA%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_3">热门搜索碧桂园世纪城</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%AD%E6%A2%81%E7%A7%80%E6%B9%96%E5%A3%B9%E5%8F%B7%E9%99%A2?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_4">中梁秀湖壹号院</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%AD%E6%A2%81%E7%A7%80%E6%B9%96%E5%A3%B9%E5%8F%B7%E9%99%A2?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_4">热门搜索中梁秀湖壹号院</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%99%BA%E6%85%A7%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_5">智慧城</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%99%BA%E6%85%A7%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_5">热门搜索智慧城</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BC%9F%E9%B9%8F%E9%87%91%E9%83%A1?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_6">伟鹏金郡</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BC%9F%E9%B9%8F%E9%87%91%E9%83%A1?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_6">热门搜索伟鹏金郡</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%80%9B%E6%B5%B7%E8%8A%B1%E5%A2%85?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_7">瀛海花墅</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%80%9B%E6%B5%B7%E8%8A%B1%E5%A2%85?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_7">热门搜索瀛海花墅</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BD%B3%E5%85%86%E4%B8%9A%E5%9F%8E%E5%B8%82%E5%B9%BF%E5%9C%BA?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_8">佳兆业城市广场</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BD%B3%E5%85%86%E4%B8%9A%E5%9F%8E%E5%B8%82%E5%B9%BF%E5%9C%BA?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_8">热门搜索佳兆业城市广场</a></li>
                                     <li class="line"></li>
-                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%8A%E6%B5%B7%E9%99%A2%E5%AD%90?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_9">上海院子</a></li>
+                                    <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%8A%E6%B5%B7%E9%99%A2%E5%AD%90?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_9">上热门搜索海院子</a></li>
                                  </div>
                               </div>
                               <div class="js_hotList js_saveSearch" style="display:block">
@@ -366,12 +367,15 @@
       <div class="zf-top">
          <div class="title-wrapper">
             <div class="content">
+            <br/><br/>
                <div class="title">
                   <h1 class="main" title="两室户，钥匙房，生活很便利，空气清新">两室户，钥匙房，生活很便利，空气清新</h1>
                </div>
                <div class="btnContainer">
                   <!--非已下架、非已失效时显示-->
-                  <button id="notice_focus" class="notice-focus fr notice" houserentid="3789248" gahref="zufang_subscribe">关注此房</button>
+                  <form action="?houseHref=#houseDetails.houseHref">
+                  <button id="notice_focus" class="notice-focus fr notice" houserentid="3789248" gahref="zufang_subscribe">收藏此房</button>
+                  </form>
                </div>
             </div>
          </div>
@@ -395,42 +399,11 @@
                      </a>
                      <div class="album-view-wrap" id="album-view-wrap">
                         <ul>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/0d276395-a616-42c3-b96f-45deaf65dd29.jpg_600x450.jpg" img-title="主卧" src="./dtl_files/0d276395-a616-42c3-b96f-45deaf65dd29.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/7e8b3036-599f-4daa-9fcc-99793b193be9.jpg_600x450.jpg" img-title="主卧" src="./dtl_files/7e8b3036-599f-4daa-9fcc-99793b193be9.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/b777dc41-f553-4043-bd08-496e43778f2b.jpg_600x450.jpg" img-title="次卧" src="./dtl_files/b777dc41-f553-4043-bd08-496e43778f2b.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20170314/96fdccb3-34fd-4272-95f8-5e9fdcd5b7cf.jpg_600x450.jpg" img-title="户型图" src="./dtl_files/96fdccb3-34fd-4272-95f8-5e9fdcd5b7cf.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/45684282-cc53-44f0-b12e-a03965ed5eef.jpg_600x450.jpg" img-title="次卧" src="./dtl_files/45684282-cc53-44f0-b12e-a03965ed5eef.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/cc47939a-8470-46a2-88b9-282b4620fbe4.jpg_600x450.jpg" img-title="厨房" src="./dtl_files/cc47939a-8470-46a2-88b9-282b4620fbe4.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/7802420d-cd7b-4143-9ffc-2a2e569e6f59.jpg_600x450.jpg" img-title="厨房" src="./dtl_files/7802420d-cd7b-4143-9ffc-2a2e569e6f59.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/83a70542-baf2-401c-8e41-eb167c35382d.jpg_600x450.jpg" img-title="主卫" src="./dtl_files/83a70542-baf2-401c-8e41-eb167c35382d.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/a336910f-be0f-41e3-9b35-72129260a89a.jpg_600x450.jpg" img-title="主卫" src="./dtl_files/a336910f-be0f-41e3-9b35-72129260a89a.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/ba831510-1055-4e5a-9aa0-bdbc963b2cf4.jpg_600x450.jpg" img-title="由主卧" src="./dtl_files/ba831510-1055-4e5a-9aa0-bdbc963b2cf4.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/6c3afc14-c396-4084-960c-6a917a35a1c9.jpg_600x450.jpg" img-title="由次卧" src="./dtl_files/6c3afc14-c396-4084-960c-6a917a35a1c9.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/7f42d5b5-dacc-4c32-a83d-77c33e6b4189.jpg_600x450.jpg" img-title="其他" src="./dtl_files/7f42d5b5-dacc-4c32-a83d-77c33e6b4189.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
+                        	<s:iterator var="img" value="#request.houseDetails.images">
+                        		<li>
+                        		<img data-large="${img[0] }" src="${img[1] }" img-title="${img[2] }" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
+                        		</li>
+                        	</s:iterator>
                         </ul>
                      </div>
                      <a href="javascript:;" class="ctrl-btn ctrl-btn-next" id="ctrl-btn-next">
@@ -447,62 +420,33 @@
                      <div class="mainInfo bold" style="font-size:28px;">6800<span class="unit">元/月</span></div>
                   </div>
                   <div class="room">
-                     <div class="mainInfo">2<span class="unit">室</span> 0<span class="unit">厅</span></div>
+                     <div class="mainInfo">${houseDetails["room"] }<span class="unit">室</span> ${houseDetails["hall"] }<span class="unit">厅</span></div>
                   </div>
                   <div class="area">
-                     <div class="mainInfo">52<span class="unit">平</span></div>
+                     <div class="mainInfo">${houseDetails["area"] }<span class="unit">平</span></div>
                   </div>
                </div>
                <table class="aroundInfo">
-                  <tbody>
-                     <tr>
-                        <td class="title" nowrap="">楼层：</td>
-                        <td width="50%">中区/18层</td>
-                        <td class="title" nowrap="">朝向：</td>
-                        <td width="50%">
-                           朝东
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="title" nowrap="">区域：</td>
-                        <td width="50%">徐汇 徐家汇</td>
-                        <td class="title" nowrap="">上架：</td>
-                        <td width="50%">2017.02.22</td>
-                     </tr>
-                     <tr>
-                        <td class="title" nowrap="">小区：</td>
-                        <td colspan="3">
-                           <p class="addrEllipsis" title="海天公寓">
-                              <a href="file:///C:/xiaoqu/5011000015263.html">海天公寓</a>
-                           </p>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="title">地址：</td>
-                        <td colspan="3">
-                           <p class="addrEllipsis" title="天钥桥路180弄1-2号">
-                              天钥桥路180弄1-2号
-                           </p>
-                        </td>
-                     </tr>
-                  </tbody>
+               <!-- 这里实际上是html -->
+               ${houseDetails["level"] }
+                  
+                  
                </table>
                <!--非已下架、非已失效时显示-->
                <div class="brokerInfo">
-                  <a href="http://sh.lianjia.com/jingjiren/detail/203598.html?phone=4007675011,598137" target="_blank">
-                  <img class="lj-lazy" src="./dtl_files/203598_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;" data-original="http://cdn1.dooioo.com/fetch/vp/touxiang/photos/203598_150x200.jpg" style="display: inline;">
+                  <a href="#houseDetails.agentHref" target="_blank">
+                  <img class="lj-lazy" src="#houseDetails.agentImg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;" data-original="#houseDetails.agentImg" style="display: inline;">
                   </a>
                   <div class="brokerInfoText">
                      <div class="brokerName">
-                        <a href="http://sh.lianjia.com/jingjiren/detail/203598.html?phone=4007675011,598137" class="name" target="_blank">王贝贝</a>
+                        <a href="http://sh.lianjia.com/jingjiren/detail/203598.html?phone=4007675011,598137" class="name" target="_blank">${houseDetails["agentName"] }</a>
                         <span class="tag first"></span>
                         <a class="lianjiaim-createtalkAll" usercode="203598" style="display: none;" title="在线咨询" data-role="lianjiaim-createtalk" data-ucid="1000000020105479" source="rentHouse"></a>
                      </div>
                      <div class="evaluate">
-                        好评率<span class="evaluate rate">96%</span>
+                        好评率<span class="evaluate rate">${houseDetails["praiseRate"] }%</span>
                      </div>
-                     <div class="phone">4007675011
-                        <span>转</span>598137
+                     <div class="phone">${houseDetails["agentPhone"] }
                      </div>
                   </div>
                </div>
@@ -1420,6 +1364,23 @@
          </div>
       </div>
       <!--end: footer-->
+      
+      
+      <div id="show-compare" style="position:fixed; top:40%; right:0px; min-width:25px; visibility:visible;">
+   <div style="background-color:#a0a0a0; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&lt;<br/>展<br/>开</div>
+   </span>
+   <div style="background-color:#e4e3e3; text-align:center; padding-top:5px; padding-bottom:5px;"><span>住<br/>房<br/>对<br/>比</span></div>
+</div>
+<div id="compare-houses" style="position:fixed; top:40%; right:0px; min-width:250px; min-height:250px;  visibility:hidden;">
+   <div id="hide-compare-houses" style="background-color:#a0a0a0; width:100%; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&gt;隐藏</span></div>
+   </span>
+   <div style="background-color:#e4e3e3; width:100%; text-align:center; padding-top:5px; padding-bottom:5px;">
+		<a style="display:inline-block; background-color:red; width:80px; padding: 5px 5px 5px 5px; color:#FFFFFF;" href="javascript:void()" >开始对比</a>&nbsp;&nbsp;&nbsp;
+		<a style="display:inline-block; background-color:gray; width:80px; padding: 5px 5px 5px 5px; color:#000000;" href="javascript:void()">清空</a>
+   </div>
+</div>
+      
+      
       <!--begin: fix-right--
       <div id="side-bar-tools-placeholder">
          <div class="fix-right-v2" id="back-top" daty-id="index">
@@ -1427,31 +1388,11 @@
                <tbody>
                   <tr>
                      <td>
-                        <div class="sidebar-wrap">
-                           <ul id="ul_myfav">
-                              <li class="myfav">	                                    <a title="我关注的房源" href="javascript:;" id="link_myFav" gahref="right_link_myFav">我关注的房源</a>	                                    <span class="popup"><i></i>我关注的房源</span>	                                </li>
-                           </ul>
-                           <div class="sidebar-line" id="line_myfav"></div>
-                           <ul>
-                              <li class="sell">	                                    <a title="在线卖房" href="http://sh.lianjia.com/yezhu/" target="_blank" gahref="right_link_yezhu">在线卖房</a>	                                    <span class="popup"><i></i>在线卖房</span>	                                </li>
-                           </ul>
-                           <div class="sidebar-line"></div>
-                           <ul class="js_otherTools">
-                              <li class="download">
-                                 <a href="http://sh.lianjia.com/client?source=pccbl" title="" target="_blank" gahref="right_link_app"上海链家APP</a>	                                    
-                                 <span class="popup popup-qr">
-                                    <i></i>	                                        
-                                    <div class="js_qrcodeWrapper" source="cbewm" ewmimgw="80" ewmimgh="80" style="position: relative;">
-                                       <canvas width="80" height="80"></canvas>
-                                       <img class="js_qrCodeIcon" src="./dtl_files/qrCodeIcon_lj.png" style="position: absolute; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width: 26px; height: 26px; border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(255, 255, 255);">
-                                    </div>
-                                    <em class="qr-title">AP</em>	                                    
-                                 </span>
-                              </li>
-                              <li class="phone">	                                    <a title="客服热线">客服热线</a>	                                    <span class="popup"><i></i>客服热线 4007 001 001</span>	                                </li>
-                              <li class="feedback" id="feedback">	                                    <a title="意见反馈" gahref="right_open_feedback_pop">意见反馈</a>	                                    <span class="popup"><i></i>意见反馈</span>	                                </li>
-                           </ul>
+                        <div style="height: 300px;">
+                        	<div>展开</div>
+                        	<div>住房对比</div>
                         </div>
+                        <div>开始对比</div>
                      </td>
                   </tr>
                </tbody>

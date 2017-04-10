@@ -18,6 +18,7 @@ import com.sun.org.apache.bcel.internal.generic.IF_ICMPGE;
 import edu.housesearcher.crawler.entity.EntAgent;
 import edu.housesearcher.crawler.entity.EntCommunity;
 import edu.housesearcher.crawler.entity.EntHouse;
+import edu.housesearcher.crawler.lianjia.LianJiaAgentMessageCrawler;
 import edu.housesearcher.crawler.utils.HibernateUtil;
 import edu.housesearcher.web.beans.HouseDetails;
 
@@ -80,20 +81,16 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    String agentImg = document.select("div[class=brokerInfo] img").attr("src");
 
 	    EntAgent agent = (new EntAgentDao()).getInstanceByAgentHref(agentHref);
-	    //经纪人姓名
-	    String agentName = "";
-	    //经济人好评率
-	    String favorateRate  = "";
-	    //经纪人电话
-	    String phone = "";
-	    if(agent!=null){	//经纪人数据能够从数据库中检索得到
-		agentName = agent.getName();
-		favorateRate = agent.getPraiseRate();
-		phone = agent.getPhone();
-	    }else{	//经纪人数据不能从数据库中检索得到,直接从网站上获取，并更新数据库
-		
+	    if(agent==null){
+		(new LianJiaAgentMessageCrawler()).appendDataByHref(agentHref);
 	    }
 	    
+	    //经纪人姓名
+	    String agentName = agent.getName();;
+	    //经济人好评率
+	    String favorateRate  = agent.getPraiseRate();
+	    //经纪人电话
+	    String phone = agent.getPhone();
 	    
 	    
 	    //经纬度
@@ -103,6 +100,9 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    return (new HouseDetails())
 		    .setAgentHref(agentHref)
 		    .setAgentImg(agentImg)
+		    .setAgentName(agentName)
+		    .setAgentPhone(phone)
+		    .setPraiseRate(favorateRate)
 		    .setArea(area)
 		    .setHall(hall)
 		    .setImages(images)
@@ -110,7 +110,8 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 		    .setLevel(level)
 		    .setLongitude(longitude)
 		    .setPrice(price)
-		    .setRoom(room);
+		    .setRoom(room)
+		    .setHouseHref(houseHref);
 	}else{
 	    CRAWLER_LOGGER.debug("获取页面失败！");
 	}

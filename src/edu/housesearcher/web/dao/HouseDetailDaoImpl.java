@@ -65,6 +65,9 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 		images.add(img);
 	    }
 	    
+	    //标题
+	    String houseTitle = document.select("h1").text();
+	    
 	    //价格
 	    String price = document.select("div[class=price] div").text();
 	    //户型
@@ -111,6 +114,7 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 		    .setLongitude(longitude)
 		    .setPrice(price)
 		    .setRoom(room)
+		    .setHouseTitle(houseTitle)
 		    .setHouseHref(houseHref);
 	}else{
 	    CRAWLER_LOGGER.debug("获取页面失败！");

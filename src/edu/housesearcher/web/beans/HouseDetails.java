@@ -18,7 +18,15 @@ public class HouseDetails {
     String praiseRate;
     String agentPhone;
     String houseHref;
+    String houseTitle;
     
+    public String getHouseTitle() {
+        return houseTitle;
+    }
+    public HouseDetails setHouseTitle(String houseTitle) {
+        this.houseTitle = houseTitle;
+        return this;
+    }
     public String getHouseHref() {
         return houseHref;
     }

@@ -369,7 +369,7 @@
             <div class="content">
             <br/><br/>
                <div class="title">
-                  <h1 class="main" title="两室户，钥匙房，生活很便利，空气清新">两室户，钥匙房，生活很便利，空气清新</h1>
+                  <h1 class="main" title="">${houseDetails["HTitle"] }</h1>
                </div>
                <div class="btnContainer">
                   <!--非已下架、非已失效时显示-->

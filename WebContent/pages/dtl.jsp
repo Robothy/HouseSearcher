@@ -369,11 +369,11 @@
             <div class="content">
             <br/><br/>
                <div class="title">
-                  <h1 class="main" title="">${houseDetails["HTitle"] }</h1>
+                  <h1 class="main" href="${hosueDetails['houseHref'] }" title="#request.houseDetails.houseTitle">${houseDetails["houseTitle"] }</h1>
                </div>
                <div class="btnContainer">
                   <!--非已下架、非已失效时显示-->
-                  <form action="?houseHref=#houseDetails.houseHref">
+                  <form action="?houseHref=${houseDetails['houseHref']}">
                   <button id="notice_focus" class="notice-focus fr notice" houserentid="3789248" gahref="zufang_subscribe">收藏此房</button>
                   </form>
                </div>
@@ -429,12 +429,10 @@
                <table class="aroundInfo">
                <!-- 这里实际上是html -->
                ${houseDetails["level"] }
-                  
-                  
                </table>
                <!--非已下架、非已失效时显示-->
                <div class="brokerInfo">
-                  <a href="#houseDetails.agentHref" target="_blank">
+                  <a href="${houseDetails['agentHref'] }" target="_blank">
                   <img class="lj-lazy" src="#houseDetails.agentImg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;" data-original="#houseDetails.agentImg" style="display: inline;">
                   </a>
                   <div class="brokerInfoText">

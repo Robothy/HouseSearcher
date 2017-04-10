@@ -32,8 +32,7 @@
     <meta http-equiv="Cache-Control" content="no-transform">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="format-detection" content="telephone=no">
-    <link href="http://sh.lianjia.com/public/img/favicon.ico" type="image/x-icon" rel="icon">
-    <link href="http://sh.lianjia.com/public/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
     <meta name="keywords" content="上海租房,上海租房网,上海房屋出租,上海房屋租赁,上海房屋出租信息">
     <meta name="description" content="链家上海租房网在上海租房市场用户口碑极佳，为上海租房用户使用率和满意度极好的网络租房交易及信息平台，同时也是上海租房用户重点推荐使用的网站。链家上海租房网提供上海最新出租房源，房源真实可靠无虚假无重复，让每一个用户安心满意的在上海进行房屋出租及租赁，营造最值得用户信赖的上海租房网络平台。">
     <link rel="stylesheet" href="./house-lists_files/common.css">
@@ -116,30 +115,26 @@
     <!--begin: searchs Top -->
     <div class="lj_searchs ">
         <div class="wrapper clear">
-            <a href="http://sh.lianjia.com/" class="lj_logo fl"></a>
+            <!-- <a href="http://sh.lianjia.com/" class="lj_logo fl"></a> -->
             <div class="label fl">租房</div>
             <div class="search-txt fr">
                 <form id="formSearch" class="clear" action="http://sh.lianjia.com/zufang/rs" actdata="zufang" method="post">
                     <div class="search-tab">
                         <i class="icon"></i>
                         <div class="check" id="channelChked" formact="/zufang/rs" actdata="zufang" gahref="search_channel">租房</div>
-                        <ul class="tabs" style="display: none;">
+                         <ul class="tabs" style="display: none;">
                             <li>
-                                <label formact="/ershoufang/rs" tips="请输入区域、板块或小区名开始找房" actdata="ershoufang">二手房</label>
+                                <label formact="/ershoufang/rs" tips="请输入区域、板块或小区名开始找房" actdata="ershoufang">住房</label>
                             </li>
 
                             <li>
-                                <label formact="http://sh.fang.lianjia.com/loupan/search" tra="_blank" tips="请输入区域、板块或楼盘名开始找房" actdata="xinfang">新房</label>
-                            </li>
-
-                            <li>
-                                <label formact="/zufang/rs" tra="_blank" tips="请输入区域、板块或小区名开始找房" actdata="zufang">租房</label>
+                                <label formact="http://sh.fang.lianjia.com/loupan/search" tra="_blank" tips="请输入区名或街道名" actdata="xinfang">区域</label>
                             </li>
 
                             <li>
                                 <label formact="/xiaoqu/rs" tra="_blank" tips="请输入小区名" actdata="xiaoqu">小区</label>
                             </li>
-                        </ul>
+                        </ul> 
                         <div class="txt-serach">
                             <a href="javascript:;" class="saveSearchTotal" id="saveSearchTotal"><span></span>条已保存搜索</a>
                             <input value="" pagetype="zufang" class="left txt autoSuggest" name="keyword" autocomplete="off" placeholder="请输入区域、板块或小区名开始找房" id="keyword-box" popdiv="suggestion" maxlength="20" gahref="search_keyword_box">
@@ -156,25 +151,10 @@
                                         <li class="hot-name">热门搜索</li>
                                         <div class="list">
 
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E4%B8%8A%E6%B5%B7%E5%BA%B7%E5%9F%8E" gahref="search_hot_ershoufang_click_order_1">上海康城</a></li>
+                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E4%B8%8A%E6%B5%B7%E5%BA%B7%E5%9F%8E" gahref="search_hot_ershoufang_click_order_1">热门</a></li>
                                             <li class="line"></li>
 
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E6%85%A7%E8%8A%9D%E6%B9%96%E8%8A%B1%E5%9B%AD" gahref="search_hot_ershoufang_click_order_2">慧芝湖花园</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%8A%B1%E5%9B%AD" gahref="search_hot_ershoufang_click_order_3">奥林匹克花园</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E" gahref="search_hot_ershoufang_click_order_4">中远两湾城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E4%B8%9C%E6%96%B9%E6%9B%BC%E5%93%88%E9%A1%BF" gahref="search_hot_ershoufang_click_order_5">东方曼哈顿</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E6%96%B0%E6%B9%96%E6%98%8E%E7%8F%A0%E5%9F%8E" gahref="search_hot_ershoufang_click_order_6">新湖明珠城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E7%BB%8F%E7%BA%AC%E5%9F%8E%E5%B8%82%E7%BB%BF%E6%B4%B2" gahref="search_hot_ershoufang_click_order_7">经纬城市绿洲</a></li>
+                                            <li><a href="http://sh.lianjia.com/ershoufang/rs%E6%85%A7%E8%8A%9D%E6%B9%96%E8%8A%B1%E5%9B%AD" gahref="search_hot_ershoufang_click_order_2">热门慧芝湖花园</a></li>
                                             <li class="line"></li>
 
                                             <li><a href="http://sh.lianjia.com/ershoufang/rs%E4%BF%9D%E5%88%A9%E8%A5%BF%E5%AD%90%E6%B9%BE" gahref="search_hot_ershoufang_click_order_8">保利西子湾</a></li>
@@ -186,51 +166,7 @@
                                     </div>
                                 </ul>
 
-                                <ul id="xinfang">
-                                    <div class="js_hotList js_history">
-                                        <li class="hot-name">搜索历史
-                                            <a href="javascript:;" class="del">清空搜索记录</a>
-                                        </li>
-                                        <div class="list">
-                                        </div>
-                                    </div>
-                                    <div class="js_hotList js_hot">
-                                        <li class="hot-name">热门搜索</li>
-                                        <div class="list">
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%BB%BF%E5%9C%B0%E9%95%BF%E5%B2%9B?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_1">绿地长岛</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%81%92%E5%A4%A7%E6%B5%B7%E4%B8%8A%E5%A8%81%E5%B0%BC%E6%96%AF?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_2">恒大海上威尼斯</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%A2%A7%E6%A1%82%E5%9B%AD%E4%B8%96%E7%BA%AA%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_3">碧桂园世纪城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%AD%E6%A2%81%E7%A7%80%E6%B9%96%E5%A3%B9%E5%8F%B7%E9%99%A2?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_4">中梁秀湖壹号院</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E6%99%BA%E6%85%A7%E5%9F%8E?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_5">智慧城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BC%9F%E9%B9%8F%E9%87%91%E9%83%A1?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_6">伟鹏金郡</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E7%80%9B%E6%B5%B7%E8%8A%B1%E5%A2%85?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_7">瀛海花墅</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%BD%B3%E5%85%86%E4%B8%9A%E5%9F%8E%E5%B8%82%E5%B9%BF%E5%9C%BA?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_8">佳兆业城市广场</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.fang.lianjia.com/loupan/search%E4%B8%8A%E6%B5%B7%E9%99%A2%E5%AD%90?utm_source=shershoufang&amp;utm_medium=referral&amp;utm_campaign=search" gahref="search_hot_xinfang_click_order_9">上海院子</a></li>
-
-                                        </div>
-                                    </div>
-                                    <div class="js_hotList js_saveSearch" style="display:block">
-                                        <!--已保存搜索，模板生成-->
-                                    </div>
-                                </ul>
-
+                                
                                 <ul id="zufang">
                                     <div class="js_hotList js_history">
                                         <li class="hot-name">搜索历史
@@ -244,21 +180,6 @@
                                         <div class="list">
 
                                             <li><a href="http://sh.lianjia.com/zufang/rs%E9%9D%99%E5%AE%89%E6%96%B0%E5%9F%8E" gahref="search_hot_zufang_click_order_1">静安新城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/zufang/rs%E5%A4%A7%E5%8D%8E%E9%94%A6%E7%BB%A3%E5%8D%8E%E5%9F%8E" gahref="search_hot_zufang_click_order_2">大华锦绣华城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/zufang/rs%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E" gahref="search_hot_zufang_click_order_3">中远两湾城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/zufang/rs%E7%91%9E%E8%99%B9%E6%96%B0%E5%9F%8E" gahref="search_hot_zufang_click_order_4">瑞虹新城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/zufang/rs%E9%98%B3%E5%85%89%E5%A8%81%E5%B0%BC%E6%96%AF" gahref="search_hot_zufang_click_order_5">阳光威尼斯</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/zufang/rs%E4%B8%87%E8%BE%BE%E5%B9%BF%E5%9C%BA" gahref="search_hot_zufang_click_order_6">万达广场</a></li>
                                             <li class="line"></li>
 
                                             <li><a href="http://sh.lianjia.com/zufang/rs%E4%B8%8A%E6%B5%B7%E5%BA%B7%E5%9F%8E" gahref="search_hot_zufang_click_order_7">上海康城</a></li>
@@ -290,19 +211,6 @@
                                     <div class="js_hotList js_hot">
                                         <li class="hot-name">热门搜索</li>
                                         <div class="list">
-
-                                            <li><a href="http://sh.lianjia.com/xiaoqu/rs%E4%B8%AD%E8%BF%9C%E4%B8%A4%E6%B9%BE%E5%9F%8E" gahref="search_hot_xiaoqu_click_order_1">中远两湾城</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/xiaoqu/rs%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E8%8A%B1%E5%9B%AD" gahref="search_hot_xiaoqu_click_order_2">奥林匹克花园</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/xiaoqu/rs%E4%B8%96%E8%8C%82%E6%BB%A8%E6%B1%9F%E8%8A%B1%E5%9B%AD" gahref="search_hot_xiaoqu_click_order_3">世茂滨江花园</a></li>
-                                            <li class="line"></li>
-
-                                            <li><a href="http://sh.lianjia.com/xiaoqu/rs%E4%BF%9D%E5%88%A9%E8%A5%BF%E5%AD%90%E6%B9%BE" gahref="search_hot_xiaoqu_click_order_4">保利西子湾</a></li>
-                                            <li class="line"></li>
-
                                             <li><a href="http://sh.lianjia.com/xiaoqu/rs%E6%96%B0%E9%AB%98%E8%8B%91" gahref="search_hot_xiaoqu_click_order_5">新高苑</a></li>
                                             <li class="line"></li>
 
@@ -337,9 +245,9 @@
         </div>
     </div>
     <!--保存搜索条件－反馈-->
-    <div id="slideMsg_saveSearch" class="slideMsg_saveSearch" style="position:absolute; display:none;">
+    <%-- <div id="slideMsg_saveSearch" class="slideMsg_saveSearch" style="position:absolute; display:none;">
         <span>保存成功</span>
-    </div>
+    </div> --%>
 
     <!--begin:模板－已保存搜索弹层-->
     <textarea id="template_saveSearchList" style="display:none"> &lt;li class="hot-name saveSearch-title"&gt;已保存搜索 {#if $T.login} &lt;a href="http://user.sh.lianjia.com/search/index"&gt;管理&gt;&gt;&lt;/a&gt; {#/if} &lt;/li&gt; &lt;div class="list saveSearchFix"&gt; {#foreach $T.list as list} &lt;li class="filter" id="searchId_{$T.list.id}"&gt; &lt;a href="{$T.list.url}?from=saveSearch" title="{$T.list.filter}" class="filter_name"&gt; {#foreach $T.list.filterShortCut as filter} &lt;span&gt;{$T.filter}&lt;/span&gt; {#/for} {#if $T.list.hasMore}&lt;span style="background:transparent"&gt;...&lt;/span&gt;{#/if} &lt;/a&gt; &lt;a href="javascript:;" class="filter_del" type="{$T.list.type}" searchid="{$T.list.id}"&gt;删除&lt;/a&gt; &lt;/li&gt; {#if !$T.list$last} &lt;li class="line"&gt;&lt;/li&gt; {#/if} {#/for} &lt;/div&gt;
@@ -669,27 +577,7 @@
                                 </div>
                             </dd>
                         </dl>
-                        <dl class="dl-lst clear gio_brand">
-                            <dt>品牌：</dt>
-                            <dd>
-                                <div class="option-list multiChk">
-                                    <a href="http://sh.lianjia.com/zufang/" gahref="brand-nolimit" class="nolimit on">不限</a>
-                                    <div class="item-list">
-
-                                        <a href="http://sh.lianjia.com/zufang/n1" gahref="n1" class="">
-                                            <span class="checkbox"></span>
-                                            <span class="name">链家</span>
-                                        </a>
-
-                                        <a href="http://sh.lianjia.com/zufang/n2" gahref="n2" class="">
-                                            <span class="checkbox"></span>
-                                            <span class="name">自如</span>
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </dd>
-                        </dl>
+                        
                         <dl class="dl-lst clear gio_rent_type">
                             <dt>类型：</dt>
                             <dd>
@@ -747,7 +635,7 @@
                     </div>
                 </div>
 
-                <div class="filter-bar01">
+                <%-- <div class="filter-bar01">
                     <div class="sort-bar" id="sort-bar">
                         <span>排序：</span>
                         <div class="sort-parent on">
@@ -775,7 +663,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --%>
             </div>
         </div>
         <!--end: 筛选条件-->

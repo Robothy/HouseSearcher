@@ -686,11 +686,10 @@
                     <ul id="house-lst" class="house-lst">
                     	<s:iterator var="house" value="#request['houses']" >
                     	
-                    	<form method="post" id="${house['HHref']}" action="house-details.action" >
                     	<input type="text" style="visibility: hidden;" name="houseHref" value="${house['HHref'] }" />
                         <li>
                             <div class="pic-panel">
-                                <a name="selectDetail" class="rent" target="_blank" href="javascript:void()" onclick="document.getElementById('${house['HHref']}').submit()" >
+                                <a name="selectDetail" class="rent" target="_blank" href="house-details.action?houseHref=${house['HHref'] }">
                                 	<object data="./img/img-err.jpg" type="image/jpg">
                                     <img src="${house['imgHref'] }" data-img-real="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160624/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" data-img-layout="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160430/52b7e060-9a63-457b-b013-1c03290f5bc4.jpg_200x150.jpg" data-original="http://cdn1.dooioo.com/fetch/vp/fy/gi/20160624/6c64db47-8ca9-49e9-aa71-7073d4d26688.jpg_200x150.jpg" class="lj-lazy" alt="沧源小区，有钥匙房源，上门实拍，交通方便" style="display: inline;">
                                 	</object>
@@ -748,7 +747,6 @@
                                 </div>
                             </div>
                         </li>
-                    </form>
                     	</s:iterator>
 
                     </ul>

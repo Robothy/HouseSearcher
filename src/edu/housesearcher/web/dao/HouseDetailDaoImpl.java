@@ -83,10 +83,13 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    //经纪人图片
 	    String agentImg = document.select("div[class=brokerInfo] img").attr("src");
 
-	    EntAgent agent = (new EntAgentDao()).getInstanceByAgentHref(agentHref);
-	    if(agent==null){
+	    EntAgentDao agentDao = new EntAgentDao();
+	    EntAgent agent = agentDao.getInstanceByAgentHref(agentHref);
+	    if(agent==null||agent.getIsGetMsg().equals("N")){
 		(new LianJiaAgentMessageCrawler()).appendDataByHref(agentHref);
 	    }
+	    
+	    agent = agentDao.getInstanceByAgentHref(agentHref);
 	    
 	    //经纪人姓名
 	    String agentName = agent.getName();;

@@ -137,6 +137,8 @@ public final class LianJiaAgentMessageCrawler extends ALianJiaCrawlerManager imp
 		    agt.setName(data.get("agentName"));
 		    agt.setPhone(data.get("phoneNumber"));
 		    agt.setPraiseRate(data.get("praiseRate"));
+		    session.save(agt);
+		    CRAWLER_LOGGER.debug("插入了一条数据。");
 		}
 		
 		if(updateEntities>1){

@@ -56,159 +56,17 @@
       <script src="./dtl_files/jquery-jtemplates.js"></script>
       <script src="./dtl_files/jquery.cookie.js"></script>
       <script src="./dtl_files/common.js"></script>
+      <script src="./dtl_files/compare.js"></script>
       <script src="./dtl_files/saveSearchInit.js"></script>
       <script src="./dtl_files/ljubt.min.js"></script><script src="./dtl_files/lianjiaUlog.js"></script>
       <style type="text/css">.BMap_mask{background:transparent url(http://api0.map.bdimg.com/images/blank.gif);}.BMap_noscreen{display:none;}.BMap_button{cursor:pointer;}.BMap_zoomer{background-image:url(http://api0.map.bdimg.com/images/mapctrls1d3.gif);background-repeat:no-repeat;overflow:hidden;font-size:1px;position:absolute;width:7px;height:7px;}.BMap_stdMpCtrl div{position:absolute;}.BMap_stdMpPan{width:44px;height:44px;overflow:hidden;background:url(http://api0.map.bdimg.com/images/mapctrls2d0.png) no-repeat;}.BMap_ie6 .BMap_stdMpPan{background:none;}.BMap_ie6 .BMap_smcbg{left:0;width:44px;height:464px;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://api0.map.bdimg.com/images/mapctrls2d0.png");}.BMap_ie6 .BMap_stdMpPanBg{z-index:-1;}.BMap_stdMpPan .BMap_button{height:15px;width:15px;}.BMap_panN,.BMap_panW,.BMap_panE,.BMap_panS{overflow:hidden;}.BMap_panN{left:14px;top:0;}.BMap_panW{left:1px;top:12px;}.BMap_panE{left:27px;top:12px;}.BMap_panS{left:14px;top:25px;}.BMap_stdMpZoom{top:45px;overflow:hidden;}.BMap_stdMpZoom .BMap_button{width:22px;height:21px;left:12px;overflow:hidden;background-image:url(http://api0.map.bdimg.com/images/mapctrls2d0.png);background-repeat:no-repeat;z-index:10;}.BMap_ie6 .BMap_stdMpZoom .BMap_button{background:none;}.BMap_stdMpZoomIn{background-position:0 -221px;}.BMap_stdMpZoomOut{background-position:0 -265px;}.BMap_ie6 .BMap_stdMpZoomIn div{left:0;top:-221px;}.BMap_ie6 .BMap_stdMpZoomOut div{left:0;top:-265px;}.BMap_stdMpType4 .BMap_stdMpZoom .BMap_button{left:0;overflow:hidden;background:-webkit-gradient(linear,50% 0,50% 100%,from(rgba(255,255,255,0.85)),to(rgba(217,217,217,0.85)));z-index:10;-webkit-border-radius:22px;width:34px;height:34px;border:1px solid rgba(255,255,255,0.5);-webkit-box-shadow:0 2px 3.6px #CCC;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;-webkit-box-sizing:border-box;}.BMap_stdMpType4 .BMap_smcbg{position:static;background:url(http://api0.map.bdimg.com/images/mapctrls2d0_mb.png) 0 0 no-repeat;-webkit-background-size:24px 32px;}.BMap_stdMpType4 .BMap_stdMpZoomIn{background-position:0 0;}.BMap_stdMpType4 .BMap_stdMpZoomIn .BMap_smcbg{width:24px;height:24px;background-position:0 0;}.BMap_stdMpType4 .BMap_stdMpZoomOut{background-position:0 0;}.BMap_stdMpType4 .BMap_stdMpZoomOut .BMap_smcbg{width:24px;height:6px;background-position:0 -25px;}.BMap_stdMpSlider{width:37px;top:18px;}.BMap_stdMpSliderBgTop{left:18px;width:10px;overflow:hidden;background:url(http://api0.map.bdimg.com/images/mapctrls2d0.png) no-repeat -23px -226px;}.BMap_stdMpSliderBgBot{left:19px;height:8px;width:10px;top:124px;overflow:hidden;background:url(http://api0.map.bdimg.com/images/mapctrls2d0.png) no-repeat -33px bottom;}.BMap_ie6 .BMap_stdMpSliderBgTop,.BMap_ie6 .BMap_stdMpSliderBgBot{background:none;}.BMap_ie6 .BMap_stdMpSliderBgTop div{left:-23px;top:-226px;}.BMap_ie6 .BMap_stdMpSliderBgBot div{left:-33px;bottom:0;}.BMap_stdMpSliderMask{height:100%;width:24px;left:10px;cursor:pointer;}.BMap_stdMpSliderBar{height:11px;width:19px;left:13px;top:80px;overflow:hidden;background:url(http://api0.map.bdimg.com/images/mapctrls2d0.png) no-repeat 0 -309px;}.BMap_stdMpSliderBar.h{background:url(http://api0.map.bdimg.com/images/mapctrls2d0.png) no-repeat 0 -320px;}.BMap_ie6 .BMap_stdMpSliderBar,.BMap_ie6 .BMap_stdMpSliderBar.h{background:none;}.BMap_ie6 .BMap_stdMpSliderBar div{top:-309px;}.BMap_ie6 .BMap_stdMpSliderBar.h div{top:-320px;}.BMap_zlSt,.BMap_zlCity,.BMap_zlProv,.BMap_zlCountry{position:absolute;left:34px;height:21px;width:28px;background-image:url(http://api0.map.bdimg.com/images/mapctrls2d0.png);background-repeat:no-repeat;font-size:0;cursor:pointer;}.BMap_ie6 .BMap_zlSt,.BMap_ie6 .BMap_zlCity,.BMap_ie6 .BMap_zlProv,.BMap_ie6 .BMap_zlCountry{background:none;overflow:hidden;}.BMap_zlHolder{display:none;position:absolute;top:0;}.BMap_zlHolder.hvr{display:block;}.BMap_zlSt{background-position:0 -380px;top:21px;}.BMap_zlCity{background-position:0 -401px;top:52px;}.BMap_zlProv{background-position:0 -422px;top:76px;}.BMap_zlCountry{background-position:0 -443px;top:100px;}.BMap_ie6 .BMap_zlSt div{top:-380px;}.BMap_ie6 .BMap_zlCity div{top:-401px;}.BMap_ie6 .BMap_zlProv div{top:-422px;}.BMap_ie6 .BMap_zlCountry div{top:-443px;}.BMap_stdMpType1 .BMap_stdMpSlider,.BMap_stdMpType2 .BMap_stdMpSlider,.BMap_stdMpType3 .BMap_stdMpSlider,.BMap_stdMpType4 .BMap_stdMpSlider,.BMap_stdMpType2 .BMap_stdMpZoom,.BMap_stdMpType3 .BMap_stdMpPan,.BMap_stdMpType4 .BMap_stdMpPan{display:none;}.BMap_stdMpType3 .BMap_stdMpZoom{top:0;}.BMap_stdMpType4 .BMap_stdMpZoom{top:0;}.BMap_cpyCtrl a{font-size:11px;color:#7979CC;}.BMap_scaleCtrl{height:23px;overflow:hidden;}.BMap_scaleCtrl div.BMap_scaleTxt{font-size:11px;font-family:Arial,sans-serif;}.BMap_scaleCtrl div{position:absolute;overflow:hidden;}.BMap_scaleHBar img,.BMap_scaleLBar img,.BMap_scaleRBar img{position:absolute;width:37px;height:442px;left:0;}.BMap_scaleHBar{width:100%;height:5px;font-size:0;bottom:0;}.BMap_scaleHBar img{top:-437px;width:100%;}.BMap_scaleLBar,.BMap_scaleRBar{width:3px;height:9px;bottom:0;font-size:0;z-index:1;}.BMap_scaleLBar img{top:-427px;left:0;}.BMap_scaleRBar img{top:-427px;left:-5px;}.BMap_scaleLBar{left:0;}.BMap_scaleRBar{right:0;}.BMap_scaleTxt{text-align:center;width:100%;cursor:default;line-height:18px;}.BMap_omCtrl{background-color:#fff;overflow:hidden;}.BMap_omOutFrame{position:absolute;width:100%;height:100%;left:0;top:0;}.BMap_omInnFrame{position:absolute;border:1px solid #999;background-color:#ccc;overflow:hidden;}.BMap_omMapContainer{position:absolute;overflow:hidden;width:100%;height:100%;left:0;top:0;}.BMap_omViewMv{border-width:1px;border-style:solid;border-left-color:#84b0df;border-top-color:#adcff4;border-right-color:#274b8b;border-bottom-color:#274b8b;position:absolute;z-index:600;}.BMap_omViewInnFrame{border:1px solid #3e6bb8;}.BMap_omViewMask{width:1000px;height:1000px;position:absolute;left:0;top:0;background-color:#68c;opacity:.2;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);}.BMap_omBtn{height:13px;width:13px;position:absolute;cursor:pointer;overflow:hidden;background:url(http://api0.map.bdimg.com/images/mapctrls1d3.gif) no-repeat;z-index:1210;}.anchorBR .BMap_omOutFrame{border-top:1px solid #999;border-left:1px solid #999;}.quad4 .BMap_omBtn{background-position:-26px -27px;}.quad4 .BMap_omBtn.hover{background-position:0 -27px;}.quad4 .BMap_omBtn.BMap_omBtnClosed{background-position:-39px -27px;}.quad4 .BMap_omBtn.BMap_omBtnClosed.hover{background-position:-13px -27px;}.anchorTR .BMap_omOutFrame{border-bottom:1px solid #999;border-left:1px solid #999;}.quad1 .BMap_omBtn{background-position:-39px -41px;}.quad1 .BMap_omBtn.hover{background-position:-13px -41px;}.quad1 .BMap_omBtn.BMap_omBtnClosed{background-position:-26px -41px;}.quad1 .BMap_omBtn.BMap_omBtnClosed.hover{background-position:0 -41px;}.anchorBL .BMap_omOutFrame{border-top:1px solid #999;border-right:1px solid #999;}.quad3 .BMap_omBtn{background-position:-27px -40px;}.quad3 .BMap_omBtn.hover{background-position:-1px -40px;}.quad3 .BMap_omBtn.BMap_omBtnClosed{background-position:-40px -40px;}.quad3 .BMap_omBtn.BMap_omBtnClosed.hover{background-position:-14px -40px;}.anchorTL .BMap_omOutFrame{border-bottom:1px solid #999;border-right:1px solid #999;}.quad2 .BMap_omBtn{background-position:-40px -28px;}.quad2 .BMap_omBtn.hover{background-position:-14px -28px;}.quad2 .BMap_omBtn.BMap_omBtnClosed{background-position:-27px -28px;}.quad2 .BMap_omBtn.BMap_omBtnClosed.hover{background-position:-1px -28px;}.anchorR .BMap_omOutFrame{border-bottom:1px solid #999;border-left:1px solid #999;border-top:1px solid #999;}.anchorL .BMap_omOutFrame{border-bottom:1px solid #999;border-right:1px solid #999;border-top:1px solid #999;}.anchorB .BMap_omOutFrame{border-top:1px solid #999;border-left:1px solid #999;border-right:1px solid #999;}.anchorT .BMap_omOutFrame{border-bottom:1px solid #999;border-right:1px solid #999;border-left:1px solid #999;}.anchorNon .BMap_omOutFrame,.withOffset .BMap_omOutFrame{border:1px solid #999;}.BMap_zoomMask0,.BMap_zoomMask1{position:absolute;left:0;top:0;width:100%;height:100%;background:transparent url(http://api0.map.bdimg.com/images/blank.gif);z-index:1000;}.BMap_contextMenu{position:absolute;border-top:1px solid #adbfe4;border-left:1px solid #adbfe4;border-right:1px solid #8ba4d8;border-bottom:1px solid #8ba4d8;padding:0;margin:0;width:auto;visibility:hidden;background:#fff;z-index:10000000;}.BMap_cmShadow{position:absolute;background:#000;opacity:.3;filter:alpha(opacity=30);visibility:hidden;z-index:9000000;}div.BMap_cmDivider{border-bottom:1px solid #adbfe4;font-size:0;padding:1px;margin:0 6px;}div.BMap_cmFstItem{margin-top:2px;}div.BMap_cmLstItem{margin-bottom:2px;}.BMap_shadow img{border:0 none;margin:0;padding:0;height:370px;width:1144px;}.BMap_pop .BMap_top{border-top:1px solid #ababab;background-color:#fff;}.BMap_pop .BMap_center{border-left:1px solid #ababab;border-right:1px solid #ababab;background-color:#fff;}.BMap_pop .BMap_bottom{border-bottom:1px solid #ababab;background-color:#fff;}.BMap_shadow,.BMap_shadow img,.BMap_shadow div{-moz-user-select:none;-webkit-user-select:none;}.BMap_checkbox{background:url(http://api0.map.bdimg.com/images/mapctrls1d3.gif);vertical-align:middle;display:inline-block;width:11px;height:11px;margin-right:4px;background-position:-14px 90px;}.BMap_checkbox.checked{background-position:-2px 90px;}.BMap_pop .BMap_top img,.BMap_pop .BMap_center img,.BMap_pop .BMap_bottom img{display:none;}@media print{.BMap_noprint{display:none;}.BMap_noscreen{display:block;}.BMap_mask{background:none;}.BMap_pop .BMap_top img,.BMap_pop .BMap_center img,.BMap_pop .BMap_bottom img{display:block;}}.BMap_vectex{cursor:pointer;width:11px;height:11px;position:absolute;background-repeat:no-repeat;background-position:0 0;}.BMap_vectex_nodeT{background-image:url(http://api0.map.bdimg.com/images/nodeT.gif);}.BMap_vectex_node{background-image:url(http://api0.map.bdimg.com/images/node.gif);}.iw{width:100%;-webkit-box-sizing:border-box;border:.3em solid transparent;-webkit-background-clip:padding;}.iw_rt{position:relative;height:46px;width:195px;-webkit-box-sizing:border-box;display:-webkit-box;-webkit-box-align:center;margin:2px 5px 0 2px;background-color:rgba(0,0,0,0.8);-webkit-box-shadow:2px 2px 7px rgba(0,0,0,0.3);-webkit-border-radius:2px;color:#fff;}.iw_rt:after{content:"";position:absolute;left:50%;bottom:-8px;width:0;height:0;border-left:5px solid transparent;border-top:8px solid rgba(0,0,0,0.8);border-right:5px solid transparent;margin:0 0 0 -6px;}.iw_s{text-align:center;vertical-align:middle;height:100%;-webkit-box-sizing:border-box;}.iw_rt .iw_s1{color:#cbcbcb;}.iw_rt b{color:#fff;font-weight:bold;}.iw_rt_gr{margin-left:-4px;}.iw_busline{margin:32px 0 0 -3px;}.iw_busline .iw_cc{text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;padding:0 6px;}.iw_r{-webkit-box-ordinal-group:3;}.iw_r,.iw_l{height:100%;font-size:4.5em;text-align:center;color:#747474;border:none;-webkit-box-sizing:border-box;-webkit-border-radius:0;line-height:.7em;border:1px solid rgba(255,255,255,0.2);width:41px;}.iw_r{border-style:none none none solid;}.iw_l{border-style:none solid none none;}.iw_search,.iw_l{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ bWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6 eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEz NDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNl SUQ9InhtcC5paWQ6QjA3NjMyREJDNzQ2MTFFMTlBQUM5QzlCRDZGODZCQkYiIHhtcE1NOkRvY3Vt ZW50SUQ9InhtcC5kaWQ6QjA3NjMyRENDNzQ2MTFFMTlBQUM5QzlCRDZGODZCQkYiPiA8eG1wTU06 RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMDc2MzJEOUM3NDYxMUUxOUFB QzlDOUJENkY4NkJCRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCMDc2MzJEQUM3NDYxMUUx OUFBQzlDOUJENkY4NkJCRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1w bWV0YT4gPD94cGFja2V0IGVuZD0iciI/PllB9T8AAAKuSURBVHjaxFjRcdpAEAX+mVEqiFxB5AoQ HZAKElcArsBWBSgVQCoAVwCuwEoFlivwGQpI7jKrzGXn7ep0EsPO7BjLp/O73bdv9xifTqdRpCXW c+sz65n1lNy3mvzZemX9aN34C6bTKdx8HAHMgVlaX0QeaGv9J4EcBJgD9EA/hzAH7N4Cq/oAW1tf KX+vKEXP7PlMSLFvhQX32BWY49GBOIRO7FKy57wBlnoUQHu5yJX+g4mymdvgFWzkAM3JtwGgmiJw a2/pvQoEYBQCLKNI8RfuaeNjT245gAUdqgHdmkqUPiOctLdJVYkithkAVO/K5cC+M30KAZVSxboo /ybnn1eIR5r5qUyI7P4GX6nqJHskbQsxQ7wqu6aSn2qrgHLrXjqAat5ZC0WlRuzVE0J3uhtBCjRt a3qjX92JIMiOIqYtYgumzpo+7RRtu/E0zvknokMF5GgdQv4Ze/5DWL8CFVe2aNuedGsLCi1vS+WL F4WKNkL2Dnh414FnO1b1R5vKuRaxjKUF2YKBqjuCGtF6nyL5+XxOJWCcL2/CpjzdRYRuGpDShQQs ARUj9U/OnRh7Yr9/CW1JXU4fYxXoHIMCu+iB+gBLIt/LgShDYCYktGCDfCBgvyRgVQgZwTy/jIzy EnQNMZV1QCT4bJ+3XFCkS81/WijdkiYAdSak04BWtabWEmIbsNZYgU00YE+gjyErQeo31GpShVMH Yc+/dwsEzh97/D6ojT2ZMlM1XwN8WP9Ma7NAbZvbtBoEjE+jBT2TusCu5SIbI7z/wLWN1rdKi0o6 cqwTuAmYyTm5NQW/82atWvlnBbo7apxD98qDJxl7mkC76JQ2Qm0CI1xKF95Gb4oLXHJDwJlxjy/u LgruGtNFM8lqnNtfK2JqN3CVeW1gzWj9jThd0xd59R8BBgAAiefGO1Bt1gAAAABJRU5ErkJggg==") no-repeat 50% 50%;-webkit-background-size:19px 19px;}.iw_line_s,.iw_r{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAmCAYAAABDClKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ bWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6 eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEz NDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNl SUQ9InhtcC5paWQ6QjA3NjMyREZDNzQ2MTFFMTlBQUM5QzlCRDZGODZCQkYiIHhtcE1NOkRvY3Vt ZW50SUQ9InhtcC5kaWQ6QjA3NjMyRTBDNzQ2MTFFMTlBQUM5QzlCRDZGODZCQkYiPiA8eG1wTU06 RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCMDc2MzJEREM3NDYxMUUxOUFB QzlDOUJENkY4NkJCRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCMDc2MzJERUM3NDYxMUUx OUFBQzlDOUJENkY4NkJCRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1w bWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqheQ+MAAAEtSURBVHja7JftDYIwEIbB8JeEUXACZQPd oGygE+gGxAnQEZzAOgEdwREIDKBXUgjBIqW5Npj0kvcHpG0erveFX1WVZ8l2oBhEhRoLw/BroW8J KgeR3vMVlI5BrSwAHQZAnngmYxtMe4oIL41ZAp6iNqF4/BQTa0oBxmxAcaAHKFJY+wKtAaw0CRUJ oHjGHiY8VpqCKmYCdRkJUKmJ7Ms1gZqkqOs6w/bUGXRCOGePCcXjaItwDsW8PoZ0zhM70IeeyiZi jH/Isf+CF9MAOdCppDj+LJ6yim6j9802B6VqQa818BFjY6AHakHp9Crj15ctCaiFIi7Q/wCKLRHq vjSoVNKWunH4rTBDv5Cv7NKeKfvvU2nINzHAuexzUA7KQTkoB6UxDicKvc+qfQQYABaiUBxugCsr AAAAAElFTkSuQmCC") no-repeat 50% 50%;-webkit-background-size:19px 19px;}.iw_line{height:64px;width:228px;padding:0 11px;line-height:20px;}.iw_bustrans .iw_cc{text-align:center;}.iw_c{color:#FFFFFF;text-decoration:none;overflow:hidden;display:-webkit-box;-webkit-box-align:center;-webkit-box-flex:1;}.iw_cc{-webkit-box-sizing:border-box;width:100%;border:none;}.gray_background{filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity: 0.5} .light_gray_background {filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity: 0.7} .panoInfoBox {cursor: pointer; } .panoInfoBox {position: relative; width: 323px; height: 101px; margin-bottom: 4px; cursor: pointer; } .panoInfoBox .panoInfoBoxTitleBg {width: 323px; height: 19px; position: absolute; left: 0; bottom: 0; z-index: 2; background-color: #000; opacity: .7; } .panoInfoBox .panoInfoBoxTitleContent {font-size: 12px; color: #fff; position: absolute; bottom: 2px; left: 5px; z-index: 3; text-decoration: none; } .RouteAddressOuterBkg{position:relative; padding: 32px 4px 4px 3px; background-color:#ffdd99; } .RouteAddressInnerBkg{padding: 3px 5px 8px 8px; background-color:#ffffff; } #RouteAddress_DIV1{margin-top: 5px; } .RouteAddressTip{position:absolute; width:100%; top:0px; text-align:center; height:30px; line-height:30px; color:#994c00; } .route_tip_con {position:absolute;top:145px;} .route_tip_con .route_tip{position:absolute;width:233px;height:29px;color:#803300;text-align:center;line-height:29px;border:#cc967a solid 1px;background:#fff2b2;z-index:100000;} .route_tip_con .route_tip span{position:absolute;top:0;right:0;_right:-1px;width:14px;height:13px;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat 0 -121px;cursor:pointer;} .route_tip_con .route_tip_shadow{width:233px;height:29px;  position:absolute;left:1px;top:1px;background:#505050;border:1px solid #505050;opacity:0.2;filter:alpha(opacity=20)} .sel_body_body_page{margin:5px 0} .sel_n{margin-top:5px;overflow:hidden;} .sel_n .sel_top{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -418px;height:4px;font-size:0px;} .sel_n .sel_body_top{height:32px;width:100%;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat 0 -41px;} .sel_n .sel_body_title{float:left;width:100%;height:31px;} .sel_n .sel_body_sign{margin-top:1px;width:30px;height:31px;float:left;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -79px -387px;} .sel_n .sel_body_name{height: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin:0 20px 0 30px;padding:8px 7px 7px;font-size:14px;color:#FA8722;} .sel_n .sel_body_button{float:left;width:55px;margin-left:-55px;padding-top:8px;} .sel_n .sel_body_button a{} .sel_n .sel_bottom{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -415px;height:4px;font-size:0px;} .sel_n .sel_body_body{padding:3px 0 0 0} .sel_n1{margin-top:5px;width:329px;overflow:hidden;} .sel_n1 .sel_top{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -418px;height:4px;font-size:0px;} .sel_n1 .sel_body_top{height:31px;width:100%;background:url(http://api0.map.bdimg.com/images/sel_body_n_top.gif) repeat-x;} .sel_n1 .sel_body_top{height:32px;width:100%;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat 0 -41px} .sel_n1 .sel_body_title{float:left;width:100%;height:31px;cursor:pointer;} .sel_n1 .sel_body_sign{margin-top:1px;width:30px;height:31px;float:left;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -79px -387px;} .sel_n1 .sel_body_name{margin:0 20px 0 30px;padding:8px 7px 7px;font-size:14px;color:#FA8722;} .sel_n1 .sel_body_button{float:left;width:20px;height:31px;margin-left:-23px;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -253px -382px;overflow:hidden;zoom:1;cursor:pointer;} .sel_n1 .sel_body_button a{display:none;} .sel_n1 .sel_body_body{display:none} .sel_n1 .sel_bottom{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -415px;height:4px;font-size:0px;} .sel_y{margin-top:5px;overflow:hidden;} .sel_y .sel_top{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -439px;height:4px;zoom:1;font-size:0px;} .sel_y .sel_body_top{height:32px;width:100%;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat 0 0} .sel_y .sel_body_title{float:left;width:100%;height:31px;cursor:pointer;} .sel_y .sel_body_sign{margin-top:1px;width:30px;height:31px;float:left;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -167px -384px;} .sel_y .sel_body_name{margin:0 20px 0 30px;padding:8px 7px 7px;font-size:14px;color:#5B7BCB;} .sel_y .sel_body_button{float:left;width:20px;height:31px;margin-left:-20px;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -269px -297px;cursor:pointer;} .sel_y .sel_body_button a{display:none;} .sel_y .sel_body_body{display:none;height:0px} .sel_y .sel_body_body_div{} .sel_y .sel_bottom{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -436px;height:4px;font-size:0px;} .sel_y .sel_body_body_page{display:none;height:0px;} .sel_x{margin-top:5px;width:329px;overflow:hidden;} .sel_x .sel_top{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -418px;height:4px;font-size:0px;} .sel_x .sel_body_top{height:32px;width:100%;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat 0 -41px;} .sel_x .sel_body_title{float:left;width:100%;height:31px;} .sel_x .sel_body_sign{margin-top:1px;width:30px;height:31px;float:left;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -122px -384px;} .sel_x .sel_body_name{margin:0 20px 0 30px;padding:8px 7px 7px;font-size:14px;color:#FA8722;} .sel_x .sel_body_button{float:left;width:55px;margin-left:-55px;padding-top:8px;} .sel_x .sel_body_button a{} .sel_x .sel_body_body{} .sel_x .sel_body_body_div{padding:5px 5px 0 5px;} .sel_x .sel_bottom{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -415px;height:4px;font-size:0px;} .sel_x1{margin-top:5px;width:329px;overflow:hidden;} .sel_x1 .sel_top{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -418px;height:4px;font-size:0px;} .sel_x1 .sel_body_top{height:32px;width:100%;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat 0 -41px} .sel_x1 .sel_body_title{float:left;width:100%;height:31px;cursor:pointer;} .sel_x1 .sel_body_sign{margin-top:1px;width:30px;height:31px;float:left;background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat -122px -384px;} .sel_x1 .sel_body_name{margin:0 20px 0 30px;padding:8px 7px 7px;font-size:14px;color:#FA8722;} .sel_x1 .sel_body_button{float:left;width:55px;height:31px;margin-left:-55px;} .sel_x1 .sel_body_button a{display:none;} .sel_x1 .sel_body_body{display:none;height:0px;} .sel_x1 .sel_body_body_div{padding:5px 5px 0 5px;} .sel_x1 .sel_bottom{background:url(http://api0.map.bdimg.com/images/bgs.gif) no-repeat 0 -415px;height:4px;font-size:0px;} .sel_body_citylist{height:100px;padding: 0 0 0 5px} .sel_body_resitem{table-layout:fixed;overflow-x:hidden;overflow-y:hidden;} .sel_body_resitem table {margin-right:5px;} .sel_body_resitem tr{cursor:pointer;} .sel_body_resitem th{padding-top:5px;padding-left:5px;text-align:left;vertical-align:top;width:22px;} .sel_body_resitem th div.iconbg{background:url(http://api0.map.bdimg.com/images/markers_new_ie6.png) no-repeat scroll 0 0;height:29px;width:24px;} .sel_body_resitem th div.icon{cursor:pointer} .sel_body_resitem th div#no_0_1, .sel_body_resitem th div#no_1_1{background-position:0 -64px} .sel_body_resitem th div#no_0_2, .sel_body_resitem th div#no_1_2{background-position:-24px -64px} .sel_body_resitem th div#no_0_3, .sel_body_resitem th div#no_1_3{background-position:-48px -64px} .sel_body_resitem th div#no_0_4, .sel_body_resitem th div#no_1_4{background-position:-72px -64px} .sel_body_resitem th div#no_0_5, .sel_body_resitem th div#no_1_5{background-position:-96px -64px} .sel_body_resitem th div#no_0_6, .sel_body_resitem th div#no_1_6{background-position:-120px -64px} .sel_body_resitem th div#no_0_7, .sel_body_resitem th div#no_1_7{background-position:-144px -64px} .sel_body_resitem th div#no_0_8, .sel_body_resitem th div#no_1_8{background-position:-168px -64px} .sel_body_resitem th div#no_0_9, .sel_body_resitem th div#no_1_9{background-position:-192px -64px} .sel_body_resitem th div#no_0_10, .sel_body_resitem th div#no_1_10{background-position:-216px -64px} .sel_body_resitem td{line-height:160%;padding:3px 0 3px 3px;vertical-align:top;} .sel_body_resitem div.ra_td_title{float:left;margin-right:40px;} .sel_body_resitem div.ra_td_button{float:right; width:40px;} .sel_body_resitem div.ra_td_button input{height:18px;font-size:12px;width:40px;} .sel_body_resitem div.clear{clear:both;height:0px;width:100%;} .sel_body_resitem td .selBtn {width:70px;height:29px;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat -21px -81px;text-align:center;line-height:29px;visibility:hidden;color:#b35900;display:inline-block;*display:inline;*zoom:1;} .sel_body_resitem td .list_street_view_poi {display:inline-block;float:none;margin-right:6px;position:static;*vertical-align:-3px;_vertical-align:-5px;*display:inline;*zoom:1;} .selInfoWndBtn {width:70px;height:29px;background:url(http://api0.map.bdimg.com/images/addrPage.png?v=20121107) no-repeat -21px -81px;text-align:center;line-height:29px;margin: 0 auto;cursor:pointer;color:#b35900} .sel_body_body td a{text-decoration: none; cursor: auto; } .sel_body_body td a:hover,.sel_body_body td a:focus{text-decoration:underline; }.panoInfoBox{cursor:pointer}.panoInfoBox{position:relative;width:323px;height:101px;margin-bottom:4px;cursor:pointer}.panoInfoBox .panoInfoBoxTitleBg{width:323px;height:19px;position:absolute;left:0;bottom:0;z-index:2;background-color:#000;opacity:.7}.panoInfoBox .panoInfoBoxTitleContent{font-size:12px;color:#fff;position:absolute;bottom:2px;left:5px;z-index:3;text-decoration:none}.pano_switch_left,.pano_switch_right{position:absolute;width:28px;height:38px;cursor:pointer;background-color:#252525;background-color:rgba(37,37,37,.9)}.pano_switch_left{background:url(http://api0.map.bdimg.com/images/panorama/zuojiantou.png) no-repeat;-webkit-background-size:100% 100%;background-size:100% 100%}.pano_switch_right{background:url(http://api0.map.bdimg.com/images/panorama/youjiantou.png) no-repeat;-webkit-background-size:100% 100%;background-size:100% 100%}.pano_switch_left:hover{background:url(http://api0.map.bdimg.com/images/panorama/zuojiantou_hover.png) no-repeat;-webkit-background-size:100% 100%;background-size:100% 100%}.pano_switch_right:hover{background:url(http://api0.map.bdimg.com/images/panorama/youjiantou_hover.png) no-repeat;-webkit-background-size:100% 100%;background-size:100% 100%}.pano_switch_left.pano_switch_disable,.pano_switch_right.pano_switch_disable{background:0 0;border:none}.pano_poi_1,.pano_poi_2,.pano_poi_4{display:inline-block;width:16px;height:16px;vertical-align:middle;background:url(http://webmap0.map.bdimg.com/newmap/static/common/images/pano_whole/guide_icons_4b871b2.png) no-repeat;background-position:0 0}.pano_photo_arrow_l,.pano_photo_arrow_r{position:absolute;top:0;width:20px;height:100%;background:#f3eeee}.pano_photo_arrow_l{left:0}.pano_photo_arrow_r{right:0}.pano_arrow_l,.pano_arrow_r{display:inline-block;width:18px;height:18px;background:url(http://webmap0.map.bdimg.com/newmap/static/common/images/pano_whole/pano-icons_223a291.png) no-repeat}.pano_catlogLi{cursor:pointer;position:relative;line-height:10px;font-size:10px;text-align:center;color:#abb0b2;border:1px solid #53565c;padding:3px 0;margin-top:3px;margin-left:2px;width:90%}.pano_catlogLi:hover{color:#3DAAFC;border:1px solid #3DAAFC}.pano_catlogLiActive{color:#3DAAFC;border:1px solid #3DAAFC}.pano_arrow_l{background-position:0 -36px}.pano_arrow_r{background-position:-54px -36px}.pano_photo_arrow_l:hover .pano_arrow_l{background-position:-18px -36px}.pano_photo_arrow_r:hover .pano_arrow_r{background-position:-72px -36px}.pano_photo_arrow_l.pano_arrow_disable .pano_arrow_l{background-position:-36px -36px}.pano_photo_arrow_r.pano_arrow_disable .pano_arrow_r{background-position:-90px -36px}.pano_photo_item{position:relative;float:left;line-height:0;padding-left:8px}.pano_photo_decs{position:absolute;bottom:1px;left:0;padding:2px 0;text-indent:5px;margin-left:8px;display:inline-block;color:#fff;background:#000;opacity:.5;filter:alpha(opacity=50)9;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.pano_photo_item img{display:inline-block;border:solid 1px #252525}.pano_photo_item:hover img{border-color:#005efc}.pano_photo_item_seleted{position:absolute;top:0;left:-100000px;border:3px solid #097df3}.pano_close{position:absolute;right:10px;top:10px;width:40px;cursor:pointer;height:40px;line-height:40px;border-radius:3px;background-color:rgba(37,37,37,.9);background-image:url(http://api0.map.bdimg.com/images/panorama/close.png);background-repeat:no-repeat;background-position:center center;background-size:90%}.pano_close:hover{background-image:url(http://api0.map.bdimg.com/images/panorama/close_hover.png)}.pano_pc_indoor_exit{position:absolute;right:60px;top:10px;width:89px;cursor:pointer;height:40px;line-height:40px;color:#ebedf0;border-radius:3px;background-color:#252525;background-color:rgba(37,37,37,.9);background-image:url(http://api0.map.bdimg.com/images/panorama/indoor_exit.png);background-repeat:no-repeat;background-position:15px 12px}.pano_pc_indoor_exit:hover{background-image:url(http://api0.map.bdimg.com/images/panorama/indoor_exit_hover.png);color:#2495ff}.pano_m_indoor_exit{font-size:16px;position:absolute;right:30px;top:10px;width:89px;cursor:pointer;height:40px;line-height:40px;color:#ebedf0;border-radius:3px;background-color:#252525;background-color:rgba(37,37,37,.9);background-image:url(http://api0.map.bdimg.com/images/panorama/indoor_exit.png);background-repeat:no-repeat;background-position:15px 12px}.navtrans-table tr{color:#666}.navtrans-table tr:hover{color:#333}.navtrans-navlist-icon{float:left;width:18px;height:16px;background:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/nav-icon_b5c3223.png) no-repeat 0px 0px;_background:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/nav-icon_ie6_134841b.png) no-repeat 0px 0px;margin-top:2px;margin-right:5px}.navtrans-navlist-icon.s-1{background-position:0px 0px}.navtrans-navlist-icon.s-2{background-position:-18px 0px}.navtrans-navlist-icon.s-3{background-position:-36px 0px}.navtrans-navlist-icon.s-4{background-position:-54px 0px}.navtrans-navlist-icon.s-5{background-position:-72px 0px}.navtrans-navlist-icon.s-6{background-position:-90px 0px}.navtrans-navlist-icon.s-7{background-position:0px -16px}.navtrans-navlist-icon.s-8{background-position:-18px -16px}.navtrans-navlist-icon.s-9{background-position:-36px -16px}.navtrans-navlist-icon.s-10{background-position:-54px -16px}.navtrans-navlist-icon.s-11{background-position:-72px -16px}.navtrans-navlist-icon.s-12{background-position:-90px -16px}.navtrans-navlist-icon.s-13{background-position:0px -32px}.navtrans-navlist-icon.s-14{background-position:-18px -32px}.navtrans-navlist-icon.s-18{background-position:-36px -32px}.navtrans-navlist-icon.s-19{background-position:-54px -32px}.navtrans-navlist-icon.s-20{background-position:-72px -32px}.navtrans-navlist-icon.s-21{background-position:-90px -32px}.navtrans-navlist-icon.nav-st,.navtrans-navlist-icon.nav-through{background-position:-16px -70px}.navtrans-navlist-icon.nav-ed{background-position:0px -70px}.navtrans-view{border-top:1px solid #e4e6e7;border-left:1px solid #e4e6e7;border-right:1px solid #e4e6e7}.navtrans-view:hover{cursor:pointer}.navtrans-view .navtrans-arrow{position:absolute;top:8px;right:5px;width:7px;height:4px;background-image:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/nav-icon_b5c3223.png);background-repeat:no-repeat;background-position:-40px -70px;margin-top:3px;margin-right:3px;_background-image:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/nav-icon_ie6_134841b.png)}.navtrans-view.expand:hover .navtrans-arrow{background-position:-61px -70px}.navtrans-view.expand .navtrans-arrow{background-position:-54px -70px}.navtrans-view:hover .navtrans-arrow{background-position:-47px -70px}.navtrans-navlist-content{overflow:hidden}.navtrans-res{border-bottom:1px solid #E4E6E7;border-left:1px solid #E4E6E7;border-right:1px solid #E4E6E7}.navtrans-bus-icon{display:inline-block;float:left;background-image:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/ui3/mo_banner_e1aa2e6.png);background-repeat:no-repeat}.navtrans-bus-icon.bus{width:13px;height:16px;background-position:-1px -192px;position:relative;top:4px}.navtrans-bus-icon.walk{width:16px;height:18px;background-position:-63px -189px;position:relative;top:2px;left:-2px}.navtrans-bus-desc{line-height:24px;margin-left:20px}.navtrans-busstation{color:#36c;font-weight:600}.tranroute-plan-list.expand .trans-title{border-bottom:1px solid #e4e6e7;background-color:#ebf1fb}.trans-plan-content tr td:hover .bus{background-position:-15px -192px}.trans-plan-content tr td:hover .walk{background-position:-82px -189px}.suggest-plan{position:absolute;background-color:#0C88E8;padding:0px 15px;line-height:20px;color:#fff;left:0px;top:0px}.suggest-plan-des{text-align:left;padding:29px 0px 0px 25px;font-size:13px;color:#000}.bmap-clearfix{*+height:1%}.bmap-clearfix:after{content:".";display:block;height:0px;clear:both;visibility:hidden}.BMap_CityListCtrl{font-size:12px}.BMap_CityListCtrl a{text-decoration:none!important}.BMap_CityListCtrl a:hover{text-decoration:underline!important}.BMap_CityListCtrl .citylist_popup_main{border:1px solid #cdcdcd;z-index:2;position:relative;width:100%;height:100%;background:#fafafa;overflow:hidden;box-shadow:1px 1px 1px rgba(0,0,0,.1)}.ui_city_change_top .ui_city_change_inner,.ui_city_change_bottom .ui_city_change_inner{display:inline-block;height:24px;line-height:24px;border:1px solid #c4c7cc;background-color:#fff;padding:0 10px 0 10px;color:#000}.ui_city_change_top .ui_city_change_inner i,.ui_city_change_bottom .ui_city_change_inner i{width:8px;height:6px;display:inline-block;position:relative;top:9px;left:5px;-webkit-transition:all ease-in-out .15s;transition:all ease-in-out .15s;display:none9}.ui_city_change_click .ui_city_change_inner i,.ui_city_change_click_close .ui_city_change_inner i{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg)}.ui_city_change_top .ui_city_change_inner:hover em{border-top-color:#0C88E8}.ui_city_change_top .ui_city_change_inner em{width:0;height:0;border-color:rgba(255,255,255,0);border-top-color:#D0D4DA;border-style:solid;border-width:4px}.ui_city_change_top .ui_city_change_inner:hover,.ui_city_change_bottom .ui_city_change_inner:hover{text-decoration:none!important;color:#3d6dcc}.ui_city_change_bottom .ui_city_change_inner:hover em{border-bottom-color:#0C88E8}.ui_city_change_bottom .ui_city_change_inner em{width:0;height:0;border-color:rgba(255,255,255,0);border-bottom-color:#D0D4DA;border-style:solid;border-width:4px;position:relative;top:-18px}.citylist_popup_main .citylist_ctr_title{background:#f9f9f9;border-bottom:1px solid #dadada;height:25px;line-height:25px;font-size:12px;color:#4c4c4c;padding-left:7px}.citylist_popup_main .city_content_top{position:relative;height:30px;padding:15px 10px 0px 10px;border-bottom:1px solid #CCC;margin:0px 10px}.citylist_popup_main .city_content_top .cur_city_info{display:inline-block;margin:0;padding:0;}#city_ctrl_form{position:absolute;right:12px;top:10px}#selCityWd{border:1px solid #ccc;height:20px;width:121px;line-height:20px;text-indent:4px;outline:none}#selCitySubmit:hover{background-position:-355px -98px}#selCitySubmit{float:right;background:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/index_a2f1ac4.png) no-repeat scroll -302px -98px;height:24px;line-height:24px;width:48px;cursor:pointer;margin-left:5px;text-align:center}#sel_city_letter_list{padding-top:10px}#sel_city_letter_list a{white-space:nowrap;margin-right:11px;line-height:18px;font-size:13px;font-family:Arial,Helvetica,SimSun,sans-serif}.city_content_medium{padding:10px 10px 10px 10px;border-bottom:1px solid #CCC;margin:0px 10px}.city_content_bottom{padding:10px 10px 10px 8px;margin:9px 5px 5px 5px;height:218px;overflow-y:auto}#city_detail_table tr td{vertical-align:top}.sel_city_hotcity a{color:#3d6dcc}.sel_city_letter{padding:0 14px 0 3px}.sel_city_letter div{font-size:24px;line-height:24px;font-weight:700;color:#ccc;padding:0;margin:0;font-family:Arial,Helvetica,SimSun,sans-serif}.sel_city_sf{padding-right:8px;font-weight:700}.sel_city_sf a{white-space:nowrap;line-height:18px;color:#3d6dcc}.city_names_wrap{margin-bottom:9px}.sel_city_name{color:#3d6dcc;white-space:nowrap;margin-right:9px;line-height:18px;float:left}#popup_close{outline:none;position:absolute;z-index:50;top:7px;right:6px;width:12px;height:12px;background:url(http://webmap0.map.bdimg.com/wolfman/static/common/images/popup_close_15d2283.gif) no-repeat;border:0;cursor:pointer}</style>
    </head>
    <body>
-      <!--[if lte IE 8]>
-      <div class="old-browser-popup" id="old" >
-         亲，您当前正在使用旧版本的IE浏览器，为了保证您的浏览体验，链家网建议您使用：<label class="chrome-borwser-ico"></label><a href="http://rj.baidu.com/soft/detail/14744.html?ald" target="_blank">谷歌浏览器</a>&nbsp;或&nbsp;&nbsp;<label class="firefox-borwser-ico"></label><a href="http://rj.baidu.com/soft/detail/11843.html?ald" target="_blank">火狐浏览器</a>
-         <span id="oldclose"></span>
-      </div>
-      <![endif]-->
-      <!--begin: header-->
-      <header class="lj_header" id="lianjia-header" systemid="zufang">
-         <div class="nav-wrap">
-            <div class="wrapper">
-               <ul class="nav">
-                  <li class=" "><a href="http://sh.lianjia.com/" gahref="header_homepage">首页</a></li>
-                  <!--<li class="hover ">
-                     <a href="http://sh.lianjia.com/ershoufang" gahref="header_ershoufang">二手房</a>
-                     <div class="nav-list">
-                        <dd>
-                           <i></i>
-                           <dl><a href="http://sh.lianjia.com/ershoufang" gahref="header_ershoufang_all">全部</a></dl>
-                           <dl><a href="http://sh.lianjia.com/ditiefang" gahref="header_ershoufang_ditie">地铁房</a></dl>
-                           <dl><a href="http://sh.lianjia.com/ditu" gahref="header_ershoufang_ditu">地图找房</a></dl>
-                           <dl><a href="http://sh.lianjia.com/chengjiao" gahref="header_ershoufang_chengjiao">成交房源</a></dl>
-                        </dd>
-                     </div>
-                  </li>
-                  <li class=" "><a href="http://sh.fang.lianjia.com/" gahref="header_xinfang">新房</a></li>
-                  <li class=" "><a class="on" href="http://sh.lianjia.com/zufang" gahref="header_zufang">租房</a></li> -->
-                  <li class=" "><a href="http://sh.lianjia.com/xiaoqu" gahref="header_xiaoqu">小区</a></li>
-                  <li class=" "><a href="http://sh.lianjia.com/jingjiren" gahref="header_jingjiren">经纪人</a></li>
-                  <!-- <li class=" "><a href="http://us.lianjia.com/" target="_blank" gahref="header_oversea">海外</a></li>
-                  <li class="hover ewm">
-                     <a href="http://sh.lianjia.com/client?source=pcdh" target="_blank" gahref="header_app">AP</a>
-                     <div class="nav-list">
-                        <dd>
-                           <i></i>
-                           <div class="ewmWrap">
-                              <div class="js_downAppEwmDynamic_img" source="dhewm" ewmimgw="100" ewmimgh="100" style="position: relative;">
-                                 <canvas width="100" height="100"></canvas>
-                                 <img class="js_qrCodeIcon" src="./dtl_files/qrCodeIcon_lj.png" style="border-width: 2px; border-radius: 6px; border-style: solid; border-color: rgb(255, 255, 255); background: rgb(255, 255, 255); width: 33px; height: 33px; position: absolute; top: 50%; left: 50%; margin-top: -18.5px; margin-left: -18.5px;">
-                              </div>
-                           </div>
-                        </dd>
-                     </div>
-                  </li>
-                  <li class=" "><a href="http://sh.lianjia.com/yezhu/" target="_blank" gahref="header_yezhu">卖房</a></li> -->
-               </ul>
-               <div class="login">
-                  <div class="ti-hover">
-                     <div class="login-panel typeUserInfo">
-                        <div class="typeShowUser" id="userInfo"><span class="welcome"><a id="regUrl" href="http://passport.lianjia.com/register/resources/lianjia/register.html?service=http://user.sh.lianjia.com/index/ershou" gahref="header_signup"><span class="log">注册</span></a>|<a id="loginUrl" href="https://passport.lianjia.com/cas/login?service=http://user.sh.lianjia.com/index/ershou" class="btn-login bounceIn actLoginBtn" gahref="header_signin"><span class="reg">登录</span></a></span></div>
-                     </div>
-                     <div class="user-news" id="userNews"></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- <script src="./dtl_files/header.js"></script> -->
-      <!--end: header-->
-      <!--begin: searchs Top -->
-      <div class="lj_searchs">
-         <div class="wrapper clear">
-            <a href="file:///C:/" class="lj_logo fl"></a>
-            <!-- <div class="label fl">租房</div> -->
-            <div class="search-txt fr">
-               <form id="formSearch" class="clear" action="file:///C:/zufang/rs" actdata="zufang" method="post">
-                  <div class="search-tab">
-                     <i class="icon"></i>
-                     <div class="check" id="channelChked" formact="/zufang/rs" actdata="zufang" gahref="search_channel">租房</div>
-                     <!-- <ul class="tabs" style="display: none;">
-                        <li><label formact="/ershoufang/rs" tips="请输入区域、板块或小区名开始找房" actdata="ershoufang">二手房</label></li>
-                        <li><label formact="http://sh.fang.lianjia.com/loupan/search" tra="_blank" tips="请输入区域、板块或楼盘名开始找房" actdata="xinfang">新房</label></li>
-                        <li><label formact="/zufang/rs" tra="_blank" tips="请输入区域、板块或小区名开始找房" actdata="zufang">租房</label></li>
-                        <li><label formact="/xiaoqu/rs" tra="_blank" tips="请输入小区名" actdata="xiaoqu">小区</label></li>
-                     </ul> -->
-                     <div class="txt-serach">
-                        <a href="javascript:;" class="saveSearchTotal" id="saveSearchTotal"><span></span>条已保存搜索</a>
-                        <input value="" pagetype="zufang" class="left txt autoSuggest" name="keyword" autocomplete="off" placeholder="请输入区域、板块或小区名开始找房" id="keyword-box" popdiv="suggestion" maxlength="20" gahref="search_keyword_box">
-                        
-                        <div id="suggest-cont" class="suggest-wrap" style="width:628px; display:none">
-                           <ul style="width: 100%; display: none;" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="suggestion">
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-                  <input type="text" style="display:none">
-                  <button type="button" id="btn_topSearch" class="act-search btn home-ico ico-search" gahref="search_submmit">搜索</button>
-               </form>
-            </div>
-         </div>
-      </div>
-      <!--保存搜索条件－反馈-->
-      <div id="slideMsg_saveSearch" class="slideMsg_saveSearch" style="position:absolute; display:none;">
-         <span>保存成功</span>
-      </div>
-      <!--begin:模板－已保存搜索弹层-->
-      <textarea id="template_saveSearchList" style="display:none">		&lt;li class="hot-name saveSearch-title"&gt;已保存搜索
-			{#if $T.login}
-			&lt;a href="http://user.sh.lianjia.com/search/index"&gt;管理&gt;&gt;&lt;/a&gt;
-			{#/if}
-		&lt;/li&gt;
-		&lt;div class="list saveSearchFix"&gt;
-			{#foreach $T.list as list}
-			&lt;li class="filter" id="searchId_{$T.list.id}"&gt;
-				&lt;a href="{$T.list.url}?from=saveSearch" title="{$T.list.filter}" class="filter_name"&gt;
-					{#foreach $T.list.filterShortCut as filter}
-						&lt;span&gt;{$T.filter}&lt;/span&gt;
-					{#/for}
-					{#if $T.list.hasMore}&lt;span style="background:transparent"&gt;...&lt;/span&gt;{#/if}
-				&lt;/a&gt;
-				&lt;a href="javascript:;" class="filter_del" type="{$T.list.type}" searchid="{$T.list.id}"&gt;删除&lt;/a&gt;
-			&lt;/li&gt;
-			{#if !$T.list$last}
-				&lt;li class="line"&gt;&lt;/li&gt;
-			{#/if}
-			{#/for}
-		&lt;/div&gt;
-	</textarea>
-      <!--end:模板－已保存搜索弹层-->
-      <!--begin:模板－已保存搜索弹层 － 追加的条目（预加载的隐藏项）-->
-      <textarea id="template_saveSearchPreload" style="display:none">		&lt;li class="line"&gt;&lt;/li&gt;
-		{#foreach $T.list as list}
-		&lt;li class="filter" id="searchId_{$T.list.id}"&gt;
-			&lt;a href="{$T.list.url}?from=saveSearch" title="{$T.list.filter}" class="filter_name"&gt;
-				{#foreach $T.list.filterShortCut as filter}
-				&lt;span&gt;{$T.filter}&lt;/span&gt;
-				{#/for}
-				{#if $T.list.hasMore}&lt;span style="background:transparent"&gt;...&lt;/span&gt;{#/if}
-			&lt;/a&gt;
-			&lt;a href="javascript:;" class="filter_del" type="{$T.list.type}" searchid="{$T.list.id}"&gt;删除&lt;/a&gt;
-		&lt;/li&gt;
-		{#if !$T.list$last}
-		&lt;li class="line"&gt;&lt;/li&gt;
-		{#/if}
-		{#/for}
-	</textarea>
-      <!--end:模板－已保存搜索弹层 － 追加的条目（预加载的隐藏项）-->
-      <!-- 视频入口浮层 -->
-      <script type="text/javascript">
-         /*var oWrap_video_all = document.getElementById('wrap-video-all');
-          oWrap_video_all.onclick = function(){
-          var oVideo_box = document.getElementById('video-box');
-          var oVideo_close = document.getElementById('video-close');
-          oVideo_box.style.display = "block";
-          oVideo_close.onclick = function(){
-          oVideo_box.style.display = "none";
-          }
-          }*/
-      </script>
+
+	  <%@ include file="./module/head.jsp" %>      
+
+      
+
       <!--begin: searchs Top -->
       
       <!--begin:正文-->
@@ -218,6 +76,7 @@
             <div class="content">
             <br/><br/>
                <div class="title">
+               	<a id="house-href" style="visibility: hidden;" >${houseDetails['houseHref']}</a>
                   <h1 class="main" title="两室户，钥匙房，生活很便利，空气清新">两室户，钥匙房，生活很便利，空气清新</h1>
                </div>
                <div class="btnContainer">
@@ -299,7 +158,11 @@
                      </div>
                   </div>
                </div>
-               
+               <!-- begin: 加入对比 -->
+               <div style="width:100%; text-align:right;">
+				<a id="add-to-compare" href="javascript:{};" style="color:#FFFFFF;display:inline-block; background-color:green; padding:10px 20px 10px 20px; margin-top:20px;">加入对比</a>
+			   </div>
+			   <!-- end: 加入对比 -->
             </div>
             <!--end: 房源概况-->
             <div class="clear"></div>
@@ -520,106 +383,7 @@
          </div>
       </div>
       <!--end: 周边配套 -->
-      <!--非已下架、非已失效时显示-->
-      <!--begin: 联系经纪人
-      <div class="brokerList js_content" id="brokerList">
-         <div class="content">
-            <div class="header">
-               <span class="title">联系经纪人</span>
-               <span class="subTitle">您可以通过拨打电话或在线咨询的方式联系经纪人</span>
-               <span class="btn hide">
-               <span class="pre disable" id="btn_agent_pre"><i></i></span>
-               <span class="next disable" id="btn_agent_next"><i></i></span>
-               </span>
-            </div>
-            <ul>
-               <div id="result_agent">
-                  <li>
-                     <a href="http://sh.lianjia.com/jingjiren/detail/220604.html?phone=4007675011,598138" target="_blank">            <img src="./dtl_files/220604_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;">        </a>        
-                     <div class="desc">
-                        <div class="title">
-                           <a href="http://sh.lianjia.com/jingjiren/detail/220604.html?phone=4007675011,598138" class="name" target="_blank" title="石佳超">石佳超</a>                <a class="lianjiaim-createtalkAll" style="display: none;" title="在线咨询" usercode="220604" source="rentHouse"></a>                
-                           <div class="rate">初级物业顾问</div>
-                           <div class="rate">本房带看：4次</div>
-                        </div>
-                        <div class="phone">4007675011转598138</div>
-                     </div>
-                  </li>
-                  <li>
-                     <a href="http://sh.lianjia.com/jingjiren/detail/224335.html?phone=4007675011,598139" target="_blank">            <img src="./dtl_files/224335_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;">        </a>        
-                     <div class="desc">
-                        <div class="title">
-                           <a href="http://sh.lianjia.com/jingjiren/detail/224335.html?phone=4007675011,598139" class="name" target="_blank" title="张少娜">张少娜</a>                <a class="lianjiaim-createtalkAll" style="display: none;" title="在线咨询" usercode="224335" source="rentHouse"></a>                
-                           <div class="rate">初级物业顾问</div>
-                           <div class="rate">本房带看：1次</div>
-                        </div>
-                        <div class="phone">4007675011转598139</div>
-                     </div>
-                  </li>
-                  <li>
-                     <a href="http://sh.lianjia.com/jingjiren/detail/226507.html?phone=4007675011,598140" target="_blank">            <img src="./dtl_files/226507_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;">        </a>        
-                     <div class="desc">
-                        <div class="title">
-                           <a href="http://sh.lianjia.com/jingjiren/detail/226507.html?phone=4007675011,598140" class="name" target="_blank" title="李磊">李磊</a>                <a class="lianjiaim-createtalkAll" style="display: none;" title="在线咨询" usercode="226507" source="rentHouse"></a>                
-                           <div class="rate">初级物业顾问</div>
-                           <div class="rate">本房带看：1次</div>
-                        </div>
-                        <div class="phone">4007675011转598140</div>
-                     </div>
-                  </li>
-                  <li class="fix_align"></li>
-               </div>
-            </ul>
-         </div>
-      </div>
-      <!--end: 联系经纪人-->
-      <!--begin: 户型分间-->
-      
-      <!--end: 户型分间-->
-      <!--非已下架、非已失效时显示-->
-      <!--begin: 看房记录--
-      <div class="record js_content" id="record">
-         <div class="list">
-            <div class="title">看房记录
-               <span class="next" id="btn_kanfang_next"><i></i></span>
-               <span class="pre disable" id="btn_kanfang_pre"><i></i></span>
-            </div>
-            <div class="content">
-               <div class="header">
-                  <div class="item">带看时间</div>
-                  <div class="item">带看经纪人</div>
-                  <div class="item">本房总带看</div>
-                  <div class="phone">咨询电话</div>
-               </div>
-               <div id="result_kanfang">
-                  <div class="row">
-                     <div class="item">2017-03-19</div>
-                     <div class="item agent">                                    <a href="http://sh.lianjia.com/jingjiren/detail/167046.html?phone=4007675016,23046" class="photo" target="_blank">                        <img src="./dtl_files/167046_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;">                    </a>                    <a href="http://sh.lianjia.com/jingjiren/detail/167046.html?phone=4007675016,23046" class="name" target="_blank" title="龙晓艳">龙晓艳</a>                                            <a class="lianjiaim-createtalk" title="在线咨询" usercode="167046"></a>                                                </div>
-                     <div class="item">1次</div>
-                     <div class="phone">                                    4007675016转23046                                            </div>
-                  </div>
-                  <div class="row">
-                     <div class="item">2017-03-19</div>
-                     <div class="item agent">                                    <a href="http://sh.lianjia.com/jingjiren/detail/154169.html?phone=4007675016,22829" class="photo" target="_blank">                        <img src="./dtl_files/154169_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;">                    </a>                    <a href="http://sh.lianjia.com/jingjiren/detail/154169.html?phone=4007675016,22829" class="name" target="_blank" title="刘权">刘权</a>                                            <a class="lianjiaim-createtalk" title="在线咨询" usercode="154169"></a>                                                </div>
-                     <div class="item">1次</div>
-                     <div class="phone">                                    4007675016转22829                                            </div>
-                  </div>
-                  <div class="row">
-                     <div class="item">2017-03-19</div>
-                     <div class="item agent">                                    <a href="http://sh.lianjia.com/jingjiren/detail/223825.html?phone=4007675016,24232" class="photo" target="_blank">                        <img src="./dtl_files/223825_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;">                    </a>                    <a href="http://sh.lianjia.com/jingjiren/detail/223825.html?phone=4007675016,24232" class="name" target="_blank" title="张春旭">张春旭</a>                                                </div>
-                     <div class="item">1次</div>
-                     <div class="phone">                                                     <span style="color:#BEBEBE">暂无联系方式</span>                            </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="panel">
-            <div class="title">近7天带看次数</div>
-            <div class="count">10</div>
-            <div class="totalCount">- 总带看<span>23</span>次 -</div>
-         </div>
-      </div>
-      <!--end: 看房记录-->
+
       <!--begin: 相似房源-->
       <div class="push js_content" id="recommend">
          <div class="content">
@@ -631,23 +395,6 @@
                </span>
             </div>
             <ul id="result_recommend">
-               <li>
-                  <div class="pic">                    <a href="file:///C:/zufang/shz3740529.html" gahref="tuijian_open_1">                        <img src="./dtl_files/1f828934-9330-4c84-be5b-fbda2bdaaa1b.jpg_200x150.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">                    </a>                    <span class="price">7000元/月</span>                                     </div>
-                  <div class="title">                    <span class="name" title="海天公寓"><a href="file:///C:/zufang/shz3740529.html" gahref="tuijian_open_1">海天公寓</a></span>                    <span class="info">2室1厅/52平</span>                </div>
-               </li>
-               <li>
-                  <div class="pic">                    <a href="file:///C:/zufang/shz3790408.html" gahref="tuijian_open_2">                        <img src="./dtl_files/98525750-a629-4d4f-8036-9ae0325fd506.jpg_200x150.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">                    </a>                    <span class="price">6800元/月</span>                                     </div>
-                  <div class="title">                    <span class="name" title="海天公寓"><a href="file:///C:/zufang/shz3790408.html" gahref="tuijian_open_2">海天公寓</a></span>                    <span class="info">2室0厅/52平</span>                </div>
-               </li>
-               <li>
-                  <div class="pic">                    <a href="file:///C:/zufang/shz3812984.html" gahref="tuijian_open_3">                        <img src="./dtl_files/679c93e5-97f6-4047-b4a4-201e0e80daee.jpg_200x150.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">                    </a>                    <span class="price">7900元/月</span>                                     </div>
-                  <div class="title">                    <span class="name" title="海天公寓"><a href="file:///C:/zufang/shz3812984.html" gahref="tuijian_open_3">海天公寓</a></span>                    <span class="info">2室1厅/60平</span>                </div>
-               </li>
-               <li>
-                  <div class="pic">                    <a href="file:///C:/zufang/shz3325151.html" gahref="tuijian_open_4">                        <img src="./dtl_files/4c3e32be-49f8-48e9-b58f-6795522185af.jpg_200x150.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">                    </a>                    <span class="price">8200元/月</span>                                     </div>
-                  <div class="title">                    <span class="name" title="裕德大厦"><a href="file:///C:/zufang/shz3325151.html" gahref="tuijian_open_4">裕德大厦</a></span>                    <span class="info">2室1厅/77平</span>                </div>
-               </li>
-               <li class="fix_align"></li>
             </ul>
          </div>
       </div>
@@ -677,38 +424,8 @@
     {#/if}
     </textarea>
       <!--end:模板－联系经纪人-->
-      <!--begin:模板－户型分间－户型经纪人-->
-      <textarea id="template_huxing_agent" style="display:none">        &lt;div class="t"&gt;
-            &lt;p&gt;
-                &lt;span&gt;&lt;a href="http://sh.lianjia.com/jingjiren/detail/{$T.agent.userCode}.html?phone={$T.agent.hostNumber},{$T.agent.extNumber}" class="name" title="{$T.agent.userName}" target="_blank"&gt;{$T.agent.userName}&lt;/a&gt; / 户型专家&lt;/span&gt;
-                &lt;a class="lianjiaim-createtalk" title="在线咨询" usercode="{$T.agent.userCode}" source="huxing"&gt;&lt;/a&gt;
-            &lt;/p&gt;
-            {#if $T.agent.hostNumber}
-            &lt;p style="margin-top:10px"&gt;{$T.agent.hostNumber} {#if $T.agent.extNumber}转 {$T.agent.extNumber}{#/if}&lt;/p&gt;
-            {#/if}
-        &lt;/div&gt;
-        &lt;a href="http://sh.lianjia.com/jingjiren/detail/{$T.agent.userCode}.html?phone={$T.agent.hostNumber},{$T.agent.extNumber}" target="_blank"&gt;&lt;div class="img" style="background-image:url({$T.agent.avatar})"&gt;&lt;/div&gt;&lt;/a&gt;
-    </textarea>
-      <!--end:模板－户型分间－户型经纪人-->
-      <!--begin:模板－户型分间-->
-      <textarea id="template_huxingfenjian" style="display:none">        {#if $T.cellInfoList.length &gt; 0}
-            &lt;table class="hx_list"&gt;
-                &lt;tbody&gt;
-                {#foreach $T.cellInfoList as fenjian}
-                    &lt;tr&gt;
-                        &lt;td class="roomType"&gt;{$T.fenjian.name}&lt;/td&gt;
-                        &lt;td&gt;{$T.fenjian.area}平米&lt;/td&gt;
-                        &lt;td&gt;{#if $T.fenjian.face}{$T.fenjian.face}{#else}暂无朝向{#/if}&lt;/td&gt;
-                        &lt;td&gt;{#if $T.fenjian.windowTypeName}{$T.fenjian.windowTypeName}{#else}未知窗户类型{#/if}&lt;/td&gt;
-                    &lt;/tr&gt;
-                {#/for}
-                &lt;/tbody&gt;
-            &lt;/table&gt;
-        {#else}
-            &lt;div class="hx_list_noData"&gt;分间信息收集中&lt;/div&gt;
-        {#/if}
-    </textarea>
-      <!--end:模板－户型分间-->
+      
+
       <!--begin:模板－看房记录-->
       <textarea id="template_kanfang" style="display:none">    {#if $T.list.length&gt;0}
         {#foreach $T.list as record}
@@ -783,64 +500,7 @@
     
     </textarea>
       <!--end:模板－模板－为你推荐（房源）-->
-      <!--begin: 虚假房源举报弹层-->
-      <div class="validate">
-         <div id="validateOverlay" class="validateOverlay"></div>
-         <div id="valideteMain" class="valideteMain animated bounceIn">
-            <div class="validateTop">
-               <a href="javascript:;" class="validateCloseBtn" id="validateCloseBtn"></a>
-            </div>
-            <form action="file:///C:/Users/robothy/Desktop/details.htm" method="post" class="validForm">
-               <h3>举报</h3>
-               <div class="infju_me" id="infju_me">
-                  <p>您举报该房源的理由是：</p>
-                  <ul class="clear">
-                     <label>
-                        <li><input name="reason" id="reason1" type="checkbox" value="房源不存在或已出售" checked="checked"></li>
-                        <li>房源不存在或已租</li>
-                     </label>
-                  </ul>
-                  <ul class="clear">
-                     <label>
-                        <li><input name="reason" id="reason3" type="checkbox" value="价格不真实"></li>
-                        <li>价格不真实</li>
-                     </label>
-                  </ul>
-                  <ul class="clear">
-                     <label>
-                        <li><input name="reason" id="reason2" type="checkbox" value="图片不真实"></li>
-                        <li>图片不真实</li>
-                     </label>
-                  </ul>
-                  <ul class="clear">
-                     <label>
-                        <li><input name="reason" id="reason4" type="checkbox" value="其他"></li>
-                        <li>其他</li>
-                     </label>
-                  </ul>
-                  <p class="mt_20">详细描述：</p>
-                  <ul class="clear">
-                     <li><textarea class="detail" id="report_detail" maxlength="250"></textarea></li>
-                  </ul>
-                  <ul class="clear">
-                     <li class="sdind">验证码</li>
-                     <li><input name="valicode" id="valicode" type="text" class="dfequ" maxlength="4"></li>
-                     <li id="yanzhengmaWrap"></li>
-                  </ul>
-                  <p id="checkReason"></p>
-                  <ul class="clear">
-                     <li class="jiudin" id="wyjbconfrm">
-                        <a href="javascript:;" class="btn" id="btn_reportSubmit">确定</a>
-                     </li>
-                  </ul>
-               </div>
-               <div id="infju_me_success">
-                  <p class="msg">已经收到您的举报，我们会尽快进行处理。<br>感谢您对我们工作的理解和支持！</p>
-               </div>
-            </form>
-         </div>
-      </div>
-      <!--end: 虚假房源举报弹层-->
+      
       <script>
          var nowUrl = "";
          var pagePrefix = "/zufang"
@@ -870,38 +530,6 @@
                      
                  },
                  
-                 {
-                     userName: "张少娜",
-                     userCode: "224335",
-                     hostNumber: "4007675011",
-                     extNumber: "598139",
-                     positionName: "初级物业顾问",
-                     daikan: "1",
-                     phone: "4007675011转598139",
-                     positionId : 1,
-                     status : 1,
-                     
-                     
-                     photoUrl: "http://cdn1.dooioo.com/fetch/vp/touxiang/photos/224335_150x200.jpg"
-                     
-                 },
-                 
-                 {
-                     userName: "李磊",
-                     userCode: "226507",
-                     hostNumber: "4007675011",
-                     extNumber: "598140",
-                     positionName: "初级物业顾问",
-                     daikan: "1",
-                     phone: "4007675011转598140",
-                     positionId : 1,
-                     status : 1,
-                     
-                     
-                     photoUrl: "http://cdn1.dooioo.com/fetch/vp/touxiang/photos/226507_150x200.jpg"
-                     
-                 },
-                 
              ],
              agentListPageNo : 1, //经纪人列表当前页码
          
@@ -917,8 +545,6 @@
                      phone: "4007675016转23046",
                      positionId : 1,
                      status : 1,
-                     
-                     
                      photoUrl: "http://cdn1.dooioo.com/fetch/vp/touxiang/photos/167046_150x200.jpg",
                      
                      status : "1",
@@ -932,8 +558,6 @@
              recommendList : [ //推荐房源列表
                  
                  {
-                     
-                     
                      photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20170207/1f828934-9330-4c84-be5b-fbda2bdaaa1b.jpg_200x150.jpg",
                      
                      price: "7000",
@@ -947,10 +571,7 @@
                  },
                  
                  {
-                     
-                     
                      photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20161119/98525750-a629-4d4f-8036-9ae0325fd506.jpg_200x150.jpg",
-                     
                      price: "6800",
                      name: "海天公寓",
                      room: "2",
@@ -962,155 +583,16 @@
                  },
                  
                  {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20160117/679c93e5-97f6-4047-b4a4-201e0e80daee.jpg_200x150.jpg",
-                     
-                     price: "7900",
+                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20161119/98525750-a629-4d4f-8036-9ae0325fd506.jpg_200x150.jpg",
+                     price: "6800",
                      name: "海天公寓",
                      room: "2",
-                     hall: "1",
-                     area: '60',
-                     houseRentId: "3812984",
+                     hall: "0",
+                     area: '52',
+                     houseRentId: "3790408",
                      ziruTag: "",
                      rentCityCode:"shz"
                  },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20161029/4c3e32be-49f8-48e9-b58f-6795522185af.jpg_200x150.jpg",
-                     
-                     price: "8200",
-                     name: "裕德大厦",
-                     room: "2",
-                     hall: "1",
-                     area: '77',
-                     houseRentId: "3325151",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20160321/19fb965b-d9d2-4fdb-acab-3c5f675aeb00.jpg_200x150.jpg",
-                     
-                     price: "7000",
-                     name: "南天大楼",
-                     room: "2",
-                     hall: "1",
-                     area: '65',
-                     houseRentId: "3561657",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20170116/0e2ce0da-4ccf-4dc8-809a-98bab17654b3.jpg_200x150.jpg",
-                     
-                     price: "8200",
-                     name: "裕德大厦",
-                     room: "2",
-                     hall: "2",
-                     area: '86',
-                     houseRentId: "3688626",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20170105/70c1d33d-0acf-4805-ad95-f330c737abde.jpg_200x150.jpg",
-                     
-                     price: "6500",
-                     name: "玉兰花苑",
-                     room: "2",
-                     hall: "1",
-                     area: '70',
-                     houseRentId: "3706064",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20160306/91971db2-2fcc-4943-9ca6-0e1bf2e9afd7.jpg_200x150.jpg",
-                     
-                     price: "5500",
-                     name: "南天大楼",
-                     room: "2",
-                     hall: "1",
-                     area: '65',
-                     houseRentId: "3725948",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     photourl: "http://cdn7.dooioo.com/static/img/new-version/default_block.png",
-                     
-                     
-                     price: "8500",
-                     name: "明辉苑",
-                     room: "2",
-                     hall: "2",
-                     area: '96',
-                     houseRentId: "3726486",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20170204/3bf30766-8350-49fe-9f3d-514b10c1ada2.jpg_200x150.jpg",
-                     
-                     price: "5800",
-                     name: "中原新村",
-                     room: "2",
-                     hall: "1",
-                     area: '51',
-                     houseRentId: "3732704",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20170217/0f544bbe-2f70-4c79-959c-9373959ed5cf.jpg_200x150.jpg",
-                     
-                     price: "7800",
-                     name: "裕德大厦",
-                     room: "2",
-                     hall: "1",
-                     area: '77',
-                     houseRentId: "3757083",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
-                 {
-                     
-                     
-                     photourl: "http://cdn1.dooioo.com/fetch/vp/fy/gi/20161101/be12f25a-96da-4f77-8a5f-dd90ac2b769f.jpg_200x150.jpg",
-                     
-                     price: "7000",
-                     name: "华狮国际公寓",
-                     room: "2",
-                     hall: "2",
-                     area: '120',
-                     houseRentId: "3779605",
-                     ziruTag: "",
-                     rentCityCode:"shz"
-                 },
-                 
              ],
              recommendListPageNo : 1, //看房记录列表当前页码
          
@@ -1122,166 +604,26 @@
          }
       </script>
       <!--begin: 登录弹层-->
-      <div class="loninContainer" id="loninContainer">
-         <div class="overlay_bg" id="loginOverlay"></div>
-         <div id="dialog" class="panel_login animated btn-login bounceIn actLoginBtn" gahref="signin_pop_close">
-            <i class="close" style="background: none" gahref="signin_pop_close"><img src="./dtl_files/close.png" width="52"></i>
-            <div class="panel_info">
-               <div class="panel_tab">
-                  <div class="title">
-                     <div class="fl">用户登录</div>
-                     <label class="fr">还没有链家网账号？<a href="http://passport.lianjia.com/register/resources/lianjia/register.html?service=http://bj.lianjia.com/" gahref="signin_pop_signup">马上注册</a></label>
-                  </div>
-                  <div class="clear"></div>
-                  <div id="con_login_user">
-                     <form action="file:///C:/Users/robothy/Desktop/details.htm" method="post">
-                        <ul>
-                           <li class="show-error" id="user-login-show-error">
-                              <dd id="user-login-show-error_txt">用户名或密码错误</dd>
-                           </li>
-                           <li class="item userName"><i></i><input type="text" id="user_name" class="the_input users" placeholder="请输入手机号"></li>
-                           <li class="item pwd"><i></i><input type="password" id="user_password" class="the_input password" placeholder="请输入登录密码"></li>
-                           <li class="item checkVerimg" style="display:none"><input type="text" id="user_verimg" class="the_input ver-img" maxlength="4" placeholder="请输入验证码"><img class="verImg"></li>
-                           <li class="li_01"><a href="https://passport.lianjia.com/register/resources/lianjia/forget.html?service=http://bj.lianjia.com/" gahref="signin_pop_find_password">找回密码</a></li>
-                           <li><a class="login-user-btn" id="login-user-btn" gahref="signin_pop_submit">立即登录</a></li>
-                        </ul>
-                     </form>
-                  </div>
-               </div>
-            </div>
-            <div class="registered"></div>
-         </div>
-      </div>
-	  
-	  <div style="height:30px"></div>
+      <%@ include file="./module/login.jsp" %>
 	  
       <!--end: 登录弹层-->
-      <!--begin: footer--
-      <div id="footer-wrapper-placeholder">
-         <div class="footer js_footer">
-            <div class="wrapper">
-               <div class="f-title">
-                  <div class="fl">
-                     <ul>
-                        <li><a href="http://sh.lianjia.com/about/zhuanti.html" target="_blank">了解链家网</a></li>
-                        <li><a href="http://sh.lianjia.com/about/aboutlianjia.html" rel="nofollow" target="_blank">关于链家</a></li>
-                        <li><a href="http://sh.lianjia.com/about/contactus.html" rel="nofollow" target="_blank">联系我们</a></li>
-                        <li><a href="http://sh.lianjia.com/about/joinagent.html" rel="nofollow" target="_blank">加入我们</a></li>
-                        <li><a href="http://sh.lianjia.com/about/privacy.html" rel="nofollow" target="_blank">隐私声明</a></li>
-                        <li><a href="http://sh.lianjia.com/about/sitemap.html" target="_blank">网站地图</a></li>
-                        <li><a href="http://sh.lianjia.com/about/notice.html" target="_blank">友情链接</a></li>
-                        <li><a href="https://www.ehomepay.com.cn/" rel="nofollow" target="_blank">理房通</a></li>
-                        <li><a href="http://agent.sh.lianjia.com/" rel="nofollow">经纪人登录</a></li>
-                     </ul>
-                  </div>
-                  <div class="fr">服务热线 4007-001-001</div>
-               </div>
-               <div class="lianjia-link-box js_lianjiaLinkBox" style="overflow: hidden;">
-                  <div class="fl js_footerLinkContainer">
-                     <div class="tab js_footer_tab_wrapper"><span class="js_tabItem hover" related_content="js_footerContent_0">上海找房大推荐</span><span class="js_tabItem" related_content="js_footerContent_1">上海小区列表</span><span class="js_tabItem" related_content="js_footerContent_2">热门城市新房</span><span class="js_tabItem" related_content="js_footerContent_3">热门城市租房网</span><span class="js_tabItem" related_content="js_footerContent_4">合作与友情链接</span></div>
-                     <div class="link-list js_footer_content_wrapper">
-                        <div class="js_footerContent js_footerContent_0" style="display: block;">
-                           <dd><a target="_blank" href="http://m.sh.lianjia.com/ershoufang/">手机找上海二手房</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000009061.html">底特律财富天地</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000009660.html">新城金郡</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014575.html">同润菲诗艾伦</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012033.html">三湘四季花城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012332.html">上海康城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017872.html">世茂滨江花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015174.html">奥林匹克花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014141.html">中远两湾城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000013259.html">浦发绿城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000013546.html">绿洲康城亲水湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000016116.html">三盛颐景园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000016197.html">地杰国际城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000009586.html">开元地中海</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014093.html">九城湖滨国际</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014198.html">紫东新苑</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014745.html">莱顿小城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012581.html">保利西子湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012041.html">中环一号</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000013692.html">大华二村</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000004375.html">上海源花城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017860.html">仁恒滨江园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000012349.html">浦东星河湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014189.html">馨佳园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015555.html">仁恒河滨花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015960.html">尚海湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017981.html">丽水华庭</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000018329.html">凯欣豪园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000014068.html">华润置地橡树湾</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000017211.html">财富海景花园</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000015954.html">上海春城</a><a target="_blank" href="http://sh.lianjia.com/xiaoqu/5011000011257.html">上海星河湾</a></dd>
-                        </div>
-                        <div class="js_footerContent js_footerContent_1" style="display: none;">
-                           <dd><a target="_blank" href="http://sh.lianjia.com/ershoufang/jingan/">静安</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xuhui/">徐汇</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/huangpu/">黄浦</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/minhang/">闵行</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/changning/">长宁</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/putuo/">普陀</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/zhabei/">闸北</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/hongkou/">虹口</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/yangpu/">杨浦</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/baoshan/">宝山</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jinshan/">金山</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jiading/">嘉定</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/fengxian/">奉贤</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/songjiang/">松江</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/qingpu/">青浦</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/caojiadu/">曹家渡</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jiangninglu/">江宁路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jingansi/">静安寺</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/nanjingxilu/">南京西路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/huadongligong/">华东理工</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/hengshanlu/">衡山路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/jianguoxilu/">建国西路</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/longhua/">龙华</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/shanghainanzhan/">上海南站</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/wantiguan/">万体馆</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xujiahui/">徐家汇</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/penglaigongyuan/">蓬莱公园</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/renminguangchang/">人民广场</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xintiandi/">新天地</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/xijiao/">西郊</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/zhongshangongyuan/">中山公园</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/kangqiao/">康桥</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/lujiazui/">陆家嘴</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/songbao/">淞宝</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/buyecheng/">不夜城</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/gumei/">古美</a><a target="_blank" href="http://sh.lianjia.com/ershoufang/nanxiang/">南翔</a></dd>
-                        </div>
-                        <div class="js_footerContent js_footerContent_2" style="display: none;">
-                           <dd><a target="_blank" href="http://bj.fang.lianjia.com/">北京新房</a><a target="_blank" href="http://tj.fang.lianjia.com/">天津新房</a><a target="_blank" href="http://sh.fang.lianjia.com/">上海新房</a><a target="_blank" href="http://qd.fang.lianjia.com/">青岛新房</a><a target="_blank" href="http://dl.fang.lianjia.com/">大连新房</a><a target="_blank" href="http://nj.fang.lianjia.com/">南京新房</a><a target="_blank" href="http://hz.fang.lianjia.com/">杭州新房</a><a target="_blank" href="http://cd.fang.lianjia.com/">成都新房</a><a target="_blank" href="http://wh.fang.lianjia.com/">武汉新房</a><a target="_blank" href="http://sz.fang.lianjia.com/">深圳新房</a><a target="_blank" href="http://cq.fang.lianjia.com/">重庆新房</a><a target="_blank" href="http://cs.fang.lianjia.com/">长沙新房</a><a target="_blank" href="http://xa.fang.lianjia.com/">西安新房</a></dd>
-                        </div>
-                        <div class="js_footerContent js_footerContent_3" style="display: none;">
-                           <dd><a target="_blank" href="http://tj.lianjia.com/zufang/">天津租房</a><a target="_blank" href="http://hz.lianjia.com/zufang/">杭州租房</a><a target="_blank" href="http://cd.lianjia.com/zufang/">成都租房</a><a target="_blank" href="http://dl.lianjia.com/zufang/">大连租房</a><a target="_blank" href="http://qd.lianjia.com/zufang/">青岛租房</a><a target="_blank" href="http://xm.lianjia.com/zufang/">厦门租房</a><a target="_blank" href="http://sz.lianjia.com/zufang/">深圳租房</a><a target="_blank" href="http://wh.lianjia.com/zufang/">武汉租房</a><a target="_blank" href="http://cs.lianjia.com/zufang/">长沙租房</a><a target="_blank" href="http://cq.lianjia.com/zufang/">重庆租房</a><a target="_blank" href="http://jn.lianjia.com/zufang/">济南租房</a><a target="_blank" href="http://gz.lianjia.com/zufang/">广州租房</a></dd>
-                        </div>
-                        <div class="js_footerContent js_footerContent_4" style="display: none;">
-                           <dd><a target="_blank" href="http://www.lianjia.com/">房产网</a><a target="_blank" href="http://bj.lianjia.com/baike/">买房注意事项</a><a target="_blank" href="http://bj.lianjia.com/jingjiren/">北京房屋经纪人</a><a target="_blank" href="http://bj.lianjia.com/yezhu/">北京业主委托</a><a target="_blank" href="http://m.lianjia.com/">手机房产网</a><a target="_blank" href="http://gz.esf.focus.cn/">广州二手房</a><a target="_blank" href="http://sh.cityhouse.cn/">上海房产</a><a target="_blank" href="http://sh.zu.anjuke.com/">上海租房网</a><a target="_blank" href="http://sh.house.sina.com.cn/">上海房产</a><a target="_blank" href="http://home.fang.com/">家居网</a><a target="_blank" href="http://www.oppein.cn/">定制家具</a><a target="_blank" href="http://www.fuwo.com/">装修网</a><a target="_blank" href="http://sh.loupan.com/">上海楼盘网</a><a target="_blank" href="http://www.rexian.net.cn/">武汉热线房产网</a><a target="_blank" href="http://sh.jiwu.com/">上海买房网</a><a target="_blank" href="http://sh.to8to.com/">上海装修网</a><a target="_blank" href="http://sheji.pchouse.com.cn/">家居设计</a><a target="_blank" href="http://sh.focus.cn/">上海房产</a><a target="_blank" href="http://www.ljia.net/">邯郸房产</a><a target="_blank" href="http://jsgc168.com/">工程信息</a><a target="_blank" href="http://guju.com.cn/">家居装修</a><a target="_blank" href="http://www.0731fdc.com/">长沙房产网</a><a target="_blank" href="http://www.juwai.com/">海外房产</a></dd>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="fr">
-                     <div class="ewmWrap">
-                        <div class="js_downloadApp" source="dbewm" ewmimgw="129" ewmimgh="129" style="position: relative;">
-                           <canvas width="129" height="129"></canvas>
-                           <img class="js_qrCodeIcon" src="./dtl_files/qrCodeIcon_lj.png" style="position: absolute; top: 50%; left: 50%; margin-top: -24.5px; margin-left: -24.5px; width: 43px; height: 43px; border: 3px solid rgb(255, 255, 255); border-radius: 8px; background: rgb(255, 255, 255);">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="bottom">
-                  <div class="copyright fl">	                                            北京链家房地产经纪有限公司 | 网络经营许可证 京ICP备11024601号-12<br>© Copyright©2010-2017 链家网Lianjia.com版权所有	                                        </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--end: footer-->
+      
       
       
       <div id="show-compare" style="position:fixed; top:40%; right:0px; min-width:25px; visibility:visible;">
-   <div style="background-color:#a0a0a0; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&lt;<br/>展<br/>开</div>
-   </span>
-   <div style="background-color:#e4e3e3; text-align:center; padding-top:5px; padding-bottom:5px;"><span>住<br/>房<br/>对<br/>比</span></div>
+   <div style="cursor: pointer; cursor: hand;background-color:#a0a0a0; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&lt;<br/>展<br/>开</div>
+   <div style="cursor: pointer; cursor: hand;background-color:#e4e3e3; text-align:center; padding-top:5px; padding-bottom:5px;"><span>住<br/>房<br/>对<br/>比</span></div>
 </div>
-<div id="compare-houses" style="position:fixed; top:40%; right:0px; min-width:250px; min-height:250px;  visibility:hidden;">
-   <div id="hide-compare-houses" style="background-color:#a0a0a0; width:100%; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&gt;隐藏</span></div>
-   </span>
+<div id="compare-houses" style="position:fixed; top:40%; right:0px; min-width:250px; visibility:hidden;">
+   <div id="hide-compare-houses" style="cursor: pointer; cursor: hand;background-color:#a0a0a0; width:100%; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&gt;隐藏</span></div>
    <div style="background-color:#e4e3e3; width:100%; text-align:center; padding-top:5px; padding-bottom:5px;">
-		<a style="display:inline-block; background-color:red; width:80px; padding: 5px 5px 5px 5px; color:#FFFFFF;" href="javascript:void()" >开始对比</a>&nbsp;&nbsp;&nbsp;
-		<a style="display:inline-block; background-color:gray; width:80px; padding: 5px 5px 5px 5px; color:#000000;" href="javascript:void()">清空</a>
+   		<ul id="compare-houses-lst"></ul>
+		<a id="begin-compare-houses" style="display:inline-block; background-color:red; width:80px; padding: 5px 5px 5px 5px; color:#FFFFFF;" href="javascript:void(0)" >开始对比</a>&nbsp;&nbsp;&nbsp;
+		<a id="clear-compare-houses" style="display:inline-block; background-color:gray; width:80px; padding: 5px 5px 5px 5px; color:#000000;" href="javascript:void(0)">清空</a>
    </div>
 </div>
       
-      
-      <!--begin: fix-right--
-      <div id="side-bar-tools-placeholder">
-         <div class="fix-right-v2" id="back-top" daty-id="index">
-            <table>
-               <tbody>
-                  <tr>
-                     <td>
-                        <div style="height: 300px;">
-                        	<div>展开</div>
-                        	<div>住房对比</div>
-                        </div>
-                        <div>开始对比</div>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
-            <ul>
-               <li class="gotop" id="gotop" style="display: none;">	                                <a title="返回顶部" href="file:///C:/Users/robothy/Desktop/details.htm#top" gahref="right_back_to_top">返回顶部</a>	                                <span class="popup"><i></i>返回顶部</span>	                            </li>
-            </ul>
-            <div class="js_feedbackPlaceholder">
-               <div class="feedbackContainer">
-                  <div class="overlay_bg" id="feedbackOverlay"></div>
-                  <div class="feedback-box animated bounceIn">
-                     <div class="complain">
-                        <div id="feedback_content" class="js_tabBox">
-                           <p>您对新版链家网有任何意见和建议，或使用中遇到的问题，请在本页面反馈。我们会每天关注并不断优化产品，为您提供更好的服务！</p>
-                           <div class="box">	                                        <span>反馈内容<label id="erro-tips">请输入反馈内容</label></span>	                                        <textarea id="feedbackContent" placeholder="我们非常乐意收到您使用网站过程中的感受和意见" autofocus=""></textarea>	                                    </div>
-                           <div class="box">	                                        <span>联系方式<i>(选填)</i></span>	                                        <input type="text" id="feedbackContact" placeholder="手机号、Email、QQ均可">	                                    </div>
-                           <div class="clear"></div>
-                           <div class="fl">	                                        <button id="btn_feedbackSubmit" gahref="feedback_pop_submit">提交反馈</button>	                                        <span id="tips"></span>	                                    </div>
-                           <div class="fr has"></div>
-                        </div>
-                        <div id="feedback_tousu" class="js_tabBox tab-box appeal" style="display: none">
-                           <div class="tel">	                                        <i></i>投诉热线/4007001001	                                    </div>
-                           <b>处理流程</b>	                                    
-                           <p>您可以通过链家网投诉热线提交投诉，我们会在24小时内（工作时间）反馈解决方案。</p>
-                           <div id="tousu">
-                              <b>投诉公示（<a href="http://sh.lianjia.com/tousu" target="_blank">点此查看公示页面</a>）</b>	                                        
-                              <ul id="list"></ul>
-                              <p>如果你愿意公开您的投诉，我们会在投诉公示页面进行展示，欢迎您的监督。</p>
-                           </div>
-                        </div>
-                     </div>
-                     <div id="feedback_success">	                                反馈成功，感谢您的反馈。	                            </div>
-                     <div class="closebok" id="feedbackPopClose" gahref="right_close_feedback_pop">	                                <img src="./dtl_files/close.png">	                            </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--end: fix-right-->
-      <!-- 微聊 -->
+      <!-- 微聊 --
       <div id="ng-app" ng-app="weiliaoApp" style="position: absolute;" class="ng-scope">
           
          <div weiliao-win="">
@@ -1289,18 +631,14 @@
                <div class="lianjiaim-shandow clear">
                   <div class="lianjiaim-wrap" session-win="">
                      <div class="lianjiaim-head" ng-click="clickWeiliaoHeader()">
-                        <span>咨询经纪人</span>	                            <!-- ngIf: computeTotalMsgCount(sessionList) > 0 -->	                            <!-- ngIf: helper.isShowWeiliaoPop -->	                        
                      </div>
                      <div class="lianjiaim-body" style="position: relative">
-                        <!-- ngIf: helper.isShowWeiliaoPop && weiliao.isLogin -->	                            <!-- ngIf: !weiliao.isLogin -->
                         <div class="lianjiaim-noagent ng-scope" ng-if="!weiliao.isLogin">
                            <div class="noagent-sub">您还没有登陆,先去登陆/注册吧</div>
                            <div><a href="javascript:;" class="js_login" ng-click="doLogin()">登录/注册</a></div>
                         </div>
-                        <!-- ngIf: helper.loading && weiliao.isLogin && !sessionList -->	                            <!-- ngIf: isNobody(sessionList) && weiliao.isLogin && !helper.loading -->	                        
                      </div>
                   </div>
-                  <!-- ngIf: helper.isShowChatList -->	                        
                </div>
             </div>
          </div>

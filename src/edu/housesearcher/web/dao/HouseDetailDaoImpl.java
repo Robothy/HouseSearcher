@@ -79,7 +79,7 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    //详情，这里为了简单起见直接把html弄下来了
 	    String level = document.select("table[class=aroundInfo]").html();
 	    //经济人超链接
-	    String agentHref = document.select("div[class=brokerName] a").attr("href").replaceAll("\\?.{1,}$", "");
+	    String agentHref = document.select("div[class=brokerName] a").attr("href");
 	    //经纪人图片
 	    String agentImg = document.select("div[class=brokerInfo] img").attr("src");
 

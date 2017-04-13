@@ -30,8 +30,11 @@ public class ShowHouseDetailsAction implements Action {
     @Override
     public String execute() throws Exception {
 	houseDetailDao = new HouseDetailDaoImpl();
-	houseDetails = houseDetailDao.getInstanceByHouseHref(houseHref);
-	
-	return SUCCESS;
+	if(houseHref==null||houseHref.contentEquals("")){
+	    return NONE;
+	}else{
+	    houseDetails = houseDetailDao.getInstanceByHouseHref(houseHref);
+	    return SUCCESS;
+	}
     }
 }

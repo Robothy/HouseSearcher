@@ -1,5 +1,5 @@
 (function(headerParameters){
-	var loginHtml = '<div class="overlay_bg" id="loginOverlay"></div>'+
+	/*var loginHtml = '<div class="overlay_bg" id="loginOverlay"></div>'+
 			'<div id="dialog" class="panel_login animated btn-login bounceIn actLoginBtn" gahref="signin_pop_close">'+
 				'<i class="close" style="background: none" gahref="signin_pop_close"><img src="'+headerParameters.publichost+'/public/img/close.png" width="52" /></i>'+
 				'<div class="panel_info">'+
@@ -40,7 +40,9 @@
 				'<div class="registered"></div>'+
 			'</div>';
 			
-	$('#loninContainer').html(loginHtml);
+	var registerHtml = 
+			
+	$('#loninContainer').html(loginHtml);*/
 	
 	var loginDoing = false;//登录弹层－防重复提交中间变量
 	

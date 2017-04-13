@@ -112,7 +112,7 @@ var loadCompareHouses = function () {
 
 //往待比较房屋中添加一个元素
 var appendHouseElement = function (JSONobj) {
-	$("#compare-houses-lst").append("<li style=\"padding:3px 3px 10px 10px; width:100%; \"><span title=\"查看\" style=\"  float:left; display:inline-block; \"><a style=\"font-size:11px; color:black;\" href=\"" + JSONobj['houseHref'] + "\">" + JSONobj['community'] + "," + JSONobj['houseType'] + "," + JSONobj['price'] + "</a></span><span class=\"del-compare-house\" title=\"删除\" style=\"cursor: pointer; cursor: hand; display:inline-block; border:solid gray 1px; margin-right:0px; font-size:11px; \">X</span><li>");
+	$("#compare-houses-lst").append("<li style=\"padding:3px 3px 10px 10px; width:100%; \"><span title=\"查看\" style=\"  float:left; display:inline-block; \"><a style=\"font-size:11px; color:black;\" href=\"/HouseSearcher/pages/house-details.action?houseHref=" + JSONobj['houseHref'] + "\">" + JSONobj['community'] + "," + JSONobj['houseType'] + "," + JSONobj['price'] + "</a></span><span class=\"del-compare-house\" title=\"删除\" style=\"cursor: pointer; cursor: hand; display:inline-block; border:solid gray 1px; margin-right:0px; font-size:11px; \">X</span><li>");
 }
 
 //获取当前页面房屋信息,返回一个 json 格式的字符串

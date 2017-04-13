@@ -97,7 +97,7 @@
                      </a>
                      <div class="label">
                         <div class="fl" id="houseTag">主卧</div>
-                        <div class="fr"><span id="currentIndex">1</span> / 12</div>
+                        <div class="fr"><span id="currentIndex"></span> </div>
                      </div>
                   </div>
                   <!-- 小图区域 -->
@@ -125,13 +125,13 @@
             <div class="content forRent">
                <div class="houseInfo">
                   <div class="price">
-                     <div class="mainInfo bold" style="font-size:28px;">6800<span class="unit">元/月</span></div>
+                     <div class="mainInfo bold" style="font-size:28px;">${houseDetails["price"] }<span class="unit"></span></div>
                   </div>
                   <div class="room">
                      <div class="mainInfo">${houseDetails["room"] }<span class="unit">室</span> ${houseDetails["hall"] }<span class="unit">厅</span></div>
                   </div>
                   <div class="area">
-                     <div class="mainInfo">${houseDetails["area"] }<span class="unit">平</span></div>
+                     <div class="mainInfo">${houseDetails["area"] }<span class="unit"></span></div>
                   </div>
                </div>
                <table class="aroundInfo">
@@ -618,7 +618,7 @@
    <div id="hide-compare-houses" style="cursor: pointer; cursor: hand;background-color:#a0a0a0; width:100%; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&gt;隐藏</span></div>
    <div style="background-color:#e4e3e3; width:100%; text-align:center; padding-top:5px; padding-bottom:5px;">
    		<ul id="compare-houses-lst"></ul>
-		<a id="begin-compare-houses" style="display:inline-block; background-color:red; width:80px; padding: 5px 5px 5px 5px; color:#FFFFFF;" href="javascript:void(0)" >开始对比</a>&nbsp;&nbsp;&nbsp;
+		<a id="begin-compare-houses" style="display:inline-block; background-color:red; width:80px; padding: 5px 5px 5px 5px; color:#FFFFFF;" target="_blank" href="/HouseSearcher/pages/compare-houses.jsp" >开始对比</a>&nbsp;&nbsp;&nbsp;
 		<a id="clear-compare-houses" style="display:inline-block; background-color:gray; width:80px; padding: 5px 5px 5px 5px; color:#000000;" href="javascript:void(0)">清空</a>
    </div>
 </div>

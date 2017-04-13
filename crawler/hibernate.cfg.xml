@@ -25,5 +25,6 @@
   <mapping resource="edu/housesearcher/crawler/entity/AgentWatchTimes.hbm.xml"/>
   <mapping resource="edu/housesearcher/crawler/entity/StatusValue.hbm.xml"/>
   <mapping resource="edu/housesearcher/crawler/entity/CrawlerCfg.hbm.xml"/>
+  <mapping resource="edu/housesearcher/crawler/entity/EntUser.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

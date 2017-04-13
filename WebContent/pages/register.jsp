@@ -68,7 +68,7 @@ $(document).ready(function(){
       <label for="inputdefault">确认密码</label>
       <input class="form-control" id="repwd" type="password">
     </div>
-    <button type="submit" id="sub" class="btn" style="background-color:#39AC6A; width:100%;" ><b>立即注册</b></button>
+    <button type="submit" id="sub" class="btn" style="background-color:#39AC6A; width:100%; color: white; letter-spacing: 7px;" ><b>立即注册</b></button>
   </form>
 </div>
 </body>

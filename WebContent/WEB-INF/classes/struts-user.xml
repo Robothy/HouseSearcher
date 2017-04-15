@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="edu.housesarcher.web.register" namespace="/user" extends="json-default">
+		
+		<global-allowed-methods>execute,login,check</global-allowed-methods>
+		<!-- 注册 -->
+		<action name="register" class="edu.housesearcher.web.action.RegisterAction" method="execute"  >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="includeProperties">
+					result
+				</param>
+			</result>
+		</action>
+		<!-- 检查是否存在用户 -->
+		<action name="check-user" class="edu.housesearcher.web.action.RegisterAction" method="check"  >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="includeProperties">
+					result
+				</param>
+			</result>
+		</action>
+		
+	</package>
+	
+</struts>

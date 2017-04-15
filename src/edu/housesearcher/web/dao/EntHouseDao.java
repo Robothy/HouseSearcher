@@ -27,4 +27,25 @@ public class EntHouseDao {
 	}
 	return house;
     }
+    
+    //分页查询
+    public List<EntHouse> getHouses(Integer begin, Integer num){
+	List resultSet = null;
+	String hql = "from EntHouse";
+	Session session = HibernateUtil.getSession();
+	Transaction transaction = session.beginTransaction();
+	Query query = session.createQuery(hql);
+	query.setFirstResult(begin);
+	query.setMaxResults(num);
+	try{
+	    resultSet = query.list();
+	    transaction.commit();
+	}catch(Exception e){
+	    e.printStackTrace();
+	}finally {
+	    session.close();
+	}
+	return resultSet;
+    }
+    
 }

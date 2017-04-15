@@ -91,15 +91,17 @@ public class HouseListElement implements ICrawlerLogger{
 	List<EntCommunity> result = null;
 	try{
 	    result = criteria.list();
+	    transaction.commit();
 	}catch(Exception e){
 	    CRAWLER_LOGGER.error(e);
+	}finally {
+	    session.close();
 	}
+	
 	if(result!=null)
 	if(result.size()!=0){
 	    this.CName = ((EntCommunity)(result.get(0))).getCName();
 	}
-	transaction.commit();
-	session.close();
 	
 	//获取收藏人数属性 collectNum 的值
 	collectNum = "12";

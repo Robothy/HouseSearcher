@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-4-1 11:33:22 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2017-4-16 11:28:38 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="edu.housesearcher.crawler.entity.EntHouse" table="ent_house" catalog="housesearcher">
         <id name="dataId" type="java.lang.Integer">
@@ -26,8 +26,11 @@
         <property name="price" type="string">
             <column name="price" precision="22" scale="0" />
         </property>
-        <property name="HType" type="string">
-            <column name="h_type" length="0" />
+        <property name="HCell" type="string">
+            <column name="h_cell" />
+        </property>
+        <property name="HRoom" type="string">
+            <column name="h_room" />
         </property>
         <property name="HLevel" type="string">
             <column name="h_level" />

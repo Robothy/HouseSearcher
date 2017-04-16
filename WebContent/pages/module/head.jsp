@@ -56,7 +56,7 @@
 				"text":"首页"
 			},
 			"all-houses":{
-				"url":"/HouseSearcher/search-all-house.action",
+				"url":"/HouseSearcher/house/search-houses.action",
 				"text":"所有住房"
 			},
 			"collections":{

@@ -9,9 +9,10 @@
 		<!-- 推荐房屋列表 -->
 		<action name="recommend-house-list" class="edu.housesearcher.web.action.RecommendHousesAction" method="execute" >
 			<result type="json">
-				<param name="excludeNullProperties">true</param>
+				<!-- <param name="excludeNullProperties">true</param> -->
 				<param name="noCache">true</param>
-				<param name="includeProperties">responseHouses,responseCode</param>
+				<!-- <param name="includeProperties">responseHouses,responseCode</param> -->
+				<param name="includeProperties">requestHouseFirst,requestHousesNumber,houseListElementDao,houseDao</param>
 			</result>
 		</action>
 		

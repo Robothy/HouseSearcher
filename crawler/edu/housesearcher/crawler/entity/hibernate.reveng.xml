@@ -22,7 +22,7 @@
 			not-null="false">
 		</sql-type>
 	</type-mapping>
-	<table-filter match-name="ent_user" match-catalog="housesearcher"></table-filter>
-								
-				
+	<table-filter match-name="ent_agent"
+		match-catalog="housesearcher">
+	</table-filter>
 </hibernate-reverse-engineering>

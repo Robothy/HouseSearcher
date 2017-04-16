@@ -130,11 +130,9 @@ public class LianJiaHrefListCrawler extends ALianJiaCrawlerManager implements Se
 		    Element element = iterator.next();
 		    String key = element.select("a[class=rent]").attr("href");
 		    String value = "http://sh.lianjia.com" + key;//住房超链接
-		    String image = element.select("img").attr("src");  //图片超链接
 		    String title = element.select("img").attr("alt");//标题
 		    String tags = element.select("div[class=chanquan] span[class=fang-subway-ex] span").text()+",";//标签
 		    Map<String, String> e = new HashMap<String,String>();
-		    e.put("ImgHref", image);
 		    e.put("HTitle",title);
 		    e.put("HTags",tags);
 		    e.put("HHref", value);

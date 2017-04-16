@@ -104,10 +104,16 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		//租金
 		String Price = contentForRent.select("div[class=price]").first()
 			.select("div[class=mainInfo bold]").first().ownText();
-		//户型 json 格式
-		String HType = "{\"room\":"+contentForRent.select("div[class=room]").first()
+		//图片链接
+		String imgHref = document.select("img[id=view_big_img]").attr("src");
+		
+		//户型 
+		String HType[] = contentForRent.select("div[class=room]").first()
 			.select("div[class=mainInfo]").first().text()
-			.replace("室", ",\"hall\":").replace("厅", "}");
+			.replace("室", "-").replace("厅", "").split("-");
+		String HHall = HType[0];
+		String HRoom = HType[1];
+		//面积	
 		String Area = contentForRent.select("div[class=area]").select("div").first().text().replace("平", "");
 		String PubDate = null;
 		String HLevel = null;
@@ -131,13 +137,15 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 		
 		Map<String, String> node = new HashMap<String, String>();
 		node.put("Price", Price);
-		node.put("HType", HType);
+		node.put("HHall", HHall);
+		node.put("HRoom", HRoom);
 		node.put("PubDate",PubDate);
 		node.put("HLevel", HLevel);
 		node.put("HOrientation", HOrientation);
 		node.put("CHref", CHref);
 		node.put("AHref", AHref);
 		node.put("Area", Area);
+		node.put("imgHref", imgHref);
 		result.add(node);
 		
 	    } catch (Exception e) {
@@ -161,11 +169,13 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 	    for(Map<String, String> data : datas){
 		String hqlUpdate = "update EntHouse set "
 			+ "price = :Price, "
-			+ "HType = :HType, "
+			+ "HHall = :HHall, "
+			+ "HRoom = :HRoom, " 
 			+ "pubDate = :PubDate, "
 			+ "HLevel = :HLevel, "
 			+ "HOrientation = :HOrientation, "
 			+ "CHref = :CHref,"
+			+ "imgHref = :imgHref,"
 			+ "AHref = :AHref,"
 			+ "area = :Area,"
 			+ "createTime = :CreateTime,"
@@ -173,7 +183,9 @@ public class LianJiaHouseMessageCrawler extends ALianJiaCrawlerManager implement
 			+ "where HHref = :HHref";
 		int updateEntities = session.createQuery(hqlUpdate)
 			.setString("Price", data.get("Price"))
-			.setString("HType", data.get("HType"))
+			.setString("HHall", data.get("HHall"))
+			.setString("HRoom", data.get("HRoom"))
+			.setString("imgHref", data.get("imgHref"))
 			.setString("PubDate", data.get("PubDate"))
 			.setString("HLevel", data.get("HLevel"))
 			.setString("HOrientation", data.get("HOrientation"))

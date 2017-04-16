@@ -51,7 +51,7 @@ public class LianJiaCommunityMsgCrawler extends ALianJiaCrawlerManager implement
 	    try {		    
 		String CName = document.select("h1").text();
 		String CLocation = document.select("span[class=adr]").attr("title");
-		CLocation = CLocation.length()<200?CLocation:CLocation.substring(0, 199);
+		CLocation = CLocation.length()<50?CLocation:CLocation.substring(0, 49);
 		Element coordElement = document.select("div[class=zone-map js_content]").first();
 		String coord = coordElement.attr("longitude") + "," + coordElement.attr("latitude");
 		data.put("CName", CName);

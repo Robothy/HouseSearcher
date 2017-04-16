@@ -11,7 +11,7 @@
 	
 	<include file="struts-user.xml"></include>
 	<include file="struts-house.xml"></include>
-	
+	<include file="struts-recommend.xml"></include>
 	
 	
 	

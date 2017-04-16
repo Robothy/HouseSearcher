@@ -12,7 +12,7 @@
 				<!-- <param name="excludeNullProperties">true</param> -->
 				<param name="noCache">true</param>
 				<!-- <param name="includeProperties">responseHouses,responseCode</param> -->
-				<param name="includeProperties">requestHouseFirst,requestHousesNumber,houseListElementDao,houseDao</param>
+				<param name="excludeProperties">requestHouseFirst,requestHousesNumber,houseListElementDao,houseDao</param>
 			</result>
 		</action>
 		

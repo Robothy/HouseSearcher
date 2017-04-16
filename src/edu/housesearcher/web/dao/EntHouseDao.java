@@ -31,7 +31,7 @@ public class EntHouseDao {
     //分页查询
     public List<EntHouse> getHouses(Integer begin, Integer num){
 	List resultSet = null;
-	String hql = "from EntHouse";
+	String hql = "from EntHouse where isGetMsg='Y'";
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 	Query query = session.createQuery(hql);

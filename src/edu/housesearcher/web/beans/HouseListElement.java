@@ -28,7 +28,8 @@ public class HouseListElement implements ICrawlerLogger{
     private String pubDate;
     private String area;
     private String price;
-    private String HType;
+    private String HHall;
+    private String HRoom;
     private String HLevel;
     private String HOrientation;
     private String imgHref;
@@ -49,7 +50,8 @@ public class HouseListElement implements ICrawlerLogger{
 	this.pubDate = house.getPubDate();
 	this.area = house.getArea();
 	this.price = house.getPrice();
-	this.HType = house.getHType();
+	this.HHall = house.getHHall();
+	this.HRoom = house.getHRoom();
 	this.HLevel = house.getHLevel();
 	this.HOrientation = house.getHOrientation();
 	this.imgHref = house.getImgHref();
@@ -60,25 +62,6 @@ public class HouseListElement implements ICrawlerLogger{
 	this.getRelatedPropertiesValue();
     }
     
-    public HouseListElement(String HHref, String HTitle, String HTags, String pubDate, String area, String price, String HType,
-	    String HLevel, String HOrientation, String imgHref, String CHref, String AHref, String isGetMsg,
-	    String createTime) {
-	this.HHref = HHref;
-	this.HTitle = HTitle;
-	this.HTags = HTags;
-	this.pubDate = pubDate;
-	this.area = area;
-	this.price = price;
-	this.HType = HType;
-	this.HLevel = HLevel;
-	this.HOrientation = HOrientation;
-	this.imgHref = imgHref;
-	this.CHref = CHref;
-	this.AHref = AHref;
-	this.isGetMsg = isGetMsg;
-	this.createTime = createTime;
-    }
-
     /**
      * 获取相关变量的值
      */
@@ -179,12 +162,21 @@ public class HouseListElement implements ICrawlerLogger{
 	this.price = price;
     }
 
-    public String getHType() {
-	return this.HType;
+
+    public String getHHall() {
+        return HHall;
     }
 
-    public void setHType(String HType) {
-	this.HType = HType;
+    public void setHHall(String hHall) {
+        HHall = hHall;
+    }
+
+    public String getHRoom() {
+        return HRoom;
+    }
+
+    public void setHRoom(String hRoom) {
+        HRoom = hRoom;
     }
 
     public String getHLevel() {

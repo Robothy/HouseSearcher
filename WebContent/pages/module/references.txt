@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/HouseSearcher/bootstrap/bootstrap.min.css">
+<script src="/HouseSearcher/bootstrap/bootstrap.min.js"></script>
+
 <script src="/HouseSearcher/jquery/jquery.min.js"></script>
 <script src="/HouseSearcher/jquery/jquery.cookie.min.js"></script>
-<script src="/HouseSearcher/bootstrap/bootstrap.min.js"></script>

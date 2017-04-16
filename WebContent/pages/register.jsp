@@ -14,6 +14,7 @@
       </style>
    </head>
    <body>
+   	  <%@ include file="module/head.jsp" %>
       <div class="registContainer" style="width: 30%; margin-top: 100px; margin-left: auto; margin-right: auto;" >
          <h2>账号注册</h2>
          <hr style="color" />

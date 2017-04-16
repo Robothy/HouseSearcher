@@ -21,10 +21,47 @@ public class SearchHouseAction implements Action  {
     
     private List<HouseListElement> houses = null;
     private String searchResult = SUCCESS;//查询结果
+    private Integer responseCode ;
+    public String getSearchResult() {
+        return searchResult;
+    }
+
+    public void setSearchResult(String searchResult) {
+        this.searchResult = searchResult;
+    }
+
+    public Integer getResponseCode() {
+        return responseCode;
+    }
+
+    public void setResponseCode(Integer responseCode) {
+        this.responseCode = responseCode;
+    }
+
+    public Integer getBeginIndex() {
+        return beginIndex;
+    }
+
+    public void setBeginIndex(Integer beginIndex) {
+        this.beginIndex = beginIndex;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    private Integer beginIndex;
+    private Integer number;
+    
     
     @Override
     public String execute() throws Exception {
 	executeSearch();
+	System.out.println("execute");
 	return SUCCESS;
     }
     
@@ -37,14 +74,15 @@ public class SearchHouseAction implements Action  {
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 	Query query = session.createQuery("from EntHouse where is_get_msg = 'Y'");
-	query.setFirstResult(1);
-	query.setMaxResults(20);
+	query.setFirstResult(beginIndex);
+	query.setMaxResults(number);
 	List<EntHouse> queryResults = null;
 	try {
 	    queryResults = query.list();
 	    transaction.commit();
+	    responseCode=1;
 	} catch (Exception e) {
-	    searchResult = "none";
+	    responseCode=0;
 	}finally {
 	    session.close();
 	}

@@ -8,11 +8,11 @@ import edu.housesearcher.web.beans.HouseListElement;
 
 public class HouseListElementDao {
     
-    HouseListElement getHouseListElementByEntHouse(EntHouse house){
+    public HouseListElement getHouseListElementByEntHouse(EntHouse house){
 	return new HouseListElement(house);
     }
     
-    List<HouseListElement> getHouseListElementsByEntHouses(List<EntHouse> houses){
+    public List<HouseListElement> getHouseListElementsByEntHouses(List<EntHouse> houses){
 	List<HouseListElement> result = new ArrayList<>();
 	for(EntHouse h: houses){
 	    result.add(new HouseListElement(h));

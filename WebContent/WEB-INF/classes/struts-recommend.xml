@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="edu.housesearcher.web.recommend" namespace="/recommend" extends="json-default">
+		<global-allowed-methods>execute</global-allowed-methods>
+		
+		<!-- 推荐房屋列表 -->
+		<action name="recommend-house-list" class="edu.housesearcher.web.action.RecommendHousesAction" method="execute" >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="includeProperties">responseHouses,responseCode</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

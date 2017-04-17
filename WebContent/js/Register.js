@@ -11,7 +11,12 @@ $(document).ready(function(){
          			if((/^1[34578]\d{9}$/.test(phone))){ //手机号输入格式正确
          				$.ajax({
          					type:"POST",
-         					data:{phone:$("#phone").val(),pwd:$("#pwd").val()},
+         					data:{
+         							phone:$("#phone").val(),
+         							pwd:$("#pwd").val(),
+         							nickName:$("#nickName").val(),
+         							firstName:$("#firstName").val()
+         						},
          					url:"/HouseSearcher/user/check-user.action",
          					dataType:"json",
          					beforeSend(){
@@ -51,7 +56,7 @@ $(document).ready(function(){
          				$("#pwd-check-info").html('<span style="color:green;">√ 验证成功！</span>');
          				isPwdValid = true;
          			}else{
-         				$("#pwd-check-info").html('<span style="color:red;">√ 两次密码不一致！</span>');
+         				$("#pwd-check-info").html('<span style="color:red;">× 两次密码不一致！</span>');
          			}
          		}
          	});
@@ -93,14 +98,19 @@ $(document).ready(function(){
          	$.ajax({
          		type:"POST",
          		url:"/HouseSearcher/user/register.action",
-         		data:{phone:$("#phone").val(),pwd:$("#pwd").val()},
+         		data:{
+         			phone:$("#phone").val(),
+					pwd:$("#pwd").val(),
+					nickName:$("#nickName").val(),
+					firstName:$("#firstName").val()
+         		},
          		success:function(data){
          			var result = data["result"];
          			
          			if (result=="0") {//用户已存在
          				alert("该用户已注册！");
          			}else if (result=="1") {//注册成功
-         				$("body").html('<div style="position: absolute; width:100%; height:100%; background-color:black; opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=50); z-index=1000;">'+
+         				/*$("body").html('<div style="position: absolute; width:100%; height:100%; background-color:black; opacity:0.5;-moz-opacity:0.5;filter:alpha(opacity=50); z-index=1000;">'+
          					'<div style="border-top:solid 3px green; width:200px; background-color:white; margin-top:150px; margin-left:auto; margin-right:auto;">'+
          					'√ 注册成功,<span id="timer">5</span>秒后<a href="/HouseSearcher/index.html">跳转</a>'+
          					'</div>'+
@@ -108,9 +118,12 @@ $(document).ready(function(){
          				for(var i=4; i>-1; i--){
          					setTimeout(function(){
          						$("#timer").text(i.toString());
-         					},1000);
-         				}
-         				window.location = '/HouseSearcher/index.html';
+         					},2000);
+         				}*/
+         				
+         				alert('注册成功！')
+         				window.location = '/HouseSearcher/index.jsp';
+         				
          			}else {
          				alert("系统内部错误，请稍后重试！");
          			}

@@ -5,23 +5,31 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>注册账户</title>
-      <%@ include file="module/references.txt" %>
-      <script type="text/javascript" src="/HouseSearcher/js/Register.js"></script>
       <style type="text/css">
          .form-group{
          width: 100%;
          }
       </style>
+            
    </head>
    <body>
    	  <%@ include file="module/head.jsp" %>
-      <div class="registContainer" style="width: 30%; margin-top: 100px; margin-left: auto; margin-right: auto;" >
+   	  <script type="text/javascript" src="/HouseSearcher/js/Register.js"></script>
+      <div class="registContainer" style="width: 30%; margin-top: 50px; margin-left: auto; margin-right: auto;" >
          <h2>账号注册</h2>
-         <hr style="color" />
+         <hr style="border-width: 2px; border-color:#39AC6A; "/>
          <div class="form-inline">
             <div style="margin-top: 15px;" class="form-group">
                <label style="">手机号</label><label style="float: right;" id="phone-check-info"></label><br>
                <input style="width: 100%;" class="form-control" id="phone" type="text">
+            </div>
+            <div style="margin-top: 15px;" class="form-group">
+               <label style="">姓名</label><br>
+               <input style="width: 100%;" class="form-control" id="firstName" type="text">
+            </div>
+            <div style="margin-top: 15px;" class="form-group">
+               <label style="">昵称</label><br>
+               <input style="width: 100%;" class="form-control" id="nickName" type="text">
             </div>
             <div style="margin-top: 15px;" class="form-group">
                <label for="inputdefault">密码</label><br>

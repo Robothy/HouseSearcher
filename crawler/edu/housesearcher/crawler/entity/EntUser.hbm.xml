@@ -1,15 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2017-4-13 22:25:45 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 2017-4-17 15:12:27 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="edu.housesearcher.crawler.entity.EntUser" table="ent_user" catalog="housesearcher">
-        <id name="phone" type="string">
-            <column name="phone" length="20" />
-            <generator class="assigned" />
+    <class name="EntUser" table="ent_user" catalog="housesearcher">
+        <id name="dataId" type="java.lang.Integer">
+            <column name="data_id" />
+            <generator class="identity" />
         </id>
+        <property name="telephone" type="string">
+            <column name="telephone" length="20" unique="true" />
+        </property>
+        <property name="firstName" type="string">
+            <column name="first_name" length="50" />
+        </property>
+        <property name="nickName" type="string">
+            <column name="nick_name" length="50" />
+        </property>
         <property name="pwd" type="string">
-            <column name="pwd" length="200" />
+            <column name="pwd" length="200" not-null="true" />
+        </property>
+        <property name="createTime" type="string">
+            <column name="create_time" length="19" />
         </property>
     </class>
 </hibernate-mapping>

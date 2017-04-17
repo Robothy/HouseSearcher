@@ -85,12 +85,15 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 
 	    EntAgentDao agentDao = new EntAgentDao();
 	    EntAgent agent = agentDao.getInstanceByAgentHref(agentHref);
-	    if(agent==null||agent.getIsGetMsg().equals("N")){
+	    
+	    //没有经济人
+	    if(agentHref.equals("")){
+		agent = agentDao.getInstanceByAgentHref("http://sh.lianjia.com/jingjiren/detail/102618.html");
+	    }else if(agent==null||agent.getIsGetMsg().equals("N")){
 		(new LianJiaAgentMessageCrawler()).appendDataByHref(agentHref);
+		agent = agentDao.getInstanceByAgentHref(agentHref);
 	    }
-	    
-	    agent = agentDao.getInstanceByAgentHref(agentHref);
-	    
+	    	    
 	    //经纪人姓名
 	    String agentName = agent.getName();;
 	    //经济人好评率

@@ -52,14 +52,14 @@ public class UserDao {
     }
     
     public EntUser find(EntUser user){
-	return find(user.getPhone());
+	return find(user.getTelephone());
     }
     
     public EntUser find(String phone){
 	Session session = HibernateUtil.getSession();
 	Transaction transaction = session.beginTransaction();
 	Criteria criteria = session.createCriteria(EntUser.class);
-	criteria.add(Restrictions.eq("phone", phone));
+	criteria.add(Restrictions.eq("telephone", phone));
 	EntUser result = null;
 	try {
 	    List results = criteria.list();

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-4-17 15:12:27 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="edu.housesearcher.crawler.entity.UserCollectHouse" table="user_collect_house" catalog="housesearcher">
+        <id name="dataId" type="java.lang.Integer">
+            <column name="data_id" />
+            <generator class="identity" />
+        </id>
+        <property name="telephone" type="string">
+            <column name="telephone" length="20" />
+        </property>
+        <property name="HHref" type="string">
+            <column name="h_href" length="100" />
+        </property>
+        <property name="createTime" type="string">
+            <column name="create_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

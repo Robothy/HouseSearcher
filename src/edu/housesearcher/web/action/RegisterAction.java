@@ -3,6 +3,7 @@ package edu.housesearcher.web.action;
 import com.opensymphony.xwork2.Action;
 
 import edu.housesearcher.crawler.entity.EntUser;
+import edu.housesearcher.crawler.utils.DateTimeUtil;
 import edu.housesearcher.web.dao.UserDao;
 
 public class RegisterAction implements Action {
@@ -10,6 +11,27 @@ public class RegisterAction implements Action {
     private UserDao userDao;
     private String phone;
     private String pwd;
+    private String nickName;
+    private String firstName;
+    public UserDao getUserDao() {
+        return userDao;
+    }
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+    public String getNickName() {
+        return nickName;
+    }
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     private String result;
     public String getPhone() {
         return phone;
@@ -39,7 +61,7 @@ public class RegisterAction implements Action {
 	
 	UserDao userDao = new UserDao();
 	if(userDao.find(phone)==null){//可以注册
-	    userDao.save(new EntUser(phone, pwd));
+	    userDao.save(new EntUser(phone,firstName, nickName,pwd, DateTimeUtil.getNowAsString()));
 	    setResult("1");
 	}else{
 	    setResult("0");//用户已存在

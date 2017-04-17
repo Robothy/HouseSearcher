@@ -42,7 +42,7 @@ var load = function(begin,num) {
 					'<a href="/HouseSearcher/house/house-details?houseHref='+h['HHref']+'" target="_blank"><img class="img-polaroid" src="'+h['imgHref']+'" style="height: 150px; width:230px;" alt="图片" onerror="this.src=\'/HouseSearcher/imgs/not-found-img.png\'"></a>'+
 		    	'</div>'+
 		    	'<div style="width: 75%; display: inline-block; float: left;">'+
-		    		'<a style="text-decoration: none;" href="#"><h4><b>'+h['HTitle']+'</b></h4></a>'+
+		    		'<a style="text-decoration: none;" href="/HouseSearcher/house/house-details?houseHref='+h['HHref']+'"><h4><b>'+h['HTitle']+'</b></h4></a>'+
 		    		'<div style="width: 100%;">'+
 		    			'<div style="width: 70%; display:inline-block; float: left;">'+
 		    				'<h5><b><span>'+h['CName']+'</span>&nbsp;&nbsp;<span>'+h['HRoom']+'室'+h['HHall']+'厅</span>&nbsp;&nbsp;<span>朝南</span></b></h5>'+

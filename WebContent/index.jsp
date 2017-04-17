@@ -9,7 +9,9 @@
 <body>
 
 <%@ include file="pages/module/head.jsp" %>
+<script type="text/javascript" src="/HouseSearcher/js/Search.js"></script>
 <%@ include file="pages/module/search-form.jsp" %>
 <%@ include file="pages/module/recommend-houses.jsp" %>
+
 </body>
 </html>

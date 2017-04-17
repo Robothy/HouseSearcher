@@ -5,17 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>住房对比</title>
-<%@ include file="module/references.txt" %>
-<script type="text/javascript" src="/HouseSearcher/js/LoadCompareHouses.js"></script>
 </head>
 <body>
-	<div class="container">
+
+  <%@ include file="module/head.jsp" %>
+	<script type="text/javascript" src="/HouseSearcher/js/LoadCompareHouses.js"></script>
+  <div class="container">
   <h2>住房比较</h2>
   <hr style="border-width: 2px; border-color:#39AC6A; "/>                        
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>编号</th>
         <th>标题</th>
         <th>价格</th>
         <th>面积</th>
@@ -31,7 +31,6 @@
     </thead>
     <tbody id="house-context">
       <tr>
-        <td>1</td>
         <td>好房子</td>
         <td>2000元/月</td>
         <td>20平</td>

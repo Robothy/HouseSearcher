@@ -16,7 +16,6 @@ $(document).ready(function() {
 	for(var i=0; i<houses.length; i++){
 		var house = JSON.parse(houses[i]);
 		context += "<tr>";
-		context += "<td>" + i + "</td>";
 		context += "<td><a href=\"/HouseSearcher/pages/house-details.action?houseHref="+ house["houseHref"] +"\">" + house["title"] + "</a></td>";
 		context += "<td>" + house["price"] + "</td>";
 		context += "<td>" + house["area"] + "</td>";

@@ -22,9 +22,7 @@
       <!--[if lt IE 9]>
       <script type="text/javascript" src="http://sh.lianjia.com/public/js/html5.js"></script>
       <![endif]-->
-      <script type="text/javascript" async="" src="./dtl_files/vds.js"></script>
-      <script async="" src="./dtl_files/gtm.js"></script>
-      <script async="" src="./dtl_files/analytics.js(1)"></script><script>
+      <script type="text/javascript" async="" src="./dtl_files/vds.js"></script><script async="" src="./dtl_files/gtm.js"></script><script async="" src="./dtl_files/analytics.js(1)"></script><script>
          var headerParameters = {
          	env : 'production',
          	publichost : 'http://sh.lianjia.com',
@@ -50,6 +48,7 @@
          }
       </script>
       <script src="./dtl_files/jquery.min.js"></script>
+	  <script src="./dtl_files/compare.js"></script>
       <script src="./dtl_files/jQuery.XDomainRequest.js"></script>
       <script src="./dtl_files/jquery.qrcode.min.js"></script>
       <script src="./dtl_files/jquery-upload-1.0.js"></script>
@@ -368,7 +367,9 @@
          <div class="title-wrapper">
             <div class="content">
                <div class="title">
+				<a href="#">
                   <h1 class="main" title="两室户，钥匙房，生活很便利，空气清新">两室户，钥匙房，生活很便利，空气清新</h1>
+				</a>
                </div>
                <div class="btnContainer">
                   <!--非已下架、非已失效时显示-->
@@ -507,7 +508,11 @@
                      </div>
                   </div>
                </div>
-               
+			   <!-- begin: 加入对比 -->
+               <div style="width:100%; text-align:right;">
+				<a id="add-to-compare" href="javascript:{};" style="color:#FFFFFF;display:inline-block; background-color:green; padding:10px 20px 10px 20px; margin-top:20px;">加入对比</a>
+			   </div>
+			   <!-- end: 加入对比 -->
             </div>
             <!--end: 房源概况-->
             <div class="clear"></div>
@@ -1421,38 +1426,36 @@
          </div>
       </div>
       <!--end: footer-->
+
+  
+<div id="show-compare" style="position:fixed; top:40%; right:0px; min-width:25px; visibility:visible;">
+   <div style="background-color:#a0a0a0; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&lt;<br/>展<br/>开</div>
+   </span>
+   <div style="background-color:#e4e3e3; text-align:center; padding-top:5px; padding-bottom:5px;"><span>住<br/>房<br/>对<br/>比</span></div>
+</div>
+<div id="compare-houses" style="position:fixed; top:40%; right:0px; min-width:250px; min-height:250px;  visibility:hidden;">
+   <div id="hide-compare-houses" style="background-color:#a0a0a0; width:100%; color:#ffffff; text-align:center; width:100%; padding-top:5px; padding-bottom:5px;"><span>&gt;隐藏</span></div>
+   </span>
+   <div style="background-color:#e4e3e3; width:100%; text-align:center; padding-top:5px; padding-bottom:5px;">
+		<a style="display:inline-block; background-color:red; width:80px; padding: 5px 5px 5px 5px; color:#FFFFFF;" href="javascript:void()" >开始对比</a>&nbsp;&nbsp;&nbsp;
+		<a style="display:inline-block; background-color:gray; width:80px; padding: 5px 5px 5px 5px; color:#000000;" href="javascript:void()">清空</a>
+   </div>
+</div>
+	  
+	  
       <!--begin: fix-right--
       <div id="side-bar-tools-placeholder">
+	  
+	  
+	  
+	  
          <div class="fix-right-v2" id="back-top" daty-id="index">
             <table>
                <tbody>
                   <tr>
                      <td>
-                        <div class="sidebar-wrap">
-                           <ul id="ul_myfav">
-                              <li class="myfav">	                                    <a title="我关注的房源" href="javascript:;" id="link_myFav" gahref="right_link_myFav">我关注的房源</a>	                                    <span class="popup"><i></i>我关注的房源</span>	                                </li>
-                           </ul>
-                           <div class="sidebar-line" id="line_myfav"></div>
-                           <ul>
-                              <li class="sell">	                                    <a title="在线卖房" href="http://sh.lianjia.com/yezhu/" target="_blank" gahref="right_link_yezhu">在线卖房</a>	                                    <span class="popup"><i></i>在线卖房</span>	                                </li>
-                           </ul>
-                           <div class="sidebar-line"></div>
-                           <ul class="js_otherTools">
-                              <li class="download">
-                                 <a href="http://sh.lianjia.com/client?source=pccbl" title="" target="_blank" gahref="right_link_app"上海链家APP</a>	                                    
-                                 <span class="popup popup-qr">
-                                    <i></i>	                                        
-                                    <div class="js_qrcodeWrapper" source="cbewm" ewmimgw="80" ewmimgh="80" style="position: relative;">
-                                       <canvas width="80" height="80"></canvas>
-                                       <img class="js_qrCodeIcon" src="./dtl_files/qrCodeIcon_lj.png" style="position: absolute; top: 50%; left: 50%; margin-top: -15px; margin-left: -15px; width: 26px; height: 26px; border: 2px solid rgb(255, 255, 255); border-radius: 5px; background: rgb(255, 255, 255);">
-                                    </div>
-                                    <em class="qr-title">AP</em>	                                    
-                                 </span>
-                              </li>
-                              <li class="phone">	                                    <a title="客服热线">客服热线</a>	                                    <span class="popup"><i></i>客服热线 4007 001 001</span>	                                </li>
-                              <li class="feedback" id="feedback">	                                    <a title="意见反馈" gahref="right_open_feedback_pop">意见反馈</a>	                                    <span class="popup"><i></i>意见反馈</span>	                                </li>
-                           </ul>
-                        </div>
+                        
+						
                      </td>
                   </tr>
                </tbody>
@@ -1490,9 +1493,10 @@
                </div>
             </div>
          </div>
+		 
       </div>
       <!--end: fix-right-->
-      <!-- 微聊 -->
+      <!-- 微聊 --
       <div id="ng-app" ng-app="weiliaoApp" style="position: absolute;" class="ng-scope">
           
          <div weiliao-win="">
@@ -1500,18 +1504,16 @@
                <div class="lianjiaim-shandow clear">
                   <div class="lianjiaim-wrap" session-win="">
                      <div class="lianjiaim-head" ng-click="clickWeiliaoHeader()">
-                        <span>咨询经纪人</span>	                            <!-- ngIf: computeTotalMsgCount(sessionList) > 0 -->	                            <!-- ngIf: helper.isShowWeiliaoPop -->	                        
+                        <span>咨询经纪人</span>	                            	                                  
                      </div>
                      <div class="lianjiaim-body" style="position: relative">
-                        <!-- ngIf: helper.isShowWeiliaoPop && weiliao.isLogin -->	                            <!-- ngIf: !weiliao.isLogin -->
                         <div class="lianjiaim-noagent ng-scope" ng-if="!weiliao.isLogin">
                            <div class="noagent-sub">您还没有登陆,先去登陆/注册吧</div>
                            <div><a href="javascript:;" class="js_login" ng-click="doLogin()">登录/注册</a></div>
                         </div>
-                        <!-- ngIf: helper.loading && weiliao.isLogin && !sessionList -->	                            <!-- ngIf: isNobody(sessionList) && weiliao.isLogin && !helper.loading -->	                        
                      </div>
                   </div>
-                  <!-- ngIf: helper.isShowChatList -->	                        
+                  	                        
                </div>
             </div>
          </div>

@@ -51,7 +51,7 @@ var load = function(begin,num) {
 		    			'</div>'+
 		    			'<div style="width: 30%; display:inline-block; float: rigth;">'+
 		    				'<div style="width: 60%; float: left;">'+
-		    					'<p style="color: red;"><span style="font-size:40px;" >3000</span><span style="font-size:16px;">元/月</span></p>'+
+		    					'<p style="color: red;"><span style="font-size:40px;" >'+h['price']+'</span><span style="font-size:16px;">元/月</span></p>'+
 		    					'<p>'+h['pubDate']+'上架</p>'+
 		    				'</div>'+
 		    				'<div style="width: 40%; float: left; text-align:center; ">'+

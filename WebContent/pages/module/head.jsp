@@ -45,6 +45,11 @@
 		display: inline-block;
 	}
 	
+	#login-register a{
+		padding: 5px 10px 5px 10px;
+	}
+
+	
 	
 	
 </style>
@@ -67,6 +72,33 @@
 	
 	
 $(document).ready(function () {
+	//未登录
+	var nologin = function(){
+		$('#login-register').html('<a href="/HouseSearcher/pages/register.jsp">注册</a><span>|</span><a href="/HouseSearcher/pages/module/login.jsp">登录</a>');
+	}
+	
+	/*获取用户session*/
+	$.ajax({
+		type:'POST',
+		url: '/HouseSearcher/user/islogin',
+		success:function(data){
+			if (data['responseCode']==1) {
+				var user = data['user'];
+				var phone = user['phone'];
+				var name = user['firstName'];
+				var nick = user['nickName'];
+				var uname = name!=''?name:nick!=''?nick:phone;
+				$('#login-register').html('<a>'+uname+'</a>'+
+  					'|<a id="logout" href="/HouseSearcher/user/logout">退出</a>'+
+  					'|<a href="/HouseSearcher/pages/module/modify-user-info.jsp">修改</a>');
+			}else {
+				nologin()
+			}
+		},
+		error: nologin()
+	})
+	
+	/*初始化导航栏*/
 	$("#navigator").html();
 	for(var key in navi){
 		var elementInfo = navi[key];
@@ -75,7 +107,15 @@ $(document).ready(function () {
 		$(element).text(elementInfo["text"]);
 		$("#navigator").append(element);
 	}
+	
+	$('#logout').on('click',function(){
+		
+	})
+	
 })
+
+
+
 </script>
 
 
@@ -83,7 +123,7 @@ $(document).ready(function () {
 <body>
 	<div id="navigator-background">
 		<div class="" id="navigator"></div>
-		<div id="login-register"><a href="/HouseSearcher/pages/register.jsp">注册</a><span>|</span><a>登录</a></div>
+		<div id="login-register"></div>
 	</div>
 </body>
 </html>

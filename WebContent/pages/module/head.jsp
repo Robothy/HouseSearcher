@@ -70,12 +70,32 @@
 			}
 	}
 	
-	
-$(document).ready(function () {
-	//未登录
+	//未登录导航栏显示登录|注册
 	var nologin = function(){
 		$('#login-register').html('<a href="/HouseSearcher/pages/register.jsp">注册</a><span>|</span><a href="/HouseSearcher/pages/module/login.jsp">登录</a>');
 	}
+	
+	var logout = function(){
+			$.ajax({
+				type : 'POST',
+				url : '/HouseSearcher/user/logout',
+				success:function(data){
+					if(data['responseCode']==1){
+						//退出成功,修改页面头部内容显示
+						nologin();
+					}else {
+						alert('退出失败！');
+					}
+				},
+				error:function(){
+					alert('退出失败！');
+				}
+			})
+	}
+	
+	
+$(document).ready(function () {
+	
 	
 	/*获取用户session*/
 	$.ajax({
@@ -89,7 +109,7 @@ $(document).ready(function () {
 				var nick = user['nickName'];
 				var uname = name!=''?name:nick!=''?nick:phone;
 				$('#login-register').html('<a>'+uname+'</a>'+
-  					'|<a id="logout" href="/HouseSearcher/user/logout">退出</a>'+
+  					'|<a href="javascript:logout()" id="logout">退出</a>'+
   					'|<a href="/HouseSearcher/pages/module/modify-user-info.jsp">修改</a>');
 			}else {
 				nologin()
@@ -108,11 +128,11 @@ $(document).ready(function () {
 		$("#navigator").append(element);
 	}
 	
-	$('#logout').on('click',function(){
-		
-	})
+	
+	
 	
 })
+
 
 
 

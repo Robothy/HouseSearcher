@@ -27,6 +27,45 @@
 			</result>
 		</action>
 		
+		<!-- 登录 -->
+		<action name="login" class="edu.housesearcher.web.action.LoginAction" method="execute"  >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="includeProperties">
+					responseCode
+				</param>
+			</result>
+		</action>
+		
+		<!-- 登出 -->
+		<action name="logout" class="edu.housesearcher.web.action.LoginAction" method="logout"  >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="includeProperties">
+					responseCode
+				</param>
+			</result>
+		</action>
+		
+		<action name="islogin" class="edu.housesearcher.web.action.LoginAction" method="checkSession"  >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>5
+				<param name="noCache">true</param>
+			</result>
+		</action>
+		
+		<action name="modify-user-info" class="edu.housesearcher.web.action.ModifyUserInfoAction" method="checkSession"  >
+			<result type="json">
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+				<param name="includeProperties">
+					responseCode
+				</param>
+			</result>
+		</action>
+		
 	</package>
 	
 </struts>

@@ -61,11 +61,11 @@
 				"text":"首页"
 			},
 			"all-houses":{
-				"url":"/HouseSearcher/house/search-houses.action",
+				"url":"/HouseSearcher/pages/house-list.jsp",
 				"text":"所有住房"
 			},
 			"collections":{
-				"url":"/HouseSearcher/",
+				"url":"/HouseSearcher/house/hosue-collection",
 				"text":"我的收藏"
 			}
 	}

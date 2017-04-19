@@ -10,6 +10,11 @@ public class HouseDetails {
     String hall;
     String area;
     String level;
+    String orientation;
+    String pubDate;
+    String communityName;
+    String communityHref;
+    String addr;
     String agentHref;
     String agentImg;
     String longitude;
@@ -19,7 +24,36 @@ public class HouseDetails {
     String agentPhone;
     String houseHref;
     String houseTitle;
-    
+    public String getOrientation() {
+        return orientation;
+    }
+    public void setOrientation(String orientation) {
+        this.orientation = orientation;
+    }
+    public String getPubDate() {
+        return pubDate;
+    }
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
+    }
+    public String getCommunityName() {
+        return communityName;
+    }
+    public void setCommunityName(String communityName) {
+        this.communityName = communityName;
+    }
+    public String getCommunityHref() {
+        return communityHref;
+    }
+    public void setCommunityHref(String communityHref) {
+        this.communityHref = communityHref;
+    }
+    public String getAddr() {
+        return addr;
+    }
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
     public String getHouseTitle() {
         return houseTitle;
     }

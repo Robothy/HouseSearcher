@@ -11,7 +11,7 @@
          }
       </style>
       
-      
+      <%@ include file="references.txt" %>
             
    </head>
    <body>

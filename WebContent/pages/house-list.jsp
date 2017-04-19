@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>房源列表</title>
 
-
+<%@ include file="module/references.txt" %>
 
 <style type="text/css">
 	.tag-block{

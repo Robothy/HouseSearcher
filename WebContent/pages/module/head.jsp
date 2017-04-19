@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>头部</title>
 
-<%@ include file="references.txt" %>
+
 
 <style type="text/css">
 

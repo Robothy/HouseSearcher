@@ -34,7 +34,12 @@ public class ShowHouseDetailsAction implements Action {
 	    return NONE;
 	}else{
 	    houseDetails = houseDetailDao.getInstanceByHouseHref(houseHref);
-	    return SUCCESS;
 	}
+	
+	if (houseDetails==null) {//页面验证无效（可能已经下架，也可能由于其他原因）
+	    return ERROR;
+	}
+	
+	return SUCCESS;
     }
 }

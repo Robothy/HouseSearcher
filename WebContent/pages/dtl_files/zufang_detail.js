@@ -214,8 +214,8 @@ $(function(){
     		联系经纪人
     **************************/
 	    //页面加载时初始化经纪人列表
-	    buildList('agent');
-	    buttonEventBind('agent');
+	    //buildList('agent');
+	    //buttonEventBind('agent');
 
 
 	/*************************
@@ -264,15 +264,15 @@ $(function(){
     		看房记录
     **************************/
 	    //页面加载时初始化看房记录列表
-	    buildList('kanfang');
-	    buttonEventBind('kanfang');
+	    //buildList('kanfang');
+	    //buttonEventBind('kanfang');
 
 
     /*************************
     		为你推荐
     **************************/
-	    buildList('recommend', {maxPerPage:4});
-	    buttonEventBind('recommend', {maxPerPage:4});
+	    //buildList('recommend', {maxPerPage:4});
+	    //buttonEventBind('recommend', {maxPerPage:4});
 
 
 	    //列表-翻页组件状态设置（联系经纪人，看房记录，为你推荐）

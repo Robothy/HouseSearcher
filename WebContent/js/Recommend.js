@@ -36,12 +36,12 @@ function loadRecommendHouses(begin,num){
 					var h = houses[key];
 					housesHtml += '<div class="col-md-3">'+
 				      '<div class="thumbnail">'+
-				        '<a href="/HouseSearcher/house/house-details?houseHref='+h['HHref']+'" target="_blank">'+
+				        '<a href="/HouseSearcher/pages/dtl.jsp?houseHref='+h['HHref']+'" target="_blank">'+
 				    			'<img src="'+h['imgHref']+'" onerror="this.src=\'/HouseSearcher/imgs/not-found-img.png\'" alt="Lights" style="width:100%; height:150px;" />'+
 				        '</a>'+
 				        '<div style="width: 100%;" class="caption">'+
 				        	'<div class="foot-text left-text">'+
-				            	'<a href="/HouseSearcher/house-details?houseHref='+h['HHref']+'">'+h['CName']+'</a>'+       	
+				            	'<a href="/HouseSearcher/pages/dtl.jsp?houseHref='+h['HHref']+'">'+h['CName']+'</a>'+       	
 				        	'</div>'+
 				        	'<div class="foot-text right-text">'+
 				            	'<a>朝'+h['HOrientation']+'</a>|'+

@@ -27,32 +27,37 @@ public class HouseDetails {
     public String getOrientation() {
         return orientation;
     }
-    public void setOrientation(String orientation) {
+    public HouseDetails setOrientation(String orientation) {
         this.orientation = orientation;
+        return this;
     }
     public String getPubDate() {
         return pubDate;
     }
-    public void setPubDate(String pubDate) {
+    public HouseDetails setPubDate(String pubDate) {
         this.pubDate = pubDate;
+        return this;
     }
     public String getCommunityName() {
         return communityName;
     }
-    public void setCommunityName(String communityName) {
+    public HouseDetails setCommunityName(String communityName) {
         this.communityName = communityName;
+        return this;
     }
     public String getCommunityHref() {
         return communityHref;
     }
-    public void setCommunityHref(String communityHref) {
+    public HouseDetails setCommunityHref(String communityHref) {
         this.communityHref = communityHref;
+        return this;
     }
     public String getAddr() {
         return addr;
     }
-    public void setAddr(String addr) {
+    public HouseDetails setAddr(String addr) {
         this.addr = addr;
+        return this;
     }
     public String getHouseTitle() {
         return houseTitle;

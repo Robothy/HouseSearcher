@@ -110,8 +110,7 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    
 	    //经济人超链接
 	    String agentHref = document.select("div[class=brokerName] a").attr("href");
-	    //经纪人图片
-	    String agentImg = document.select("div[class=brokerInfo] img").attr("src");
+	    
 
 	    EntAgentDao agentDao = new EntAgentDao();
 	    EntAgent agent = agentDao.getInstanceByAgentHref(agentHref);
@@ -130,7 +129,10 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    String favorateRate  = agent.getPraiseRate();
 	    //经纪人电话
 	    String phone = agent.getPhone();
-	
+	    
+	    //经纪人图片
+	    String agentImg = agent.getAgentImg();
+	    
 	    return (new HouseDetails())
 		    .setOrientation(orientation)
 		    .setPubDate(pubDate)

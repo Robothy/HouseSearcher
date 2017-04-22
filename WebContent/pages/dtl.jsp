@@ -1,7 +1,16 @@
+<%@page import="edu.housesearcher.web.dao.HouseDetailDaoImpl"%>
+<%@page import="edu.housesearcher.web.beans.HouseDetails"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%
+	String houseHref = request.getParameter("houseHref"); 
+	HouseDetails houseDetails = (new HouseDetailDaoImpl()).getInstanceByHouseHref(houseHref);
+	if(houseDetails==null) response.sendRedirect("/HouseSearcher/pages/dtl-err.jsp");
+%>
+
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -75,7 +84,7 @@
             <div class="content">
                <div class="title">
 				<a style="text-decoration: none;">
-                  <h1 class="main" title="两室户，钥匙房，生活很便利，空气清新">两室户，钥匙房，生活很便利，空气清新</h1>
+                  <h1 class="main" title="<%=houseDetails.getHouseTitle()%>"><%=houseDetails.getHouseTitle() %></h1>
 				</a>
                </div>
                <div class="btnContainer">
@@ -103,42 +112,12 @@
                      </a>
                      <div class="album-view-wrap" id="album-view-wrap">
                         <ul>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/0d276395-a616-42c3-b96f-45deaf65dd29.jpg_600x450.jpg" img-title="主卧" src="./dtl_files/0d276395-a616-42c3-b96f-45deaf65dd29.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/7e8b3036-599f-4daa-9fcc-99793b193be9.jpg_600x450.jpg" img-title="主卧" src="./dtl_files/7e8b3036-599f-4daa-9fcc-99793b193be9.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/b777dc41-f553-4043-bd08-496e43778f2b.jpg_600x450.jpg" img-title="次卧" src="./dtl_files/b777dc41-f553-4043-bd08-496e43778f2b.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20170314/96fdccb3-34fd-4272-95f8-5e9fdcd5b7cf.jpg_600x450.jpg" img-title="户型图" src="./dtl_files/96fdccb3-34fd-4272-95f8-5e9fdcd5b7cf.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/45684282-cc53-44f0-b12e-a03965ed5eef.jpg_600x450.jpg" img-title="次卧" src="./dtl_files/45684282-cc53-44f0-b12e-a03965ed5eef.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/cc47939a-8470-46a2-88b9-282b4620fbe4.jpg_600x450.jpg" img-title="厨房" src="./dtl_files/cc47939a-8470-46a2-88b9-282b4620fbe4.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/7802420d-cd7b-4143-9ffc-2a2e569e6f59.jpg_600x450.jpg" img-title="厨房" src="./dtl_files/7802420d-cd7b-4143-9ffc-2a2e569e6f59.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/83a70542-baf2-401c-8e41-eb167c35382d.jpg_600x450.jpg" img-title="主卫" src="./dtl_files/83a70542-baf2-401c-8e41-eb167c35382d.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/a336910f-be0f-41e3-9b35-72129260a89a.jpg_600x450.jpg" img-title="主卫" src="./dtl_files/a336910f-be0f-41e3-9b35-72129260a89a.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/ba831510-1055-4e5a-9aa0-bdbc963b2cf4.jpg_600x450.jpg" img-title="由主卧" src="./dtl_files/ba831510-1055-4e5a-9aa0-bdbc963b2cf4.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/6c3afc14-c396-4084-960c-6a917a35a1c9.jpg_600x450.jpg" img-title="由次卧" src="./dtl_files/6c3afc14-c396-4084-960c-6a917a35a1c9.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
-                           <li>
-                              <img data-large="http://cdn1.dooioo.com/fetch/vp/fy/gi/20150403/7f42d5b5-dacc-4c32-a83d-77c33e6b4189.jpg_600x450.jpg" img-title="其他" src="./dtl_files/7f42d5b5-dacc-4c32-a83d-77c33e6b4189.jpg_100x75.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
-                           </li>
+                        	<%-- <%= %>
+                        	<s:iterator value="img" status="#houseDetails.images" >
+                        		<li>
+                              		<img data-large="${img[0] }" img-title="${img[2] }" src="${img[1] }" onerror="this.src=/HouseSearcher/; this.onerror=null;">
+                           		</li>
+                        	</s:iterator> --%>
                         </ul>
                      </div>
                      <a href="javascript:;" class="ctrl-btn ctrl-btn-next" id="ctrl-btn-next">
@@ -152,44 +131,44 @@
             <div class="content forRent">
                <div class="houseInfo">
                   <div class="price">
-                     <div class="mainInfo bold" style="font-size:28px;">6800<span class="unit">元/月</span></div>
+                     <div class="mainInfo bold" style="font-size:28px;"><%=houseDetails.getPrice() %><span class="unit">元/月</span></div>
                   </div>
                   <div class="room">
-                     <div class="mainInfo">2<span class="unit">室</span> 0<span class="unit">厅</span></div>
+                     <div class="mainInfo"><%=houseDetails.getRoom() %><span class="unit">室</span> <%=houseDetails.getHall() %><span class="unit">厅</span></div>
                   </div>
                   <div class="area">
-                     <div class="mainInfo">52<span class="unit">平</span></div>
+                     <div class="mainInfo"><%=houseDetails.getArea() %><span class="unit">平</span></div>
                   </div>
                </div>
                <table class="aroundInfo">
                   <tbody>
                      <tr>
                         <td class="title" nowrap="">楼层：</td>
-                        <td width="50%">中区/18层</td>
+                        <td width="50%"><%=houseDetails.getLevel() %>层</td>
                         <td class="title" nowrap="">朝向：</td>
                         <td width="50%">
-                           朝东
+                           <%=houseDetails.getOrientation() %>
                         </td>
                      </tr>
                      <tr>
                         <td class="title" nowrap="">区域：</td>
-                        <td width="50%">徐汇 徐家汇</td>
+                        <td width="50%"><%=houseDetails.getAddr().length()>10?houseDetails.getAddr().substring(0, 9):houseDetails.getAddr() %></td>
                         <td class="title" nowrap="">上架：</td>
-                        <td width="50%">2017.02.22</td>
+                        <td width="50%"><%=houseDetails.getPubDate() %></td>
                      </tr>
                      <tr>
                         <td class="title" nowrap="">小区：</td>
                         <td colspan="3">
                            <p class="addrEllipsis" title="海天公寓">
-                              <a href="file:///C:/xiaoqu/5011000015263.html">海天公寓</a>
+                              <a href="<%=houseDetails.getCommunityHref() %>"><%=houseDetails.getCommunityName() %></a>
                            </p>
                         </td>
                      </tr>
                      <tr>
                         <td class="title">地址：</td>
                         <td colspan="3">
-                           <p class="addrEllipsis" title="">
-                              天钥桥路180弄1-2号
+                           <p class="addrEllipsis" title="<%=houseDetails.getAddr()%>">
+                              <%=houseDetails.getAddr().length()>10?houseDetails.getAddr().substring(0, 9):houseDetails.getAddr() %>
                            </p>
                         </td>
                      </tr>
@@ -197,20 +176,19 @@
                </table>
                <!--非已下架、非已失效时显示-->
                <div class="brokerInfo">
-                  <a href="http://sh.lianjia.com/jingjiren/detail/203598.html?phone=4007675011,598137" target="_blank">
-                  <img class="lj-lazy" src="./dtl_files/203598_150x200.jpg" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/jingjiren/noimg.jpg&#39;; this.onerror=null;" data-original="http://cdn1.dooioo.com/fetch/vp/touxiang/photos/203598_150x200.jpg" style="display: inline;">
+                  <a href="<%=houseDetails.getAgentHref() %>" target="_blank">
+                  <img class="lj-lazy" src="<%=houseDetails.getAgentImg() %>" onerror="this.src=/HouseSearcher/imgs/not-found-img.png; this.onerror=null;" data-original="<%=houseDetails.getAgentImg() %>" style="display: inline;">
                   </a>
                   <div class="brokerInfoText">
                      <div class="brokerName">
-                        <a href="http://sh.lianjia.com/jingjiren/detail/203598.html?phone=4007675011,598137" class="name" target="_blank">王贝贝</a>
+                        <a href="<%=houseDetails.getAgentHref() %>" class="name" target="_blank"><%=houseDetails.getAgentName() %></a>
                         <span class="tag first"></span>
                         <a class="lianjiaim-createtalkAll" usercode="203598" style="display: none;" title="在线咨询" data-role="lianjiaim-createtalk" data-ucid="1000000020105479" source="rentHouse"></a>
                      </div>
                      <div class="evaluate">
-                        好评率<span class="evaluate rate">96%</span>
+                        好评率<span class="evaluate rate"><%=houseDetails.getPraiseRate() %></span>
                      </div>
-                     <div class="phone">4007675011
-                        <span>转</span>598137
+                     <div class="phone"><%=houseDetails.getAgentPhone() %>
                      </div>
                   </div>
                </div>
@@ -231,7 +209,7 @@
       </div>
       <!--begin: 内容导航-->
       <!--begin: 周边配套 -->
-      <div class="around js_content" id="zoneMap" longitude="121.448226" latitude="31.197659">
+      <div class="around js_content" id="zoneMap" longitude="<%=houseDetails.getLongitude() %>" latitude="<%=houseDetails.getLatitude()%>">
          <div class="content">
             <div class="title">周边配套</div>
          </div>

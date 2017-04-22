@@ -54,6 +54,17 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	}
 	if(document!=null){
 	    
+	    if(document.select("div[class=tag tag_yixiajia]").size()!=0){//商品已下架
+		CRAWLER_LOGGER.debug("商品已经下架");
+		return null;
+	    }
+	    
+	    if(document.select("div[class=content forRent]").size()==0) {
+		CRAWLER_LOGGER.debug("页面不包含房屋的基本信息！");
+		return null;
+	    }
+	    
+	    
 	    //获取图片
 	    List<String[]> images = new ArrayList<String[]>();
 	    Elements imgEles = document.select("div[class=album-view-wrap] li img");
@@ -64,20 +75,39 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 		img[2] = e.attr("img-title");
 		images.add(img);
 	    }
+	    CRAWLER_LOGGER.debug("获取到了"+imgEles.size()+"张图片");
 	    
-	    //标题
-	    String houseTitle = document.select("h1").text();
+	    EntHouseDao houseDao = new EntHouseDao();
+	    EntHouse house = houseDao.getInstanceByHouseHref(houseHref);
 	    
 	    //价格
-	    String price = document.select("div[class=price] div").text();
+	    String price = house.getPrice();
+	    //朝向
+	    String orientation = house.getHOrientation();
 	    //户型
-	    String type = document.select("div[class=room] div").text().replaceAll("[室|厅]", "-");
-	    String room = type.split("-")[0];
-	    String hall = type.split("-")[1];
+	    String room = house.getHRoom();
+	    String hall = house.getHHall();
 	    //面积
-	    String area = document.select("div[class=area] div").text();
-	    //详情，这里为了简单起见直接把html弄下来了
-	    String level = document.select("table[class=aroundInfo]").html();
+	    String area = house.getArea();
+	    //楼层
+	    String level = house.getHLevel();
+	    //日期
+	    String pubDate = house.getPubDate();
+	    //标题
+	    String houseTitle = house.getHTitle();
+	    
+	    //小区超链接
+	    String communityHref= house.getCHref();
+	    EntCommunity community = (new EntCommunityDao()).getInstanceByCommunityHref(communityHref);
+	    //地址
+	    String addr = community.getCLocation();
+	    //小区名
+	    String communityName = community.getCName();
+	    //经纬度
+	    String longitude = document.select("div[id=zoneMap]").attr("longitude");
+	    String latitude = document.select("div[id=zoneMap]").attr("latitude");
+	    
+	    
 	    //经济人超链接
 	    String agentHref = document.select("div[class=brokerName] a").attr("href");
 	    //经纪人图片
@@ -100,13 +130,14 @@ public class HouseDetailDaoImpl implements IHouseDetailDao {
 	    String favorateRate  = agent.getPraiseRate();
 	    //经纪人电话
 	    String phone = agent.getPhone();
-	    
-	    
-	    //经纬度
-	    String longitude = document.select("div[id=zoneMap]").attr("longitude");
-	    String latitude = document.select("div[id=zoneMap]").attr("latitude");
 	
 	    return (new HouseDetails())
+		    .setOrientation(orientation)
+		    .setPubDate(pubDate)
+		    .setCommunityHref(communityHref)
+		    .setCommunityName(communityName)
+		    .setAddr(addr)
+		    .setHouseTitle(houseTitle)
 		    .setAgentHref(agentHref)
 		    .setAgentImg(agentImg)
 		    .setAgentName(agentName)

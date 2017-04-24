@@ -31,7 +31,7 @@
       </tr>
     </thead>
     <tbody id="house-context">
-      <tr>
+      <!-- <tr>
         <td>好房子</td>
         <td>2000元/月</td>
         <td>20平</td>
@@ -43,7 +43,7 @@
         <td>军工路516好</td>
         <td>80</td>
         <td><span>X</span></td>
-      </tr>
+      </tr> -->
       
     </tbody>
   </table>

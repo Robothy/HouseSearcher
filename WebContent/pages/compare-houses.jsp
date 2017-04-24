@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>住房对比</title>
+<%@ include file="module/references.txt" %>
 </head>
 <body>
 

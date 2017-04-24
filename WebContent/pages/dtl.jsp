@@ -87,7 +87,7 @@
          <div class="title-wrapper">
             <div class="content">
                <div class="title">
-                <div style="visibility: hidden;" id="house-href"><%="/HouseSearcher/pages/dtl.jsp?houseHref="+houseDetails.getHouseHref() %></div>
+                <div style="visibility: hidden;" id="house-href"><%=houseDetails.getHouseHref() %></div>
 				<a style="text-decoration: none;">
                   <h1 class="main" title="<%=houseDetails.getHouseTitle()%>"><%=houseDetails.getHouseTitle() %></h1>
 				</a>

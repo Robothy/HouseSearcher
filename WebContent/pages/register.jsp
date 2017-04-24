@@ -10,7 +10,7 @@
          width: 100%;
          }
       </style>
-            
+      <%@ include file="module/references.txt" %>      
    </head>
    <body>
    	  <%@ include file="module/head.jsp" %>

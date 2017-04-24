@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="edu.housesearcher.web.dao.HouseDetailDaoImpl"%>
 <%@page import="edu.housesearcher.web.beans.HouseDetails"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,7 +9,10 @@
 <%
 	String houseHref = request.getParameter("houseHref"); 
 	HouseDetails houseDetails = (new HouseDetailDaoImpl()).getInstanceByHouseHref(houseHref);
-	if(houseDetails==null) response.sendRedirect("/HouseSearcher/pages/dtl-err.jsp");
+	if(houseDetails==null) {
+	    response.sendRedirect("/HouseSearcher/pages/dtl-err.jsp");
+	    return;
+	}
 %>
 
 <html>
@@ -22,7 +26,7 @@
       <meta name="format-detection" content="telephone=no">
       <link href="http://sh.lianjia.com/public/img/favicon.ico" type="image/x-icon" rel="icon">
       <link href="http://sh.lianjia.com/public/img/favicon.ico" type="image/x-icon" rel="shortcut icon">
-      <title>dtl</title>
+      <title>住房详情</title>
       <meta name="keywords" content="两室户，钥匙房，生活很便利，空气清新海天公寓推荐租房房源,海天公寓优质租房">
       <meta name="description" content="两室户，钥匙房，生活很便利，空气清新 租房推荐，两室户，钥匙房，生活很便利，空气清新 用户值得关注的好房源，向上海租房用户推荐海天公寓优质租房房源。">
       <link rel="stylesheet" href="./dtl_files/common.css">
@@ -83,12 +87,13 @@
          <div class="title-wrapper">
             <div class="content">
                <div class="title">
+                <div style="visibility: hidden;" id="house-href"><%="/HouseSearcher/pages/dtl.jsp?houseHref="+houseDetails.getHouseHref() %></div>
 				<a style="text-decoration: none;">
                   <h1 class="main" title="<%=houseDetails.getHouseTitle()%>"><%=houseDetails.getHouseTitle() %></h1>
 				</a>
                </div>
                <div class="btnContainer">
-                  <button id="notice_focus" class="notice-focus fr notice" houserentid="3789248" gahref="zufang_subscribe">收藏此房</button>
+				<a id="collect-this-house" style="cursor:pointer; color:#FFFFFF;display:inline-block; background-color: #39AC6A; padding:10px 20px 10px 20px; margin-top:20px;">收藏此房</a>
                </div>
             </div>
          </div>
@@ -98,10 +103,10 @@
                <div class="album-box left" id="album-box">
                   <div class="pic-panel pic-panel-hover" style="overflow:hidden;">
                      <a href="javascript:;">
-                     <img src="./dtl_files/0d276395-a616-42c3-b96f-45deaf65dd29.jpg_600x450.jpg" id="view_big_img" onerror="this.src=&#39;http://cdn7.dooioo.com/static/img/new-version/default_block.png&#39;; this.onerror=null;">
+                     <img src="<%=houseDetails.getImages().get(0)[0] %>" id="view_big_img" onerror="this.src=/HouseSearcher/imgs/not-found-img.png; this.onerror=null;">
                      </a>
                      <div class="label">
-                        <div class="fl" id="houseTag">主卧</div>
+                        <div class="fl" id="houseTag"><%=houseDetails.getImages().get(0)[2] %></div>
                         <div class="fr"><span id="currentIndex">1</span> / 12</div>
                      </div>
                   </div>
@@ -112,12 +117,16 @@
                      </a>
                      <div class="album-view-wrap" id="album-view-wrap">
                         <ul>
-                        	<%-- <%= %>
-                        	<s:iterator value="img" status="#houseDetails.images" >
+                        	<% 
+                        	List<String[]> images = houseDetails.getImages();
+                        	for(int i=0; i<images.size(); i++){
+                        	    String[] img = images.get(i);
+                        	    %>
+                        	
                         		<li>
-                              		<img data-large="${img[0] }" img-title="${img[2] }" src="${img[1] }" onerror="this.src=/HouseSearcher/; this.onerror=null;">
+                              		<img data-large="<%=img[0] %>" img-title="<%=img[2] %>" src="<%=img[1] %>" onerror="this.src=/HouseSearcher/imgs/not-found-img.png; this.onerror=null;">
                            		</li>
-                        	</s:iterator> --%>
+                        	<% } %>
                         </ul>
                      </div>
                      <a href="javascript:;" class="ctrl-btn ctrl-btn-next" id="ctrl-btn-next">
@@ -194,7 +203,7 @@
                </div>
 			   <!-- begin: 加入对比 -->
                <div style="width:100%; text-align:right;">
-				<a id="add-to-compare" style="color:#FFFFFF;display:inline-block; background-color: #39AC6A; padding:10px 20px 10px 20px; margin-top:20px;">加入对比</a>
+				<a id="add-to-compare" style="cursor:pointer; color:#FFFFFF;display:inline-block; background-color: #39AC6A; padding:10px 20px 10px 20px; margin-top:20px;">加入对比</a>
 			   </div>
 			   <!-- end: 加入对比 -->
             </div>
@@ -578,38 +587,6 @@
                      
                      
                      photoUrl: "http://cdn1.dooioo.com/fetch/vp/touxiang/photos/220604_150x200.jpg"
-                     
-                 },
-                 
-                 {
-                     userName: "张少娜",
-                     userCode: "224335",
-                     hostNumber: "4007675011",
-                     extNumber: "598139",
-                     positionName: "初级物业顾问",
-                     daikan: "1",
-                     phone: "4007675011转598139",
-                     positionId : 1,
-                     status : 1,
-                     
-                     
-                     photoUrl: "http://cdn1.dooioo.com/fetch/vp/touxiang/photos/224335_150x200.jpg"
-                     
-                 },
-                 
-                 {
-                     userName: "李磊",
-                     userCode: "226507",
-                     hostNumber: "4007675011",
-                     extNumber: "598140",
-                     positionName: "初级物业顾问",
-                     daikan: "1",
-                     phone: "4007675011转598140",
-                     positionId : 1,
-                     status : 1,
-                     
-                     
-                     photoUrl: "http://cdn1.dooioo.com/fetch/vp/touxiang/photos/226507_150x200.jpg"
                      
                  },
                  

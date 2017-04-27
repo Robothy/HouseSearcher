@@ -4,7 +4,7 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
 	<package name="edu.housesearcher.web.search" namespace="/house" extends="struts-default,json-default">
-		<global-allowed-methods>execute</global-allowed-methods>
+		<global-allowed-methods>execute,collect,delete</global-allowed-methods>
 		<action name="search-houses" class="edu.housesearcher.web.action.SearchHouseAction" method="execute" >
 			<result type="json">
 				<!-- <param name="excludeProperties">
@@ -14,5 +14,22 @@
 				</param> -->
 			</result>
 		</action>
+		
+		<action name="collect-house" class="edu.housesearcher.web.action.CollectHouseAction" method="collect" >
+			<result type="json">
+				<param name="includeProperties">
+					responseCode
+				</param>
+			</result>
+		</action>
+		
+		<action name="cancel-collect-house" class="edu.housesearcher.web.action.CollectHouseAction" method="delete" >
+			<result type="json">
+				<param name="includeProperties">
+					responseCode
+				</param>
+			</result>
+		</action>
+		
 	</package>
 </struts>
